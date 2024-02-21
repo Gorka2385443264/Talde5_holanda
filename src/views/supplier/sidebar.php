@@ -6,7 +6,7 @@ require_once(APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilit
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Second-life <img src="../../../public/Argazkiak/logo.png" alt=""></h5>
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="../../../public/Argazkiak/logo.png" alt=""></h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
@@ -17,6 +17,21 @@ require_once(APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilit
       <li><a href="../supplier/hornitzailea.php"><i class="fa-solid fa-boxes-stacked"></i> <?= trans("Hornitzailea bihurtu") ?></a></li>
       <li><a href="../supplier/cesta.php"><i class="fa-solid fa-cart-shopping"></i> <?= trans("Cesta de compra") ?></a></li>
       <li><a href="../supplier/estado_producto.php"><i class="fa-solid fa-truck-fast"></i> <?= trans("Estado del producto") ?></a></li>
+      <li>
+      <div class="cart-icon">
+    <a href="/Talde5_holanda/src/views/supplier/cesta.php">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="numero_icono_cesta"><?= isset($_SESSION['cesta']) ? count($_SESSION['cesta']) : 0 ?></span>
+    </a>
+</div>
+      </li>
+      <li>
+        
+<div class="cart-icon2">
+    <?php require_once(APP_DIR . "/src/views/supplier/_parts/selectLang.php"); ?>
+</div>
+
+      </li>
     </ul>
   </div>
 </div>

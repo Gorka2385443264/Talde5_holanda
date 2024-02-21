@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/Talde5_holanda/src/css/info.css">
-<title>Second Life - Info</title>
+<title>Fiets.Huur  - Info</title>
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 ?>

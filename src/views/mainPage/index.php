@@ -3,19 +3,14 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_pa
 ?>
 <link rel="stylesheet" href="/Talde5_holanda/src/css/productos.css">
 
-<title>Second Life</title>
+<title>Fiets.Huur </title>
 </head>
 
 <body>
 
 
     <!-- Div verde en la parte superior -->
-    <div class="top-bar">
-        <?php
-        require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/top_bar.php");
-        ?>
-    </div>
-    <div class="left-bar"></div>
+ 
 
 
     <!-- NO TOCAR -->
