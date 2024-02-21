@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/Talde5_holanda/public/Argazkiak/logo.png">
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/index.css">
+    <link rel="stylesheet" href="/ERRONKA3/WEB/Talde5_holanda/src/css/index.css">
     <script src="https://kit.fontawesome.com/7f605dc8fe.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
    
@@ -16,7 +16,7 @@
 
 <?php 
 //Sesioa hasten dugu bertan gordetzeko zein hizkuntzatan ari garen
-define('APP_DIR', $_SERVER['DOCUMENT_ROOT'] . '/Talde5_holanda'); //Aplikazioaren karpeta edozein lekutatik atzitzeko.
+define('APP_DIR', $_SERVER['DOCUMENT_ROOT'] . '/ERRONKA3/WEB/Talde5_holanda'); //Aplikazioaren karpeta edozein lekutatik atzitzeko.
 define('HREF_VIEWS_DIR', '/Talde5_holanda/src/views/'); //Aplikazioaren views karpeta edozein lekutatik deitzeko
 require_once(APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.
 ?>
