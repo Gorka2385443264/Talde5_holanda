@@ -52,8 +52,8 @@ body {
 }
 
 .boton_sidebar {
-    border: solid 11px #0A9CF7;
-    background-color: #0A9CF7;
+    border: solid 11px #f87331;
+    background-color: #f87331;
     position: absolute;
     top: 0;
     left: 0;
@@ -80,8 +80,8 @@ body {
 }
 
 .cart-iconLOGO {
-    border: solid 11px #0A9CF7;
-    background-color: #0A9CF7;
+    border: solid 11px #f87331;
+    background-color: #f87331;
     position: absolute;
     top: 0;
     left: 60px;
@@ -105,7 +105,7 @@ body {
 .cart-icon1:hover,
 .cart-icon2,
 .aldatu_hizkuntza_botoia {
-    color: #0A9CF7;
+    color: #f87331;
     background: transparent;
     text-decoration: none;
 }
@@ -148,7 +148,7 @@ body {
 }
 
 .offcanvas-body a:hover {
-    background: #333;
+    background: #f87331;
     color: #0A9CF7;
     padding: 20px;
     text-decoration: none;
@@ -162,7 +162,7 @@ body {
 
 /*FOOTER*/
 footer {
-    background-color: #333;
+    background-color: #f87331;
     color: #fff;
     padding: 20px 0;
     position: relative;
@@ -228,15 +228,15 @@ a:hover {
 /*boton del idioma*/
 .aldatu_hizkuntza_botoia {
     padding: 2px;
-    background-color: #333;
-    color: #666;
+    background-color: #f87331;
+    color: white;
     border: 0;
 }
 
 .opcion_idioma {
-    background-color: #333;
+    background-color: #f87331;
     border: 0;
-    color: #666;
+    color: white;
 
 }
 
@@ -246,7 +246,7 @@ a:hover {
 
 .opcion_idioma_borde:hover {
     color: #0A9CF7;
-    background: #333;
+    background: #f87331;
     text-decoration: none;
 }
 
