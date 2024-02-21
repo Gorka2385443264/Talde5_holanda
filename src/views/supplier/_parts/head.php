@@ -19,6 +19,6 @@
 define('APP_DIR', $_SERVER['DOCUMENT_ROOT'] . '/Talde5_holanda'); //Aplikazioaren karpeta edozein lekutatik atzitzeko.
 define('HREF_VIEWS_DIR', '/Talde5_holanda/src/views/'); //Aplikazioaren views karpeta edozein lekutatik deitzeko
 
-require_once(APP_DIR . "/src/transitions/transitions.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.
+require_once(APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.
 
 ?>

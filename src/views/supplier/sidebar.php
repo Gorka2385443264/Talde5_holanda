@@ -1,6 +1,6 @@
 <!-- SIDEBAR -->
 <?php
-require_once(APP_DIR . "/src/transitions/transitions.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.
+require_once(APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.
 ?>
 <button class="boton_sidebar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-bars"></i></button>
 
