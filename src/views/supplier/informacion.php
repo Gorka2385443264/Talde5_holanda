@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="/TALDE5_HOLANDA/src/css/info.css">
+<link rel="stylesheet" href="/Talde5_holanda/src/css/info.css">
 <title>Second Life - Info</title>
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/TALDE5_HOLANDA/src/views/supplier/_parts/head.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 ?>
 </head>
 
@@ -10,7 +10,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/TALDE5_HOLANDA/src/views/supplier/_pa
     <!-- Div verde en la parte superior -->
     <div class="top-bar">
         <?php
-        require_once($_SERVER["DOCUMENT_ROOT"] . "/TALDE5_HOLANDA/src/views/supplier/top_bar.php");
+        require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/top_bar.php");
         ?>
     </div>
     <div class="left-bar"></div>
@@ -30,7 +30,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/TALDE5_HOLANDA/src/views/supplier/_pa
             <p><?= trans("SecondLife es una empresa comprometida con la reutilización y la reducción de residuos electrónicos al ofrecer productos informáticos de segunda mano de alta calidad. Especializada en la venta de dispositivos refurbished, la misión de SecondLife es extender la vida útil de equipos informáticos, contribuyendo así a la disminución de la generación de desechos electrónicos. Al proporcionar opciones accesibles y respetuosas con el medio ambiente, SecondLife no solo se preocupa por las necesidades tecnológicas de sus clientes, sino que también aboga por un consumo responsable, fomentando un ciclo de vida más sostenible para los productos informáticos.") ?></p>
         </div>
         <div class="imagen_info">
-            <img src="/TALDE5_HOLANDA/public/Argazkiak/logo.png" alt="">
+            <img src="/Talde5_holanda/public/Argazkiak/logo.png" alt="">
         </div>
     </div>
 

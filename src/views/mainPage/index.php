@@ -1,7 +1,7 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/TALDE5_HOLANDA/src/views/supplier/_parts/head.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 ?>
-<link rel="stylesheet" href="/TALDE5_HOLANDA/src/css/productos.css">
+<link rel="stylesheet" href="/Talde5_holanda/src/css/productos.css">
 
 <title>Second Life</title>
 </head>
@@ -12,7 +12,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/TALDE5_HOLANDA/src/views/supplier/_pa
     <!-- Div verde en la parte superior -->
     <div class="top-bar">
         <?php
-        require_once($_SERVER["DOCUMENT_ROOT"] . "/TALDE5_HOLANDA/src/views/supplier/top_bar.php");
+        require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/top_bar.php");
         ?>
     </div>
     <div class="left-bar"></div>
