@@ -251,3 +251,66 @@ a:hover {
 }
 
 
+/*MAIN DIV*/
+
+/*Iniciar Sesion*/
+.eleguir_tipo_inicio{
+    display: flex;
+}
+.eleguir_tipo_inicio div{
+    border-radius: 5px;
+    background-color: #f87331;
+    padding: 5px;
+    margin-left: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+.eleguir_tipo_inicio div:hover{
+    color: #f87331;
+    border: 1px #f87331 solid;
+    background-color: #fff;
+}
+
+
+.mainDiv{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/*LOGIN*/
+.topbar{
+    background-color: #f87331;
+    width: 100%;
+}
+
+.topbar img{
+    width: 40%;
+}
+
+.info-section h1{
+    margin-bottom: 10px;
+}
+
+.info-section input{
+    border-radius: 5px;
+    border: rgb(232, 232, 232);
+    background-color: rgb(232, 232, 232);
+    padding: 5px;
+}
+
+.enter_buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 250px;
+}
+
+.enter_buttons div {
+    background-color: #f87331;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 540px;
+}
