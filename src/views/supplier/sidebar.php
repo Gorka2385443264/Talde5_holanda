@@ -30,6 +30,9 @@ require_once(APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilit
 <div class="cart-icon2">
     <?php require_once(APP_DIR . "/src/views/supplier/_parts/selectLang.php"); ?>
 </div>
+<?php
+    require_once(APP_DIR . "/src/views/supplier/footer.php");
+    ?>
 
       </li>
     </ul>

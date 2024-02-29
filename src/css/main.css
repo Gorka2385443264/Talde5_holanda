@@ -1,0 +1,30 @@
+.mainDiv{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.catalogoGrande{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.catalogoGrande div{
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #ff0000;
+    padding: 20px;
+    padding-top: 150px;
+    height: auto;
+    cursor: pointer;
+}
+
+.Servicios{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.imagenDentroCatalogo img{
+    margin: 0px;
+    padding: 0px;
+    height: 200px;
+}
