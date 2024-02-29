@@ -23,8 +23,36 @@
     grid-template-columns: repeat(1, 1fr);
 }
 
-.imagenDentroCatalogo img{
-    margin: 0px;
-    padding: 0px;
-    height: 200px;
+.Mainperfil{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(232, 232, 232);
+}
+.iconoDelNombre i{
+    font-size: 100px;
+}
+.nombreEtc{
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+.resto div{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightskyblue;
+    margin-right: 150px;
+    cursor: pointer;
+}
+
+.baraAbajo {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    border-top: 2px solid #000; /* Puedes ajustar el grosor y el color según tus necesidades */
+}
+
+.baraAbajo div{
+    justify-self: center;
 }
