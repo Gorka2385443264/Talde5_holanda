@@ -29,14 +29,18 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_pa
                 style="margin-top: 5px; margin-bottom: 5px; width: 390px;">
         </div>
         <div class="enter_buttons">
-            <div class="izquierda"><i class="fa-solid fa-arrow-left"></i></div>
-            <div class="derecha"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="izquierda">
+                <a href="../supplier/mainPage.php"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="derecha">
+            <a href="../supplier/mainPage.php"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
     </div>
     <!-- LOGIN -->
     <div id="login" class="login-container">
         <div class="info-section">
-            <h1>Inicia Sesion: </h1><br>
+            <h1>Iniciar Sesion: </h1><br>
 
             <input type="text" id="fname" name="fname" placeholder="Añade tu correo"
                 style="margin-top: 5px;margin-bottom: 5px; width: 390px;">
@@ -48,7 +52,9 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_pa
             <div class="izquierda">
                 <a href="../supplier/mainPage.php"><i class="fa-solid fa-arrow-left"></i></a>
             </div>
+            <div class="derecha">
             <a href="../supplier/mainPage.php"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
     </div>
 
