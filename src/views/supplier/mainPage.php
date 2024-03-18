@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 ?>
-<link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
+<<link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
 <title>Fiets.Huur </title>
 </head>
 
