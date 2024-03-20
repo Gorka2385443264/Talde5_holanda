@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/Talde5_holanda/src/css/login.css">
 </head>
+<?php require_once "../../php/conectar.php"; ?>
 
 <body>
     <main>
@@ -38,7 +39,7 @@
                     <button type="submit" id="sartu">Entrar</button>
                 </form>
                 <!--Register-->
-                <form action="../../php/conectar.php" method="post" class="formulario__register">
+                <form action="" method="post" class="formulario__register">
                     <h2>Regístrarse</h2>
                     <input type="text" placeholder="Nombre" name="nombre">
                     <input type="text" placeholder="Apellido" name="apellido">

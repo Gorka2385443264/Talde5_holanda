@@ -19,20 +19,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset ($_POST['nombre']) && isset ($
     $apellido = $_POST['apellido'];
     $correo = $_POST['correo'];
     $telefono = $_POST['telefono'];
-    $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT); // Cifrar la contraseña
+    $contraseña = $_POST['contraseña'];
 
     // Insertar datos en la tabla erronka3.bezeroa
-    $sql = "INSERT INTO bezeroa (izena, abizena, korreoa, telefonoa, pasahitza) VALUES (?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $nombre, $apellido, $correo, $telefono, $contraseña);
+    $sql_bezeroa = "INSERT INTO bezeroa (izena, abizena, korreoa, telefonoa, pasahitza) VALUES (?, ?, ?, ?, ?)";
+    $stmt_bezeroa = $conn->prepare($sql_bezeroa);
+    $stmt_bezeroa->bind_param("sssss", $nombre, $apellido, $correo, $telefono, $contraseña);
 
-    if ($stmt->execute()) {
+    if ($stmt_bezeroa->execute()) {
         echo "<script>alert('Registro exitoso');</script>";
+
+        // Insertar datos en la tabla erronka3.iniciarsesion
+        $sql_iniciarsesion = "INSERT INTO iniciarsesion (korreoa, pasahitza) VALUES (?, ?)";
+        $stmt_iniciarsesion = $conn->prepare($sql_iniciarsesion);
+        $stmt_iniciarsesion->bind_param("ss", $correo, $contraseña);
+
+        if ($stmt_iniciarsesion->execute()) {
+            echo "<script>alert('Registro de inicio de sesión exitoso');</script>";
+        } else {
+            echo "<script>alert('Error al registrar el inicio de sesión: " . $conn->error . "');</script>";
+        }
+        $stmt_iniciarsesion->close();
     } else {
         echo "<script>alert('Error al registrar: " . $conn->error . "');</script>";
     }
-    $stmt->close();
+    $stmt_bezeroa->close();
 }
+
 
 
 // Si se envió el formulario de inicio de sesión
