@@ -31,19 +31,19 @@
             <!--Formulario de Login y registro-->
             <div class="contenedor__login-register">
                 <!--Login-->
-                <form action="" class="formulario__login" id="form_login">
+                <form action="../../php/conectar.php" method="post" class="formulario__login" id="form_login">
                     <h2>Iniciar Sesión</h2>
                     <input type="email" placeholder="Correo Electronico" name="correo_login">
                     <input type="password" placeholder="Contraseña" name="contraseña_login">
                     <button type="submit" id="sartu">Entrar</button>
                 </form>
                 <!--Register-->
-                <form action="" class="formulario__register">
+                <form action="../../php/conectar.php" method="post" class="formulario__register">
                     <h2>Regístrarse</h2>
                     <input type="text" placeholder="Nombre" name="nombre">
                     <input type="text" placeholder="Apellido" name="apellido">
                     <input type="email" placeholder="Correo Electronico" name="correo">
-                    <input type="text" placeholder="Usuario" name="usuario">
+                    <input type="number" placeholder="Telefono" name="telefono">
                     <input type="password" placeholder="Contraseña" name="contraseña">
                     <button type="submit" id="erregistratu">Regístrarse</button>
                 </form>
@@ -60,7 +60,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: 'POST',
-                    url: '../../php/conectar.php', // Ruta al archivo PHP que maneja el inicio de sesión
+                    url: '../../php/conectar.php',
                     data: $(this).serialize(),
                     success: function (response) {
                         if (response.trim() === "Inicio de sesión exitoso") {
