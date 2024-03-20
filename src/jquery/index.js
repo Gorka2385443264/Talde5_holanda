@@ -74,5 +74,13 @@ anchoPage();
             caja_trasera_register.style.display = "none";
             caja_trasera_login.style.display = "block";
             caja_trasera_login.style.opacity = "1";
-        }
+        }
 }
+document.getElementById("sartu").addEventListener("click", function() {
+    // Redirige a otra página
+    window.location.href = "hasiera.php";
+});
+document.getElementById("erregistratu").addEventListener("click", function() {
+    // Redirige a otra página
+    window.location.href = "hasiera.php";
+});
