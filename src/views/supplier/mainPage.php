@@ -1,8 +1,9 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 ?>
+
 <<link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
-<title>Fiets.Huur </title>
+<title>Fiets.Huur</title>
 </head>
 
 <body>
@@ -36,7 +37,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_pa
                 </div>
                 <div class="resto">
                     <h1>Hola!</h1>
-                    <h3>David González</h3>
+                    <h3><?php echo $nombreUsuario; ?></h3>
                     <div>Iniciar viaje</div>
                 </div>
             </div>

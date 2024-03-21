@@ -59,7 +59,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset ($_POST['correo_login']) && is
 
     if ($result->num_rows > 0) {
         // Usuario autenticado
-        echo "Inicio de sesión exitoso";
+        // Obtener el nombre de usuario asociado al correo electrónico
+        $sql_nombre_usuario = "SELECT izena FROM bezeroa WHERE korreoa='$correo_login'";
+        $result_nombre_usuario = $conn->query($sql_nombre_usuario);
+        
+        if ($result_nombre_usuario->num_rows > 0) {
+            $row_nombre_usuario = $result_nombre_usuario->fetch_assoc();
+            $nombreUsuario = $row_nombre_usuario['izena'];
+            
+            echo "Inicio de sesión exitoso como: " . $nombreUsuario;
+        } else {
+            echo "No se pudo obtener el nombre de usuario";
+        }
     } else {
         echo "Credenciales incorrectas";
     }
