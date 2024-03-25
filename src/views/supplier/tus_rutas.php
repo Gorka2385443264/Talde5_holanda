@@ -23,21 +23,10 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
         ?>
     </div>
     <div class="mainDiv">
-        <div class="catalogoGrande">
-            <div class="Servicios">
+        <h1>Rutas de bicis</h1>
 
-                <h1><a style="text-decoration: none; color: black;" href="./servicios.php">Servicios</a></h1>
-            </div>
-            <div class="ubicaciones">
-                <h1><a style="text-decoration: none; color: black;" href="./ubicaciones.php">Ubicaciones</a></h1>
-            </div>
-            <div class="catalogo">
-                <h1><a style="text-decoration: none; color: black;" href="./catalogo.php">Catalogo</a></h1>
-            </div>
-            <div class="tuRuta">
-                <h1><a style="text-decoration: none; color: black;" href="./tus_rutas.php">Tus Rutas</a></h1>
-            </div>
-        </div>
+
+
         <div class="Mainperfil">
             <div class="nombreEtc">
                 <div class="iconoDelNombre">
@@ -53,7 +42,6 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
 
             </div>
         </div>
-
     </div>
 
 
