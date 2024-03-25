@@ -64,11 +64,13 @@
                     url: '../../php/conectar.php',
                     data: $(this).serialize(),
                     success: function (response) {
-                        if (response.trim() === "Inicio de sesión exitoso") {
-                            alert('Inicio de sesión exitoso. Redireccionando...');
-                            window.location.replace("../supplier/mainPage.php"); // Redireccionar al usuario a la página principal
-                        } else {
+                        if (response.trim() === "Credenciales incorrectas") {
                             alert('Credenciales incorrectas');
+                        } else if (response.trim() === "Nombre no encontrado") {
+                            alert('Error: Nombre no encontrado');
+                        } else {
+                            alert('¡Bienvenido, ' + response.trim() + '!');
+                            window.location.replace("../supplier/mainPage.php");
                         }
                     }
                 });
