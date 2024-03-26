@@ -69,8 +69,7 @@
                         } else if (response.trim() === "Nombre no encontrado") {
                             alert('Error: Nombre no encontrado');
                         } else {
-                            alert('¡Bienvenido, ' + response.trim() + '!');
-                            window.location.replace("../supplier/mainPage.php");
+                            alert('opa');
                         }
                     }
                 });

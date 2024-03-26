@@ -50,71 +50,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset ($_POST['nombre']) && isset ($
 
 
 
-
+// Si se envió el formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset ($_POST['correo_login']) && isset ($_POST['contraseña_login'])) {
     // Recibir datos del formulario
-
-    // Verificar las credenciales en la tabla erronka3.iniciarsesion
     $correo_login = $_POST['correo_login'];
     $contraseña_login = $_POST['contraseña_login'];
-
-    $sql = "SELECT * FROM iniciarsesion WHERE korreoa=? AND pasahitza=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $correo_login, $contraseña_login);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Verificar las credenciales en la tabla erronka3.iniciarsesion
+    $sql = "SELECT * FROM iniciarsesion WHERE korreoa='$correo_login' AND pasahitza='$contraseña_login'";
+    $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // Usuario autenticado
-        $sql_nombre = "SELECT izena FROM bezeroa WHERE korreoa=?";
-        $stmt_nombre = $conn->prepare($sql_nombre);
-        $stmt_nombre->bind_param("s", $correo_login);
-        $stmt_nombre->execute();
-        $result_nombre = $stmt_nombre->get_result();
-        if ($result_nombre->num_rows > 0) {
-            $row = $result_nombre->fetch_assoc();
-            $nombre_usuario = $row['izena'];
-            echo $nombre_usuario; // Esto devolverá el nombre del usuario
+        // Obtener el nombre de usuario y apellido asociados al correo electrónico
+        $sql_datos_usuario = "SELECT izena, abizena FROM bezeroa WHERE korreoa='$correo_login'";
+        $result_datos_usuario = $conn->query($sql_datos_usuario);
+
+        if ($result_datos_usuario->num_rows > 0) {
+            $row_datos_usuario = $result_datos_usuario->fetch_assoc();
+            $_SESSION['nombre_usuario'] = $row_datos_usuario['izena'];
+            $_SESSION['apellido_usuario'] = $row_datos_usuario['abizena'];
         } else {
-            echo "Nombre no encontrado";
+            echo "No se pudieron obtener los datos del usuario";
         }
-        $stmt_nombre->close();
     } else {
         echo "Credenciales incorrectas";
     }
-
-    if ($result->num_rows > 0) {
-        // Usuario autenticado
-        $sql_apellido = "SELECT abizena FROM bezeroa WHERE korreoa=?";
-        $stmt_apellido = $conn->prepare($sql_apellido);
-        $stmt_apellido->bind_param("s", $correo_login);
-        $stmt_apellido->execute();
-        $result_apellido = $stmt_apellido->get_result();
-        if ($result_apellido->num_rows > 0) {
-            $row_apellido = $result_apellido->fetch_assoc();
-            $apellido_usuario = $row_apellido['abizena'];
-            echo $apellido_usuario; // Esto devolverá el apellido del usuario
-        } else {
-            echo "Apellido no encontrado";
-        }
-        $stmt_apellido->close();
-    } else {
-        echo "Credenciales incorrectas";
-    }
-
-    if ($result->num_rows > 0) {
-        // Usuario autenticado
-        $_SESSION['nombre_usuario'] = $nombre_usuario;
-        $_SESSION['apellido_usuario'] = $apellido_usuario; // Guardar nombre y apellido en la sesión
-        echo $nombre_usuario; // Esto devolverá el nombre del usuario
-    } else {
-        echo "Credenciales incorrectas";
-    }
-
-
-
-
-    $stmt->close();
     $conn->close();
 }
 ?>
