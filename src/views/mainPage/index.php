@@ -70,6 +70,8 @@
                             alert('Error: Nombre no encontrado');
                         } else {
                             alert('opa');
+                            window.location.href = "../supplier/mainPage.php";
+
                         }
                     }
                 });
