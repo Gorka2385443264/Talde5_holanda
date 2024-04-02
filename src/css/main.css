@@ -1,16 +1,17 @@
-.mainDiv{
+.mainDiv {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr; /* Una columna por defecto */
+    grid-template-rows: auto 1fr auto; /* La primera fila y la última fila ajustan su altura automáticamente, mientras que la fila central ocupa el espacio restante */
 }
 
-.catalogoGrande{
+.catalogoGrande {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
 }
 
-.catalogoGrande div{
-    margin: 5px;
+.catalogoGrande div {
     border-radius: 5px;
+    margin: 10px;
     background-color: orange;
     padding: 20px;
     padding-top: 150px;
@@ -18,41 +19,44 @@
     cursor: pointer;
 }
 
-.Servicios{
+.Servicios,
+.tuRuta {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 10px; /* Espacio entre los elementos */
 }
 
-.Mainperfil{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    margin: 5px;
-    padding: 5px;
+.Mainperfil {
     border-radius: 5px;
     background-color: rgb(232, 232, 232);
+    margin-top: 215px;
 }
-.iconoDelNombre i{
+
+.iconoDelNombre i {
     font-size: 100px;
+    margin: 10px;
 }
-.nombreEtc{
+
+.nombreEtc {
     display: grid;
     grid-template-columns: 35% 65%;
 }
 
-.resto div{
+.resto div {
     border-radius: 5px;
     padding: 5px;
     background-color: lightskyblue;
-    margin-right: 150px;
     cursor: pointer;
 }
 
 .baraAbajo {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    border-top: 2px solid #000; /* Puedes ajustar el grosor y el color según tus necesidades */
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    border-top: 2px solid #000;
+    padding: 10px 0; /* Añade un poco de espacio entre el borde superior y los iconos */
+    grid-gap: 10px; /* Espacio entre las filas y columnas */
 }
 
 .baraAbajo div{
-    justify-self: center;
+    margin-left: 30px;
 }

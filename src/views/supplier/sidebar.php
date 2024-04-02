@@ -17,7 +17,7 @@ require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabili
       <li><a href="./mainPage.php"><i class="fa-solid fa-house"></i>
           <?= trans("Inicio") ?>
         </a></li>
-      <li><a href="../supplier/informacion.php"><i class="fa-solid fa-circle-info"></i>
+      <li><a href="../supplier/sobre_nosotros.php"><i class="fa-solid fa-circle-info"></i>
           <?= trans("Sobre Nosotros") ?>
         </a></li>
       <li><a href="../supplier/informacion.php"><i class="fa-solid fa-circle-info"></i>
