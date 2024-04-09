@@ -1,0 +1,182 @@
+/* Estilos Generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.top {
+  margin-top: 50px;
+}
+
+.mtop {
+  margin-top: 25px;
+}
+
+.heading {
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.heading h1 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.heading button {
+  padding: 10px 40px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+
+.heading .lines {
+  position: relative;
+  width: 100%;
+}
+
+.heading .line, .heading .line2 {
+  border: 1px solid #e3e3e3;
+  height: 3px;
+  position: absolute;
+  top: 43px;
+}
+
+.heading .line {
+  width: 45%;
+  left: 0;
+}
+
+.heading .line2 {
+  right: 0;
+  width: 45%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.latest .scontainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.latest .box {
+  background: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.latest .box:hover {
+  border: 1px solid #f87331;
+}
+
+.latest .img label, .latest .img i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.latest .detalis h2, .latest .detalis h2 span, .latest .detalis button {
+  font-size: smaller;
+}
+
+.wrapper {
+  height: auto;
+  padding: 20px;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+.wrapper::after {
+  background: rgba(248, 115, 49, 0.85);
+}
+
+.wrapper .scontainer, .wrapper .text {
+  padding: 20px;
+}
+
+.wrapper h1, .wrapper h3 {
+  font-size: 20px;
+}
+
+.ani_image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos para las flechas del slider */
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.owl-nav .owl-prev, .owl-nav .owl-next {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.owl-nav .owl-prev i, .owl-nav .owl-next i {
+  color: #fff;
+}
+
+.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover {
+  background: #f87331;
+}
+
+@media only screen and (min-width: 481px) {
+  .grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+  }
+
+  .heading {
+      margin-bottom: 120px;
+  }
+
+  .heading h1 {
+      font-size: 40px;
+  }
+
+  .heading button {
+      padding: 15px 80px;
+      top: 0;
+      left: 42%;
+      transform: translateX(0);
+      font-size: 15px;
+  }
+
+  .latest .box {
+      padding: 30px;
+  }
+
+  .latest .img label, .latest .img i {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+  }
+  
+  /* Estilos adicionales para el slider en pantallas más grandes */
+  .slider p, .slider h1, .slider ul li, .slider h2 {
+    color: white; /* Asegura que el texto sea legible contra el fondo oscuro */
+  }
+}
+
