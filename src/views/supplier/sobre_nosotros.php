@@ -4,6 +4,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 ?>
 
 <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
+<link rel="stylesheet" href="/Talde5_holanda/src/css/sobre_nosotros.css">
 <title>Fiets.Huur </title>
 </head>
 <?php
@@ -23,7 +24,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
         ?>
     </div>
     <div class="mainDiv">
-        <h1>Servicios de bicis</h1>
+        <h1>Sobre nosotros</h1>
     </div>
 
 
