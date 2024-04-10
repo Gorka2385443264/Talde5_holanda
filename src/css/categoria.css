@@ -195,3 +195,51 @@ body {
   
 }
 
+/* Estilos para el slider */
+.slider-container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 300%; /* Ancho total para los tres slides */
+}
+
+.slide {
+  width: 33.33%; /* Ancho de cada slide */
+  display: flex;
+  align-items: center;
+}
+
+.slide-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos para las flechas */
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  z-index: 100;
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
