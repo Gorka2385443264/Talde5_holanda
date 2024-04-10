@@ -24,7 +24,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
     <div class="mainDiv">
         <div class="catalogoGrande">
             <div class="Servicios">
-                <h1><a style="text-decoration: none; color: black;" href="./servicios.php">Servicios</a></h1>
+                <h1><a style="text-decoration: none; color: black;" href="./sanciones.php">Sanciones</a></h1>
             </div>
             <div class="ubicaciones">
                 <h1><a style="text-decoration: none; color: black;" href="./ubicaciones.php">Ubicaciones</a></h1>
