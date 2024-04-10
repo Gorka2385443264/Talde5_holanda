@@ -71,7 +71,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
                 <h3>Electric bike</h3>
                 <p>(Comfortable and a very efficient autonomy)</p>
                 <h2>$699 <span>/hour</span> </h2>
-                <button>Rent now</button>
+                <button onclick="window.location.href='pago.php?productoId=1'">Rent now</button>
             </div>
             </div>
             <div class="box">
@@ -87,7 +87,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
                 <h3>Aerion Carrbo Helmet</h3>
                 <p>(Fashion , Twin Disc)</p>
                 <h2>$699 <span>/hour</span> </h2>
-                <button>Rent now</button>
+                <button onclick="window.location.href='pago.php?productoId=2'">Rent now</button>
             </div>
             </div>
             <div class="box">
@@ -103,7 +103,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
                 <h3>Aerion Carrbo Helmet</h3>
                 <p>(Fashion , Twin Disc)</p>
                 <h2>$699 <span>/hour</span> </h2>
-                <button>Rent now</button>
+                <button onclick="window.location.href='pago.php?productoId=3'">Rent now</button>
             </div>
             </div>
             <div class="box">
@@ -119,7 +119,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
                 <h3>Aerion Carrbo Helmet</h3>
                 <p>(Fashion , Twin Disc)</p>
                 <h2>$699 <span>/hour</span> </h2>
-                <button>Rent now</button>
+                <button onclick="window.location.href='pago.php?productoId=4'">Rent now</button>
             </div>
             </div>
             <div class="box">
@@ -135,7 +135,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
                 <h3>Aerion Carrbo Helmet</h3>
                 <p>(Fashion , Twin Disc)</p>
                 <h2>$699 <span>/hour</span> </h2>
-                <button>Rent now</button>
+                <button onclick="window.location.href='pago.php?productoId=5'">Rent now</button>
             </div>
             </div>
             <div class="box">
@@ -151,7 +151,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
                 <h3>Aerion Carrbo Helmet</h3>
                 <p>(Fashion , Twin Disc)</p>
                 <h2>$699 <span>/hour</span> </h2>
-                <button>Rent now</button>
+                <button onclick="window.location.href='pago.php?productoId=6'">Rent now</button>
             </div>
             </div>
         </div>
@@ -217,7 +217,7 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
                     items:3
                 }
             },
-            navText: [
+            navText: [  
                 "<i class='fas fa-chevron-left'></i>",
                 "<i class='fas fa-chevron-right'></i>"
             ]
