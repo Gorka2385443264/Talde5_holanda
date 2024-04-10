@@ -159,37 +159,92 @@ if (isset ($_SESSION['nombre_usuario']) && isset ($_SESSION['apellido_usuario'])
     </section>
 
     <section class="slider top">
-        <div class="scontainer">
-            <div class="owl-carousel owl-theme">
-                <div class="item flex">
-                    <div id="slider-container">
-                        <!-- Primer Producto -->
-                        <div class="slider-item" style="display: block;">
-                            <!-- Detalles del Producto 1 -->
-                        </div>
-                        <!-- Segundo Producto -->
-                        <div class="slider-item">
-                            <!-- Detalles del Producto 2 -->
-                        </div>
-                        <!-- Más productos según sea necesario -->
-                    </div>
-                </div>
+    <div class="scontainer">
+      <div class="owl-carousel owl-theme">
+        <div class="item flex">
+          <div id="slider-container">
+            <div class="slider-item" style="display: block;"><p>(Fashion , Twin Disc)</p>
+            <h1>KTM 130º DUKE</h1>
+            <span></span>
+            <ul>
+              <li>- Engine Cc : 370.0cc</li>
+              <li>- Max Power : 14.5 bhp @ 9250 rpm</li>
+              <li>- Tank Capacity : 10.2 L</li>
+              <li>- Wheelbase : 1366 mm</li>
+              <li>- Cooling : Liquid Cooled</li>
+              <li>- Max Torque : 12 Nm @ 8000 rpm</li>
+            </ul>
+            <h2>Price : $1999.99<span>/hour</span></h2>
+            <button class="btn2">Buy Now</button></div>
+            <div class="slider-item"><p>(Fashion , Twin Disc)</p>
+            <h1>KTM 125 DUKE</h1>
+            <span></span>
+            <ul>
+              <li>- Engine Cc : 370.0cc</li>
+              <li>- Max Power : 14.5 bhp @ 9250 rpm</li>
+              <li>- Tank Capacity : 10.2 L</li>
+              <li>- Wheelbase : 1366 mm</li>
+              <li>- Cooling : Liquid Cooled</li>
+              <li>- Max Torque : 12 Nm @ 8000 rpm</li>
+            </ul>
+            <h2>Price : $1999.99<span>/hour</span></h2>
+            <button class="btn2">Buy Now</button></div>
+            <div id="next" style="cursor: pointer;">➡️</div>
             </div>
+          </div>
         </div>
-    </section>
-
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Script para inicializar Owl Carousel -->
     <script>
     $(document).ready(function(){
         $(".owl-carousel").owlCarousel({
             loop: true,
             margin: 10,
-            nav: true, // Habilita la navegación
-            items: 1, // Muestra un solo item (producto) a la vez
+            nav: true, // Habilitar navegación
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            },
             navText: [
                 "<i class='fas fa-chevron-left'></i>",
                 "<i class='fas fa-chevron-right'></i>"
             ]
         });
     });
+    
+    let currentItem = 0;
+const items = document.querySelectorAll('.slider-item');
+
+function updateSlider(index) {
+  items.forEach((item, i) => {
+    item.style.display = i === index ? 'block' : 'none';
+  });
+}
+
+document.getElementById('next').addEventListener('click', () => {
+  currentItem = (currentItem + 1) % items.length;
+  updateSlider(currentItem);
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+  currentItem = (currentItem - 1 + items.length) % items.length;
+  updateSlider(currentItem);
+});
+
+updateSlider(currentItem);
+
+
     </script>
 </body>
