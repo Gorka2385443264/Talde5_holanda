@@ -175,8 +175,23 @@ body {
   }
   
   /* Estilos adicionales para el slider en pantallas más grandes */
-  .slider p, .slider h1, .slider ul li, .slider h2 {
-    color: white; /* Asegura que el texto sea legible contra el fondo oscuro */
+  #slider-container {
+    position: relative;
+    /* Estilos según necesidad */
   }
+  
+  .slider-item {
+    /* Estilos de cada producto */
+  }
+  
+  #prev, #next {
+    position: absolute;
+    top: 50%;
+    /* Ajusta para alinear correctamente */
+  }
+  
+  #prev { left: 0; }
+  #next { right: 0; }
+  
 }
 
