@@ -1,34 +1,54 @@
 <?php
+// Este bloque de PHP debería estar al inicio del archivo para manejar la sesión y la lógica del carrito
+session_start();
 
-require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
-?>
+function obtenerProductoPorId($productoId) {
+    $productos = [
+        1 => ['id' => 1, 'name' => 'Bicicleta Eléctrica', 'price' => 699],
+        2 => ['id' => 2, 'name' => 'Casco Aerion Carrbo', 'price' => 150],
+        3 => ['id' => 3, 'name' => 'Bicicleta de Carretera', 'price' => 850],
+        4 => ['id' => 4, 'name' => 'Bicicleta Eléctrica de Ciudad', 'price' => 1200],
+        5 => ['id' => 5, 'name' => 'Bicicleta de Montaña', 'price' => 980],
+        6 => ['id' => 6, 'name' => 'BMX', 'price' => 720],
+        7 => ['id' => 7, 'name' => 'Bicicleta de 3 Ruedas', 'price' => 720],
+        8 => ['id' => 8, 'name' => 'Bicicleta para 2 Personas', 'price' => 720]
+    ];
 
-<link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
-<link rel="stylesheet" href="/Talde5_holanda/src/css/categoria.css">
-<title>Fiets.Huur </title>
-</head>
-<?php
+    return array_key_exists($productoId, $productos) ? $productos[$productoId] : false;
+}
 
-if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) {
-    $nombre_usuario = $_SESSION['nombre_usuario'];
-    $apellido_usuario = $_SESSION['apellido_usuario'];
+if (isset($_POST['productoId'])) {
+    $productoId = $_POST['productoId'];
+    $producto = obtenerProductoPorId($productoId);
+    if ($producto) {
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = [];
+        }
+        $_SESSION['cart'][] = $producto;
+        echo json_encode(['success' => true, 'message' => 'Producto añadido al carrito']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Producto no encontrado']);
+    }
+    exit;
 }
 ?>
 
+<!-- Aquí comienza el HTML y el resto del contenido -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <?php require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php"); ?>
+    <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
+    <link rel="stylesheet" href="/Talde5_holanda/src/css/categoria.css">
+    <title>Fiets.Huur</title>
+</head>
 <body>
-    <!-- Div verde en la parte superior -->
-    <!-- NO TOCAR -->
     <div class="sidebar">
-        <?php
-        require_once (APP_DIR . "/src/views/supplier/sidebar.php");
-        ?>
+        <?php require_once (APP_DIR . "/src/views/supplier/sidebar.php"); ?>
     </div>
     <div class="mainDiv">
-        <h1>Catalogo de bicis</h1>
+        <h1>Catálogo de Bicis</h1>
     </div>
-
-
-
     <section class="latest top">
         <div class="scontainer">
             <div class="heading">
@@ -52,7 +72,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
                         <h3>Electric bike</h3>
                         <p>(Comfortable and a very efficient autonomy)</p>
                         <h2>$699 <span>/hour</span> </h2>
-                        <button onclick="window.location.href='pago.php?productoId=1'">Rent now</button>
+                        <button class="rent-now" data-producto-id="1">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                     </div>
                 </div>
                 <div class="box">
@@ -68,7 +88,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
                         <h3>Aerion Carrbo Helmet</h3>
                         <p>(Fashion , Twin Disc)</p>
                         <h2>$699 <span>/hour</span> </h2>
-                        <button onclick="window.location.href='pago.php?productoId=2'">Rent now</button>
+                        <button class="rent-now" data-producto-id="2">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                     </div>
                 </div>
                 <div class="box">
@@ -84,7 +104,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
                         <h3>Aerion Carrbo Helmet</h3>
                         <p>(Fashion , Twin Disc)</p>
                         <h2>$699 <span>/hour</span> </h2>
-                        <button onclick="window.location.href='pago.php?productoId=3'">Rent now</button>
+                        <button class="rent-now" data-producto-id="3">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                     </div>
                 </div>
                 <div class="box">
@@ -100,7 +120,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
                         <h3>Aerion Carrbo Helmet</h3>
                         <p>(Fashion , Twin Disc)</p>
                         <h2>$699 <span>/hour</span> </h2>
-                        <button onclick="window.location.href='pago.php?productoId=4'">Rent now</button>
+                        <button class="rent-now" data-producto-id="4">Rent now</button>
                     </div>
                 </div>
                 <div class="box">
@@ -116,7 +136,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
                         <h3>Aerion Carrbo Helmet</h3>
                         <p>(Fashion , Twin Disc)</p>
                         <h2>$699 <span>/hour</span> </h2>
-                        <button onclick="window.location.href='pago.php?productoId=5'">Rent now</button>
+                        <button class="rent-now" data-producto-id="5">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                     </div>
                 </div>
                 <div class="box">
@@ -132,7 +152,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
                         <h3>Aerion Carrbo Helmet</h3>
                         <p>(Fashion , Twin Disc)</p>
                         <h2>$699 <span>/hour</span> </h2>
-                        <button onclick="window.location.href='pago.php?productoId=6'">Rent now</button>
+                        <button class="rent-now" data-producto-id="6">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                     </div>
                 </div>
             </div>
@@ -153,9 +173,11 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
 
                     <br>
                     <h1>Price: 1999,99€</h1>
+                    <button class="rent-now" data-producto-id="7">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+
                 </div>
                 <div class="slide-content-img">
-                    <img src="../../../public/Argazkiak/moto1.png" alt="">
+                    <img src="../../../public/Argazkiak/bici-dos-personas-removebg-preview.png" alt="">
                 </div>
             </div>
             <div class="slide">
@@ -170,41 +192,33 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
 
                     <br>
                     <h1>Price: 1999,99€</h1>
+                    <button class="rent-now" data-producto-id="8">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+
                 </div>
-                <img src="../../../public/Argazkiak/moto1.png" alt="">
+                <img src="../../../public/Argazkiak/doble-removebg-preview.png" alt="">
             </div>
             <!-- Agrega más slides según sea necesario -->
         </div>
         <div class="arrow left">‹</div>
         <div class="arrow right">›</div>
     </div>
-
-    <?php
-    require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php");
-    ?>
+    <!-- Aquí sigue el resto de tu estructura HTML, incluyendo los productos -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            let slideIndex = 0;
-            let sliding = false;
-
-            function showSlides() {
-                if (sliding) return; // Evita cambios mientras se está deslizando
-                sliding = true;
-                const slides = $('.slide');
-                const currentSlide = slides.eq(slideIndex);
-                const nextSlideIndex = (slideIndex + 1) % slides.length;
-                const nextSlide = slides.eq(nextSlideIndex);
-
-                currentSlide.fadeOut(500, function () {
-                    currentSlide.removeClass('active');
-                    nextSlide.addClass('active').hide().fadeIn(500, function () {
-                        sliding = false; // Marca el final del deslizamiento
-                    });
-                    slideIndex = nextSlideIndex;
+        $(document).ready(function() {
+            $('.rent-now').click(function() {
+                var productoId = $(this).data('producto-id');
+                $.post('catalogo.php', { productoId: productoId }, function(response) {
+                    var data = JSON.parse(response);
+                    if (data.success) {
+                        alert(data.message);
+                        // Aquí podrías actualizar la interfaz, como mostrar un mensaje de confirmación o actualizar un contador de carrito
+                    } else {
+                        alert('Error al añadir el producto.');
+                    }
                 });
-            }
-
-            $('.arrow').click(showSlides);
+            });
         });
     </script>
 </body>
+</html>

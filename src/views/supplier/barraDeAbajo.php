@@ -1,3 +1,10 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$nombre_usuario = isset($_SESSION['nombre_usuario']) ? $_SESSION['nombre_usuario'] : 'Invitado';
+$apellido_usuario = isset($_SESSION['apellido_usuario']) ? $_SESSION['apellido_usuario'] : '';
+?>
 <div class="Mainperfil">
     <div class="nombreEtc">
         <div class="iconoDelNombre">
@@ -6,7 +13,7 @@
         <div class="resto" style="margin-right: auto;">
             <h1>Hola!</h1>
             <h3>
-                <?php echo $nombre_usuario . " " . $apellido_usuario; ?>
+            <?php echo $nombre_usuario . " " . $apellido_usuario; ?>
             </h3>
             <div style="margin-right: auto;">Iniciar viaje</div>
         </div>

@@ -66,7 +66,7 @@ return [
     "Lista de productos" => "Lista de productos",
     "Hornitzailea bihurtu" => "Conviértete en proveedor",
     "Cesta de compra" => "Cesta de compra",
-    "Estado del producto" => "Product status",
+    "Estado del producto" => "Estado del producto",
 
 
 

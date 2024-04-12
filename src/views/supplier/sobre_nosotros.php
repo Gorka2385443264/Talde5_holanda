@@ -44,19 +44,16 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
         <section id="equipo">
             <h2>Conoce al Equipo</h2>
             <div class="miembro">
-                <img src="ruta/a/imagen/de/beñat.jpg" alt="Beñat">
                 <h3>Beñat</h3>
                 <p>Fundador y CEO. Apasionado del ciclismo y la innovación, Beñat lidera el equipo con visión y
                     dedicación.</p>
             </div>
             <div class="miembro">
-                <img src="ruta/a/imagen/de/gorka.jpg" alt="Gorka">
                 <h3>Gorka</h3>
                 <p>Co-fundador y CTO. Ingeniero y ciclista, Gorka es el cerebro detrás de nuestra tecnología y
                     operaciones.</p>
             </div>
             <div class="miembro">
-                <img src="ruta/a/imagen/de/urko.jpg" alt="Urko">
                 <h3>Urko</h3>
                 <p>Co-fundador y Director de Marketing. Creativo y estratega, Urko se encarga de conectar nuestra marca
                     con la comunidad.</p>

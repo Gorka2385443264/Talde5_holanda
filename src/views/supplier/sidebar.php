@@ -26,9 +26,6 @@ require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabili
       <li><a href="../supplier/informacion.php"><i class="fa-solid fa-circle-info"></i>
           <?= trans("Tendencias") ?>
         </a></li>
-      <li><a href="../supplier/productos.php"><i class="fa-solid fa-list"></i>
-          <?= trans("Lista de productos") ?>
-        </a></li>
       <li><a href="../supplier/hornitzailea.php"><i class="fa-solid fa-boxes-stacked"></i>
           <?= trans("Hornitzailea bihurtu") ?>
         </a></li>

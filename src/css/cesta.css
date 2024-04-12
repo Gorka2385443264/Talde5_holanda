@@ -1,0 +1,91 @@
+/* General Styles */
+html, body {
+    height: 100%; /* Ensure the full height of the page is used */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* Ensures the content is organized in a column */
+    justify-content: space-between; /* Spreads out content to use the entire vertical space */
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Main Content Styles */
+.mainDiv {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 8px;
+    margin: 20px auto; /* Center horizontally and add margin top and bottom */
+    flex-grow: 1; /* Allows the main content to grow and push the footer down */
+}
+
+/* Footer Styles */
+footer, .barraDeAbajo { /* Make sure to use the right class or tag for your footer */
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Table and Button Styles remain unchanged */
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Button Styles */
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block; /* Allows the button to be aligned easily */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .mainDiv {
+        width: 100%;
+        margin: 20px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
