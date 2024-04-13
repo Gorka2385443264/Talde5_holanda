@@ -13,11 +13,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Por ejemplo: $nombreCliente = $_POST['nombre'];
     // No olvides validar y limpiar tus datos aquí
 
+    // Generar un ID único para la compra
+    $idCompra = uniqid('compra_');
+
     // Supongamos que todo es válido y procedemos a guardar la orden en la base de datos
     // Deberías usar una declaración preparada para insertar los datos
 
-    echo "<div>¡Gracias por tu compra!</div>";
-    // Aquí redirigirías o mostrarías un mensaje de éxito
+    // Mostrar un mensaje de confirmación con el ID de compra
+    echo "<div>¡Gracias por tu compra! Tu ID de compra es: $idCompra</div>";
+    // Aquí podrías redirigir o mostrar un mensaje de éxito
+    // Para redirigir, puedes descomentar la línea siguiente y modificar la URL de destino
+    // header("Location: success.php?purchaseId=$idCompra");
+    exit();
 }
 ?>
 
@@ -54,3 +61,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </body>
 </html>
+

@@ -32,7 +32,7 @@ require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabili
       <li><a href="../supplier/cesta.php"><i class="fa-solid fa-cart-shopping"></i>
           <?= trans("Cesta de compra") ?>
         </a></li>
-      <li><a href="../supplier/estado_producto.php"><i class="fa-solid fa-truck-fast"></i>
+      <li><a href="../supplier/estado.php"><i class="fa-solid fa-truck-fast"></i>
           <?= trans("Estado del producto") ?>
         </a></li>
       <li>

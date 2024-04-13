@@ -1,9 +1,17 @@
 <?php
 session_start();
 
-// Verificar si el carrito está vacío o no
+// Check if the cart is empty or not
 $carrito = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $total = 0;
+
+// Handle item removal from cart
+if (isset($_GET['remove']) && isset($carrito[$_GET['remove']])) {
+    unset($carrito[$_GET['remove']]);
+    $_SESSION['cart'] = $carrito; // Update the session variable
+    header("Location: cesta.php"); // Redirect to refresh the page
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +23,6 @@ $total = 0;
     <title>Cesta de Compra</title>
 </head>
 <body>
-    <div class="sidebar">
-        <?php require_once (APP_DIR . "/src/views/supplier/sidebar.php"); ?>
-    </div>
     <div class="mainDiv">
         <h1>Cesta de la Compra</h1>
         <?php if (count($carrito) > 0): ?>
@@ -25,17 +30,19 @@ $total = 0;
                 <tr>
                     <th>Producto</th>
                     <th>Precio</th>
+                    <th>Acción</th>
                 </tr>
-                <?php foreach ($carrito as $item): ?>
+                <?php foreach ($carrito as $index => $item): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($item['name']); ?></td>
                     <td>$<?php echo number_format($item['price'], 2); ?></td>
+                    <td><a href="cesta.php?remove=<?php echo $index; ?>" class="button">Eliminar</a></td>
                 </tr>
                 <?php $total += $item['price']; ?>
                 <?php endforeach; ?>
                 <tr>
                     <th>Total</th>
-                    <th>$<?php echo number_format($total, 2); ?></th>
+                    <th colspan="2">$<?php echo number_format($total, 2); ?></th>
                 </tr>
             </table>
             <div>
@@ -49,3 +56,4 @@ $total = 0;
     <?php require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php"); ?>
 </body>
 </html>
+
