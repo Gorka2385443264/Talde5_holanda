@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Estado del Pedido</title>
-    <link rel="stylesheet" href="estado.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/Talde5_holanda/src/css/estado.css"> <!-- Link to your CSS file -->
 </head>
 <body>
     <div class="status-form">

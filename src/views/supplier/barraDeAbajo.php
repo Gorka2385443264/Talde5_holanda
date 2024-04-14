@@ -19,9 +19,10 @@ $apellido_usuario = isset($_SESSION['apellido_usuario']) ? $_SESSION['apellido_u
         </div>
     </div>
     <div class="baraAbajo">
-        <div class="icon1"><i class="fa-solid fa-house"></i></div>
-        <div class="icon2"><i class="fa-solid fa-bicycle"></i></div>
-        <div class="icon3"><i class="fa-regular fa-user"></i></div>
-        <div class="icon4"><i class="fa-solid fa-gear"></i></div>
+        <a href="mainPage.php" class="icon1"><i class="fa-solid fa-house"></i></a>
+        <a href="catalogo.php" class="icon2"><i class="fa-solid fa-bicycle"></i></a>
+        <a href="miPerfil.php" class="icon3"><i class="fa-regular fa-user"></i></a>
+        <a href="ajustes.php" class="icon4"><i class="fa-solid fa-gear"></i></a>
     </div>
+
 </div>
