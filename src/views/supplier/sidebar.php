@@ -20,14 +20,11 @@ require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabili
       <li><a href="../supplier/sobre_nosotros.php"><i class="fa-solid fa-circle-info"></i>
           <?= trans("Sobre Nosotros") ?>
         </a></li>
-      <li><a href="../supplier/informacion.php"><i class="fa-solid fa-circle-info"></i>
+      <li><a href="../supplier/berriak.php"><i class="fa-solid fa-circle-info"></i>
           <?= trans("Noticias") ?>
         </a></li>
       <li><a href="../supplier/informacion.php"><i class="fa-solid fa-circle-info"></i>
           <?= trans("Tendencias") ?>
-        </a></li>
-      <li><a href="../supplier/hornitzailea.php"><i class="fa-solid fa-boxes-stacked"></i>
-          <?= trans("Hornitzailea bihurtu") ?>
         </a></li>
       <li><a href="../supplier/cesta.php"><i class="fa-solid fa-cart-shopping"></i>
           <?= trans("Cesta de compra") ?>
