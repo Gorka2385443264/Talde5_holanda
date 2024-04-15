@@ -64,7 +64,7 @@ if (isset($_POST['productoId'])) {
                         <img src="../../../public/Argazkiak/bicicleta-electrica-removebg-preview.png" width="300">
                         <div class="flex1">
                             <label>50%</label>
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart favorito" data-producto-id="1"></i>
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@ if (isset($_POST['productoId'])) {
                         <img src="../../../public/Argazkiak/bici-de-ciudad-removebg-preview.png" width="300">
                         <div class="flex1">
                             <label>50%</label>
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart favorito" data-producto-id="2"></i>
                         </div>
                     </div>
 
@@ -96,7 +96,7 @@ if (isset($_POST['productoId'])) {
                         <img src="../../../public/Argazkiak/bici-de-carretera-removebg-preview.png" width="300">
                         <div class="flex1">
                             <label>50%</label>
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart favorito" data-producto-id="3"></i>
                         </div>
                     </div>
 
@@ -112,7 +112,7 @@ if (isset($_POST['productoId'])) {
                         <img src="../../../public/Argazkiak/bici-electrica-ciudad-removebg-preview.png" width="300">
                         <div class="flex1">
                             <label>50%</label>
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart favorito" data-producto-id="4"></i>
                         </div>
                     </div>
 
@@ -128,7 +128,7 @@ if (isset($_POST['productoId'])) {
                         <img src="../../../public/Argazkiak/bicicleta-montaña-removebg-preview.png" width="300">
                         <div class="flex1">
                             <label>50%</label>
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart favorito" data-producto-id="5"></i>
                         </div>
                     </div>
 
@@ -144,7 +144,7 @@ if (isset($_POST['productoId'])) {
                         <img src="../../../public/Argazkiak/bmx-removebg-preview.png" width="300">
                         <div class="flex1">
                             <label>50%</label>
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart favorito" data-producto-id="6"></i>
                         </div>
                     </div>
 
@@ -219,6 +219,33 @@ if (isset($_POST['productoId'])) {
                 });
             });
         });
+            $(document).ready(function() {
+        $('.fas.fa-heart').click(function() {
+            var $this = $(this);
+            var productoId = $this.data('producto-id');
+            if ($this.hasClass('active')) {
+                $this.removeClass('active');
+                // Aquí podrías llamar a una función para eliminar de favoritos en el backend
+                console.log('Producto ' + productoId + ' eliminado de favoritos');
+            } else {
+                $this.addClass('active');
+                // Aquí podrías llamar a una función para agregar a favoritos en el backend
+                console.log('Producto ' + productoId + ' agregado a favoritos');
+            }
+        });
+
+        $('.rent-now').click(function() {
+            var productoId = $(this).data('producto-id');
+            $.post('catalogo.php', { productoId: productoId }, function(response) {
+                var data = JSON.parse(response);
+                if (data.success) {
+                    alert(data.message);
+                } else {
+                    alert('Error al añadir el producto.');
+                }
+            });
+        });
+    });
     </script>
 </body>
 </html>

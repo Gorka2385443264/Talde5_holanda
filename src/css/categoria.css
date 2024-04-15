@@ -243,3 +243,13 @@ body {
 .arrow.right {
   right: 0;
 }
+.fas.fa-heart {
+  cursor: pointer;
+  color: gray; /* Color cuando no es favorito */
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.fas.fa-heart.active {
+  color: red; /* Color cuando es favorito */
+}
