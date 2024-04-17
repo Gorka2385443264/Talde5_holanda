@@ -23,7 +23,7 @@ require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabili
       <li><a href="../supplier/berriak.php"><i class="fa-solid fa-circle-info"></i>
           <?= trans("Noticias") ?>
         </a></li>
-      <li><a href="../supplier/informacion.php"><i class="fa-solid fa-circle-info"></i>
+      <li><a href="../supplier/tendentziak.php"><i class="fa-solid fa-circle-info"></i>
           <?= trans("Tendencias") ?>
         </a></li>
       <li><a href="../supplier/cesta.php"><i class="fa-solid fa-cart-shopping"></i>
