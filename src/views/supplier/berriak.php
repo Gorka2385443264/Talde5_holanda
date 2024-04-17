@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="/src/css/berriak.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
+
     <h1>Berriak</h1>
+
+    <form action="berriak.php" method="get">
+        <select name="order">
+            <option value="DESC">Más reciente primero</option>
+            <option value="ASC">Más antiguo primero</option>
+        </select>
+        <button type="submit">Ordenar</button>
+    </form>
+
     <?php
     $servername = "localhost";
     $username = "root";
@@ -19,7 +29,13 @@
         die("La conexión falló: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM berriak ORDER BY data DESC";
+    // Get the order parameter from the URL, default to DESC
+    $order = $_GET['order'] ?? 'DESC';
+
+    // Ensure the order parameter is safe to use in SQL
+    $order = in_array($order, ['ASC', 'DESC']) ? $order : 'DESC';
+
+    $sql = "SELECT * FROM berriak ORDER BY data $order";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -34,9 +50,6 @@
         echo "<p>No hay noticias disponibles.</p>";
     }
     $conn->close();
-    ?>
-    <?php
-    require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php");
     ?>
 </body>
 </html>

@@ -3,6 +3,8 @@ div {
     padding: 10px; 
     margin-bottom: 10px; 
     transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    background-color: rgba(255, 255, 255, 0.8); /* Blue with 50% opacity */
+
     
 }
 
@@ -12,4 +14,12 @@ h1 {
 
 div:hover {
     transform: scale(1.02); /* Increase the size by 10% */
+}
+
+body{
+    background-image: url(/Talde5_holanda/public/Argazkiak/login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
