@@ -4,9 +4,6 @@ if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit();
 }
-
-require 'config.php'; // Asegúrate de tener un archivo config.php con la configuración de tu base de datos
-
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -338,6 +338,9 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
     <div class="mainDiv">
         <h1>Catálogo de Bicis</h1>
+        <a href="mainPage.php" class="back-to-index">
+        <button class="back-button">⬅</button>
+        </a>
         <section class="latest top">
             <div class="scontainer">
                 <div class="heading">
