@@ -7,6 +7,8 @@
                 <p><?= trans("Email: info@fietshuur.com") ?></p>
                 <p><?= trans("Teléfono: (+34) 456-7890") ?></p>
             </div>
+
+                                
             <div class="seccion-footer">
                 <h3><?= trans("Seguridad") ?></h3>
                 <ul>

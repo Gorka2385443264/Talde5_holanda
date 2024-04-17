@@ -35,7 +35,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
     }
 </style>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap&libraries=&v=weekly" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDEnVgmM_Lf_jRVmR0LzU--TRdAUcmDg&callback=initMap&libraries=&v=weekly" async defer></script>
 <script>
     let map;
 
