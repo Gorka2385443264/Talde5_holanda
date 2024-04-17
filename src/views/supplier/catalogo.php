@@ -486,7 +486,8 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
                 </div>
                 <img src="../../../public/Argazkiak/doble-removebg-preview.png" alt="">
             </div>
-                </div>
+            <div class="arrow left">‹</div>
+        <div class="arrow right">›</div>
             </div>
         </section>
 
