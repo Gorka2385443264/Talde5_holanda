@@ -173,26 +173,6 @@ body {
       height: 50px;
       line-height: 50px;
   }
-  
-  /* Estilos adicionales para el slider en pantallas más grandes */
-  #slider-container {
-    position: relative;
-    /* Estilos según necesidad */
-  }
-  
-  .slider-item {
-    /* Estilos de cada producto */
-  }
-  
-  #prev, #next {
-    position: absolute;
-    top: 50%;
-    /* Ajusta para alinear correctamente */
-  }
-  
-  #prev { left: 0; }
-  #next { right: 0; }
-  
 }
 
 /* Estilos para el slider */
@@ -243,6 +223,7 @@ body {
 .arrow.right {
   right: 0;
 }
+
 .fas.fa-heart {
   cursor: pointer;
   color: gray; /* Color cuando no es favorito */
@@ -252,4 +233,41 @@ body {
 
 .fas.fa-heart.active {
   color: red; /* Color cuando es favorito */
+}
+
+/* Estilos específicos para la estructura con el botón al otro lado */
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Asegura que el sidebar y el botón estén en lados opuestos */
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.favorites-button-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100vh;
+  background-color: #fff;
+}
+
+#showFavorites {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#showFavorites:hover {
+  background-color: #0056b3;
 }
