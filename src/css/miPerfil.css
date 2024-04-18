@@ -73,3 +73,17 @@ tr:hover {
     font-size: inherit;
     vertical-align: middle;
 }
+.back-to-index {
+    display: block; /* Asegura que el botón esté en su propia línea */
+    margin: 10px 0; /* Espaciado arriba y abajo del botón */
+  }
+  
+  .back-button {
+    padding: 10px 20px; /* Espaciado interno del botón */
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde para el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+    font-size: 16px; /* Tamaño del texto */
+  }

@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario_id'])) {
-    header('Location: login.php');
+if (!isset($_SESSION['nombre_usuario']) || $_SESSION["nombre_usuario"] == "") {
+    header('Location: ../mainPage/index.php');
     exit();
 }
 $message = '';
@@ -11,36 +11,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password']; // Usar manejo más seguro si es necesario
     $language = $_POST['language'];
     $notifications = isset($_POST['notifications']) ? 1 : 0;
+    $passwordHash = !empty($password) ? password_hash($password, PASSWORD_DEFAULT) : null;
 
-    if (!empty($password)) {
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-    }
+    // Cargar el archivo XML
+    $xml = simplexml_load_file('user_config.xml');
+    $user = $xml->xpath("/users/user[@id='{$_SESSION['nombre_usuario']}']")[0];
 
-    // Actualizar base de datos
-    try {
-        $pdo = new PDO($dsn, $db_username, $db_password); // Asumiendo que tienes variables para la conexión
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $sql = "UPDATE users SET email = ?, language = ?, notifications = ?";
-        $params = [$email, $language, $notifications];
-
-        if (!empty($password)) {
-            $sql .= ", password = ?";
-            $params[] = $passwordHash;
+    // Actualizar los datos del usuario
+    if ($user) {
+        $user->$email = $email;
+        $user->$language = $language;
+        $user->$notifications = $notifications;
+        if ($passwordHash) {
+            $user->$password = $passwordHash;
         }
 
-        $sql .= " WHERE id = ?";
-        $params[] = $_SESSION['usuario_id'];
-
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute($params);
-
+        // Guardar el XML
+        $xml->asXML('user_config.xml');
         $message = 'Cambios guardados correctamente.';
-    } catch (PDOException $e) {
-        $message = "Error al guardar los cambios: " . $e->getMessage();
+    } else {
+        $message = 'Usuario no encontrado.';
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p><?= htmlspecialchars($message) ?></p>
         <?php endif; ?>
         <form action="ajustes.php" method="post">
-        <div class="form-group">
+            <div class="form-group">
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required>
             </div>

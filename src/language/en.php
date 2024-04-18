@@ -1,6 +1,6 @@
 <?php
 return [
-    "hello" => "Helloooo",
+    "hello" => "Hello",
     "Aldatu" => "Change",
     // FOOTER (1)
     "Contacto" => "Contacts",
@@ -59,27 +59,22 @@ return [
     "Atrás" => "Back",
     // SIDEBAR
     "Inicio" => "Main Page",
-    "Información" => "Information",
-    "Lista de productos" => "List of products",
-    "Hornitzailea bihurtu" => "Become a provider",
+    "Sobre nosotros" => "About us",
+    "Noticias" => "Notices",
+    "Tendecias" => "Tendences",
     "Cesta de compra" => "Shopping basket",
-    "Hornitzailea bihurtzeko, formulario hau bete!",
     "Estado del producto" => "Product status",
 
 
     // CESTA
-    "Progreso de la compra" => "Purchase progress",
-    "Tu cesta" => "Your basket",
-    "artículo" => "item",
-    "Envío por parte de" => "Shipped by",
-    "«Originalmente» se refiere al primer precio de venta del artículo" => "«Originally» refers to the initial selling price of the item",
-    "Recuerda: no podemos reservar los artículos en tu cesta." => "Remember: we cannot reserve items in your basket.",
-    "ELIMINAR PRODUCTOS" => "REMOVE PRODUCTS",
-    "Entrega prevista" => "Expected delivery",
-    "Aceptamos" => "We accept",
-    "Si tu pedido es superior a 39.99€ el envío es gratuito" => "If your order is over €39.99, shipping is free",
+    "Cesta_de_compra" => "Shopping basket",
+    "Tu cesta esta vacia" => "Your basket is empty",
+    "Volver al catalogo" => "Go back to catalog",
+    "Producto" => "Product",
+    "Precio_" => "Price",
+    "Accion" => "Action",
+    "ElimButt" => "Remove",
     "Total" => "Total",
-    "Subtotal" => "Subtotal",
     "Envío" => "Shipping",
     "Total (IVA incluido)" => "Total (VAT included)",
     "COMENZAR PEDIDO" => "START ORDER",

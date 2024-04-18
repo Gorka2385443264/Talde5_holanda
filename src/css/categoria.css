@@ -176,33 +176,25 @@ body {
 }
 
 /* Estilos para el slider */
-.slider-container {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
+@media only screen and (max-width: 480px) {
+  .slide-content {
+    padding: 10px; /* Menos padding para más espacio */
+  }
+
+  .slide img {
+    width: 100%; /* Asegura que la imagen ocupa todo el ancho disponible */
+  }
+
+  .heading h1 {
+    font-size: 20px; /* Texto más pequeño para encabezados en dispositivos pequeños */
+  }
+
+  .heading button {
+    padding: 8px 16px; /* Botón más pequeño para ahorrar espacio */
+    font-size: 12px; /* Texto más pequeño en el botón */
+  }
 }
 
-.slides {
-  display: flex;
-  width: 300%; /* Ancho total para los tres slides */
-}
-
-.slide {
-  width: 33.33%; /* Ancho de cada slide */
-  display: flex;
-  align-items: center;
-}
-
-.slide-content {
-  padding: 20px;
-  flex: 1;
-}
-
-.slide img {
-  max-width: 100%;
-  height: auto;
-}
 
 /* Estilos para las flechas */
 .arrow {
@@ -217,11 +209,11 @@ body {
 }
 
 .arrow.left {
-  left: 0;
+  left: 10px;
 }
 
 .arrow.right {
-  right: 0;
+  right: 10px;
 }
 
 .fas.fa-heart {

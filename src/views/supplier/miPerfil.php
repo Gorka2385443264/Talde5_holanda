@@ -33,6 +33,9 @@ $nombre_usuario = $_SESSION['nombre_usuario'] ?? 'Invitado';
     <!-- Incluir aquí tu archivo CSS -->
 </head>
 <body>
+<a href="mainPage.php" class="back-to-index">
+        <button class="back-button">⬅</button>
+    </a>
     <div class="Mainperfil">
         <h1>Hola, <?php echo htmlspecialchars($nombre_usuario); ?></h1>
         

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user id="1">
+        <email>usuario@example.com</email>
+        <password>$2y$10$7nqeq2h1sQxG.Cm...</password>
+        <language>es</language>
+        <notifications>1</notifications>
+    </user>
+    <!-- Más usuarios pueden ser añadidos de manera similar -->
+</users>

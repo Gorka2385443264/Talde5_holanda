@@ -38,7 +38,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     } else {
         echo "No se encontraron resultados para el usuario con correo: " . $correo_usuario;
     }
-
+    
     $stmt->close();
     $conn->close();
 }

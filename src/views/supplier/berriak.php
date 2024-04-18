@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berriak</title>
-    <link rel="stylesheet" href="/src/css/berriak.css"> <!-- Ensure this path is correct -->
+    <?php
+   // Inicialización de la variable $lang
+   $lang = [];
+
+   // Define el archivo de idioma en español por defecto
+   $file_path = __DIR__ . "/lang/es.json";
+   if (file_exists($file_path)) {
+       $json_content = file_get_contents($file_path);
+       if ($json_content !== false) {
+           $decoded_json = json_decode($json_content, true);
+           if (is_array($decoded_json)) {
+               $lang = $decoded_json;
+           }
+       }
+   }
+    ?>
+    <title><?php echo $lang['title'] ?? 'Fiets.hurr'; ?></title>
+    <link rel="stylesheet" href="/Talde5_holanda/src/css/berriak.css">
 </head>
 <body>
 
-    <h1>Berriak</h1>
+<h1><?php echo $lang['header'] ?? 'Berriak'; ?></h1>
+
 
     <form action="berriak.php" method="get">
         <select name="order">
-            <option value="DESC">Más reciente primero</option>
-            <option value="ASC">Más antiguo primero</option>
+            <option value="DESC"><?php echo $lang['order_recent_first'] ?? 'Recientes primero'; ?></option>
+            <option value="ASC"><?php echo $lang['order_oldest_first'] ?? 'Antiguos primero'; ?></option>
         </select>
-        <button type="submit">Ordenar</button>
+        <button type="submit"><?php echo $lang['submit_button'] ?? 'Filtrar'; ?></button>
+        <form action="" method="post">
+        <input type="submit" name="changeLangToEnglish" value="Change Language to English">
+        </form>
+
     </form>
 
+    <!-- Eliminados los botones de cambio de idioma -->
+    <!-- Contenido de base de datos -->
     <?php
     $servername = "localhost";
     $username = "root";
@@ -29,10 +52,7 @@
         die("La conexión falló: " . $conn->connect_error);
     }
 
-    // Get the order parameter from the URL, default to DESC
-    $order = $_GET['order'] ?? 'DESC';
-
-    // Ensure the order parameter is safe to use in SQL
+    $order = $_GET['order'] ?? 'DESC'; // Default to DESC
     $order = in_array($order, ['ASC', 'DESC']) ? $order : 'DESC';
 
     $sql = "SELECT * FROM berriak ORDER BY data $order";
@@ -47,9 +67,18 @@
             echo "</div>";
         }
     } else {
-        echo "<p>No hay noticias disponibles.</p>";
+        echo "<p>" . $lang['no_news'] . "</p>";
     }
     $conn->close();
+
+    if (isset($_POST['changeLangToEnglish'])) {
+        $lang = json_decode(file_get_contents(__DIR__ . "/lang/en.json"), true);
+        setcookie('language', 'en', time() + 60*60*24*30, '/'); // La cookie expira en 30 días
+        // Recarga la página
+    }
     ?>
+
 </body>
 </html>
+
+
