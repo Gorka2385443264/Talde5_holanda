@@ -22,3 +22,6 @@ th {
     transform: scale(1.02); /* Increase the size by 10% */
     background-color: lightgrey;
 }
+h1{
+    background-color: orange;
+}

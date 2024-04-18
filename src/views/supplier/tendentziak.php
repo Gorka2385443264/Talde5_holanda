@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berriak</title>
-    <link rel="stylesheet" href="/src/css/berriak.css"> <!-- Ensure this path is correct -->
+    <link rel="stylesheet" href="/src/css/tendentziak.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
     <h1>Biking Trends</h1>
@@ -42,11 +42,11 @@
                     // Determine color based on popularity
                     $color = '#FFFFFF'; // Default white background
                     if ($row["popularitatea"] >= 90) {
-                        $color = '#FF9999'; // Red for high popularity
+                        $color = '#99FF99'; // Red for high popularity
                     } elseif ($row["popularitatea"] >= 75) {
                         $color = '#FFFF99'; // Yellow for medium popularity
                     } elseif ($row["popularitatea"] >= 50) {
-                        $color = '#99FF99'; // Green for lower popularity
+                        $color = '#FF9999'; // Green for lower popularity
                     }
 
                     echo "<tr>";
