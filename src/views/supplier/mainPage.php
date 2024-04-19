@@ -39,9 +39,9 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
                     <h1>Catalogo</h1>
                 </div>
             </a>
-            <a href="./tus_rutas.php" style="text-decoration: none; color: black;">
+            <a href="./cesta.php" style="text-decoration: none; color: black;">
                 <div class="tuRuta">
-                    <h1>Tus Rutas</h1>
+                    <h1>Zesta</h1>
                 </div>
             </a>
         </div>

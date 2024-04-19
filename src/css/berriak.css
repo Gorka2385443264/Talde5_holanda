@@ -1,25 +1,22 @@
 div {
-    border: 1px solid black; 
-    padding: 10px; 
-    margin-bottom: 10px; 
-    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
-    background-color: rgba(255, 255, 255, 0.8); /* Blue with 50% opacity */
-
-    
+    background-color: #ffffff;
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */ 
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  
 }
 
-h1 {
-    background-color: orange; 
-}
 
 div:hover {
     transform: scale(1.02); /* Increase the size by 10% */
 }
 
 body{
-    background-image: url(/Talde5_holanda/public/Argazkiak/login.png);
+    background-color: #f0f0f0;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
 }

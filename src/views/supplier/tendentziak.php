@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="/Talde5_holanda/src/css/tendentziak.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
+    <div class="sidebar">
+        <?php
+        require_once (APP_DIR . "/src/views/supplier/sidebar.php");
+        ?>
+    </div>
     <h1>Biking Trends</h1>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Trend Name</th>
-                <th>Description</th>
-                <th>Popularity</th>
-                <th>Last Updated</th>
+                <th>Izena</th>
+                <th>Deskripazioa</th>
+                <th>Popularitatea</th>
+                <th>Data</th>
             </tr>
         </thead>
         <tbody>
