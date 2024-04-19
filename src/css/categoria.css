@@ -1,4 +1,5 @@
 /* Estilos Generales */
+/* Estilos Generales */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -89,191 +90,116 @@ body {
   font-size: smaller;
 }
 
-.wrapper {
-  height: auto;
-  padding: 20px;
-  background-size: cover;
-  text-align: center;
-  position: relative;
-}
-
-.wrapper::after {
-  background: rgba(248, 115, 49, 0.85);
-}
-
-.wrapper .scontainer, .wrapper .text {
-  padding: 20px;
-}
-
-.wrapper h1, .wrapper h3 {
-  font-size: 20px;
-}
-
-.ani_image img {
-  width: 100%;
-  height: auto;
-}
-
-/* Estilos para las flechas del slider */
-.owl-nav {
-  position: absolute;
-  top: 50%;
-  width: 100%;
+/* Slider Container */
+.slide {
   display: flex;
   justify-content: space-between;
-}
-
-.owl-nav .owl-prev, .owl-nav .owl-next {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  transition: background 0.3s;
+  padding: 20px;
 }
 
-.owl-nav .owl-prev i, .owl-nav .owl-next i {
-  color: #fff;
+.slide-content {
+  flex: 1;
+  padding-right: 20px; /* Asegúrate de tener algo de espacio entre el texto y la imagen */
 }
 
-.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover {
-  background: #f87331;
+.slide-content-img {
+  flex: 1;
+  text-align: right; /* Alinea la imagen a la derecha */
 }
 
-@media only screen and (min-width: 481px) {
-  .grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 30px;
-  }
-
-  .heading {
-      margin-bottom: 120px;
-  }
-
-  .heading h1 {
-      font-size: 40px;
-  }
-
-  .heading button {
-      padding: 15px 80px;
-      top: 0;
-      left: 42%;
-      transform: translateX(0);
-      font-size: 15px;
-  }
-
-  .latest .box {
-      padding: 30px;
-  }
-
-  .latest .img label, .latest .img i {
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-  }
+/* Estilos para la imagen dentro del contenedor de la imagen */
+.slide-content-img img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Estilos para el slider */
-@media only screen and (max-width: 480px) {
-  .slide-content {
-    padding: 10px; /* Menos padding para más espacio */
-  }
-
-  .slide img {
-    width: 100%; /* Asegura que la imagen ocupa todo el ancho disponible */
-  }
-
-  .heading h1 {
-    font-size: 20px; /* Texto más pequeño para encabezados en dispositivos pequeños */
-  }
-
-  .heading button {
-    padding: 8px 16px; /* Botón más pequeño para ahorrar espacio */
-    font-size: 12px; /* Texto más pequeño en el botón */
-  }
-}
-
-
-/* Estilos para las flechas */
 .arrow {
-  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  cursor: pointer;
+  font-size: 24px;
   color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
-  z-index: 100;
+  border-radius: 50%;
 }
 
 .arrow.left {
-  left: 10px;
+  left: 12px;
 }
 
 .arrow.right {
-  right: 10px;
+  right: 12px;
 }
 
-.fas.fa-heart {
-  cursor: pointer;
-  color: gray; /* Color cuando no es favorito */
-  font-size: 24px;
-  transition: color 0.3s;
-}
-
-.fas.fa-heart.active {
-  color: red; /* Color cuando es favorito */
-}
-
-/* Estilos específicos para la estructura con el botón al otro lado */
-.content-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Asegura que el sidebar y el botón estén en lados opuestos */
-}
-
-.sidebar {
-  width: 200px;
-  height: 100vh;
-  background-color: #f4f4f4;
-}
-
-.favorites-button-container {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  height: 100vh;
-  background-color: #fff;
-}
-
-#showFavorites {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#showFavorites:hover {
-  background-color: #0056b3;
-}
+/* Botones de navegación */
 .back-to-index {
-  display: block; /* Asegura que el botón esté en su propia línea */
-  margin: 10px 0; /* Espaciado arriba y abajo del botón */
+  display: block;
+  margin: 10px 0;
 }
 
 .back-button {
-  padding: 10px 20px; /* Espaciado interno del botón */
-  background-color: #4CAF50; /* Color de fondo del botón */
-  color: white; /* Color del texto del botón */
-  border: none; /* Sin borde para el botón */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
-  font-size: 16px; /* Tamaño del texto */
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Responsive grid layout */
+@media only screen and (min-width: 481px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+
+  .heading {
+    margin-bottom: 120px;
+  }
+
+  .heading h1 {
+    font-size: 40px;
+  }
+
+  .heading button {
+    padding: 15px 80px;
+    top: 0;
+    left: 42%;
+    transform: translateX(-50%);
+    font-size: 15px;
+  }
+
+  .latest .box {
+    padding: 30px;
+  }
+
+  .latest .img label, .latest .img i {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .slide-content {
+    padding: 10px;
+  }
+
+  .slide img {
+    width: 100%;
+  }
+
+  .heading h1 {
+    font-size: 20px;
+  }
+
+  .heading button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
 }

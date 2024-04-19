@@ -1,7 +1,4 @@
 <?php
-
-
-
 session_start();
 
 // Asumiendo que esta función devuelve todos los productos disponibles
@@ -20,16 +17,43 @@ function obtenerProductoPorId($productoId) {
     return $productos[$productoId] ?? false;
 }
 
-// Inicializa el carrito si no existe en la sesión
+// Inicializar el carrito si no existe en la sesión
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
+// Inicializar los favoritos si no existen en la sesión
+if (!isset($_SESSION['favorites'])) {
+    $_SESSION['favorites'] = [];
+}
+
 // Manejar la adición de productos al carrito
-if (isset($_POST['productoId'])) {
-    // ... manejo de la adición de productos
+if (isset($_POST['productoId']) && !isset($_POST['action'])) {
+    $productoId = $_POST['productoId'];
+    $producto = obtenerProductoPorId($productoId);
+    if ($producto) {
+        $_SESSION['cart'][$productoId] = $producto;
+        echo json_encode(['success' => true, 'message' => 'Producto añadido al carrito']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Producto no encontrado']);
+    }
+    exit;
+}
+
+// Manejar la acción de favoritos
+if (isset($_POST['action']) && $_POST['action'] == 'toggleFavorite') {
+    $productId = $_POST['productId'];
+    if (isset($_SESSION['favorites'][$productId])) {
+        unset($_SESSION['favorites'][$productId]);
+    } else {
+        $_SESSION['favorites'][$productId] = $productId;
+    }
+    header('Content-Type: application/json');
+    echo json_encode(['success' => true, 'favorites' => array_keys($_SESSION['favorites'])]);
+    exit;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -51,19 +75,14 @@ if (isset($_POST['productoId'])) {
             <div class="scontainer">
                 <div class="heading">
                     <h1>Latest Popular Bike</h1>
-                    <div class="lines flex1">
-                        <button>50% OFF</button>
-                    </div>
+                    
                 </div>
 
                 <div class="content grid top">
                 <div class="box">
                     <div class="img">
                         <img src="../../../public/Argazkiak/bicicleta-electrica-removebg-preview.png" width="300">
-                        <div class="flex1">
-                            <label>50%</label>
-                            <i class="fas fa-heart favorito" data-producto-id="1"></i>
-                        </div>
+                        
                     </div>
 
                     <div class="detalis">
@@ -76,10 +95,7 @@ if (isset($_POST['productoId'])) {
                 <div class="box">
                     <div class="img">
                         <img src="../../../public/Argazkiak/bici-de-ciudad-removebg-preview.png" width="300">
-                        <div class="flex1">
-                            <label>50%</label>
-                            <i class="fas fa-heart favorito" data-producto-id="2"></i>
-                        </div>
+                        
                     </div>
 
                     <div class="detalis">
@@ -92,10 +108,7 @@ if (isset($_POST['productoId'])) {
                 <div class="box">
                     <div class="img">
                         <img src="../../../public/Argazkiak/bici-de-carretera-removebg-preview.png" width="300">
-                        <div class="flex1">
-                            <label>50%</label>
-                            <i class="fas fa-heart favorito" data-producto-id="3"></i>
-                        </div>
+                        
                     </div>
 
                     <div class="detalis">
@@ -108,10 +121,7 @@ if (isset($_POST['productoId'])) {
                 <div class="box">
                     <div class="img">
                         <img src="../../../public/Argazkiak/bici-electrica-ciudad-removebg-preview.png" width="300">
-                        <div class="flex1">
-                            <label>50%</label>
-                            <i class="fas fa-heart favorito" data-producto-id="4"></i>
-                        </div>
+                        
                     </div>
 
                     <div class="detalis">
@@ -124,10 +134,7 @@ if (isset($_POST['productoId'])) {
                 <div class="box">
                     <div class="img">
                         <img src="../../../public/Argazkiak/bicicleta-montaña-removebg-preview.png" width="300">
-                        <div class="flex1">
-                            <label>50%</label>
-                            <i class="fas fa-heart favorito" data-producto-id="5"></i>
-                        </div>
+                        
                     </div>
 
                     <div class="detalis">
@@ -140,10 +147,7 @@ if (isset($_POST['productoId'])) {
                 <div class="box">
                     <div class="img">
                         <img src="../../../public/Argazkiak/bmx-removebg-preview.png" width="300">
-                        <div class="flex1">
-                            <label>50%</label>
-                            <i class="fas fa-heart favorito" data-producto-id="6"></i>
-                        </div>
+                       
                     </div>
 
                     <div class="detalis">
@@ -158,7 +162,7 @@ if (isset($_POST['productoId'])) {
     </section>
     <div class="slider-container">
         <div class="slides">
-        <div class="slide">
+            <div class="slide">
                 <div class="slide-content">
                     <h2>KTM 125 DUKE</h2>
                     <p>- Motor cc: 370.0cc</p>
@@ -166,12 +170,10 @@ if (isset($_POST['productoId'])) {
                     <p>- Capacidad del tanque: 10.2 L</p>
                     <p>- Distancia entre ejes: 1366mm</p>
                     <p>- Refrigerante: Líquido refrigerante</p>
-                    <p>- Motor maximo: 12Nm @ 8000rpm</p>
-
+                    <p>- Motor máximo: 12Nm @ 8000rpm</p>
                     <br>
                     <h1>Price: 1999,99€</h1>
-                    <button class="rent-now" data-producto-id="7">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
-
+                    <button class="rent-now" data-producto-id="7">Rent now</button>
                 </div>
                 <div class="slide-content-img">
                     <img src="../../../public/Argazkiak/bici-dos-personas-removebg-preview.png" alt="">
@@ -185,22 +187,17 @@ if (isset($_POST['productoId'])) {
                     <p>- Capacidad del tanque: 10.2 L</p>
                     <p>- Distancia entre ejes: 1366mm</p>
                     <p>- Refrigerante: Líquido refrigerante</p>
-                    <p>- Motor maximo: 12Nm @ 8000rpm</p>
-
+                    <p>- Motor máximo: 12Nm @ 8000rpm</p>
                     <br>
                     <h1>Price: 1999,99€</h1>
-                    <button class="rent-now" data-producto-id="8">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
-
+                    <button class="rent-now" data-producto-id="8">Rent now</button>
                 </div>
-                <img src="../../../public/Argazkiak/doble-removebg-preview.png" alt="">
-            </div><!-- Asegúrate de que tus slides estén aquí -->
+                <div class="slide-content-img">
+                    <img src="../../../public/Argazkiak/doble-removebg-preview.png" alt="">
+                </div>
+            </div>
         </div>
-        <div class="arrow left" onclick="plusSlides(-1)">‹</div>
-        <div class="arrow right" onclick="plusSlides(1)">›</div>
     </div>
-    
-    <!-- El resto de tu contenido ... -->
-
 </div>
 
 <script>
@@ -226,7 +223,7 @@ if (isset($_POST['productoId'])) {
     // Auto-slide
     setInterval(function() {
         plusSlides(1);
-    }, 3000); // Cambiará el slide cada 3 segundos
+    }, 10000); // Cambiará el slide cada 3 segundos
 </script>
 </body>
 </html>
