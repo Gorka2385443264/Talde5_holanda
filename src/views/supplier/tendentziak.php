@@ -7,12 +7,7 @@
     <link rel="stylesheet" href="/Talde5_holanda/src/css/tendentziak.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
-    <div class="sidebar">
-        <?php
-        require_once (APP_DIR . "/src/views/supplier/sidebar.php");
-        ?>
-    </div>
-    <h1>Biking Trends</h1>
+    <h1>Tendentziak</h1>
     <table>
         <thead>
             <tr>
@@ -25,9 +20,9 @@
         </thead>
         <tbody>
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "1WMG2023"; // Replace with your actual password
+            $servername = "erronka3_5taldea";
+            $username = "5taldea";
+            $password = "1@WMG2024"; // Replace with your actual password
             $dbname = "erronka3"; // Replace with your actual database name
 
             // Create connection
