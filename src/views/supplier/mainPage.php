@@ -7,10 +7,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 </head>
 <?php
 
-if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) {
-    $nombre_usuario = $_SESSION['nombre_usuario'];
-    $apellido_usuario = $_SESSION['apellido_usuario'];
-}
+$_SESSION['nombre_usuario'] = '';  // Estos valores deberían provenir de tu lógica de autenticación
+$_SESSION['apellido_usuario'] = '';
 ?>
 
 <body>

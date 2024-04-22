@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['correo_login']) && iss
     $correo_login = $_POST['correo_login'];
     $contraseña_login = $_POST['contraseña_login'];
 
-    // Verificar las credenciales en la tabla erronka3.bazeroa
-    $sql = "SELECT * FROM bezeroa WHERE korreoa=? AND pasahitza=?";
+    // Verificar las credenciales en la tabla erronka3.bezeroa
+    $sql = "SELECT izena, abizena FROM bezeroa WHERE korreoa=? AND pasahitza=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $correo_login, $contraseña_login);
     $stmt->execute();
@@ -51,9 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['correo_login']) && iss
 
     if ($result->num_rows == 1) {
         // Credenciales correctas, iniciar sesión
+        $user = $result->fetch_assoc();
         $_SESSION['loggedin'] = true;
         $_SESSION['correo'] = $correo_login;
+        $_SESSION['nombre_usuario'] = $user['izena'];
+        $_SESSION['apellido_usuario'] = $user['abizena'];
         echo "<script>alert('Inicio de sesión exitoso');</script>";
+        // Redirige a la página principal o a donde sea necesario
+        echo "<script>window.location.href = '../supplier/mainPage.php';</script>";
     } else {
         // Credenciales incorrectas
         echo "<script>alert('Credenciales incorrectas');</script>";
