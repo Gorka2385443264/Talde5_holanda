@@ -42,9 +42,9 @@
     <!-- Eliminados los botones de cambio de idioma -->
     <!-- Contenido de base de datos -->
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "1WMG2023";
+    $servername = "erronka3_5taldea";
+    $username = "5taldea";
+    $password = "1@WMG2024";
     $dbname = "erronka3";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
