@@ -1,5 +1,4 @@
 <?php
-
 // Conexión a la base de datos
 $servername = "localhost:3306";
 $username = "root";
@@ -16,11 +15,15 @@ if ($conn->connect_error) {
 // Función para obtener los productos desde la base de datos
 function obtenerProductoPorId($productoId, $conn)
 {
-    $sql = "SELECT * FROM bicicletas WHERE id = $productoId";
-    $result = $conn->query($sql);
+    if (!empty($productoId)) {
+        $sql = "SELECT * FROM bizikleta WHERE id_bizikleta = $productoId";
+        $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        return $result->fetch_assoc();
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc();
+        } else {
+            return false;
+        }
     } else {
         return false;
     }
@@ -96,8 +99,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
                             echo "<h3>" . $row['mota'] . "</h3>";
                             echo "<p>" . $row['descripcion'] . "</p>";
                             echo "<h2>$" . $row['prezioa'] . " <span>/hora</span> </h2>";
-                            if (isset($row['id'])) {
-                                echo "<button class='rent-now' data-producto-id='" . $row['id'] . "'>Rent now</button>";
+                            if (isset($row['id_bizikleta'])) {
+                                echo "<button class='rent-now' data-producto-id='" . $row['id_bizikleta'] . "'>Rent now</button>";
                             } else {
                                 echo "<button class='rent-now' data-producto-id=''>Rent now</button>"; // O algún otro valor predeterminado
                             }
