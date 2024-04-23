@@ -1,20 +1,29 @@
 <?php
-session_start();
 
-// Asumiendo que esta función devuelve todos los productos disponibles
-function obtenerProductoPorId($productoId) {
-    $productos = [
-        1 => ['id' => 1, 'name' => 'Bicicleta Eléctrica', 'price' => 699],
-        2 => ['id' => 2, 'name' => 'Casco Aerion Carrbo', 'price' => 150],
-        3 => ['id' => 3, 'name' => 'Bicicleta de Carretera', 'price' => 850],
-        4 => ['id' => 4, 'name' => 'Bicicleta Eléctrica de Ciudad', 'price' => 1200],
-        5 => ['id' => 5, 'name' => 'Bicicleta de Montaña', 'price' => 980],
-        6 => ['id' => 6, 'name' => 'BMX', 'price' => 720],
-        7 => ['id' => 7, 'name' => 'Bicicleta de 3 Ruedas', 'price' => 720],
-        8 => ['id' => 8, 'name' => 'Bicicleta para 2 Personas', 'price' => 720]
-    ];
+// Conexión a la base de datos
+$servername = "localhost:3306";
+$username = "root";
+$password = "1WMG2023";
+$dbname = "erronka3";
 
-    return $productos[$productoId] ?? false;
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Función para obtener los productos desde la base de datos
+function obtenerProductoPorId($productoId, $conn)
+{
+    $sql = "SELECT * FROM bicicletas WHERE id = $productoId";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        return $result->fetch_assoc();
+    } else {
+        return false;
+    }
 }
 
 // Inicializar el carrito si no existe en la sesión
@@ -30,7 +39,7 @@ if (!isset($_SESSION['favorites'])) {
 // Manejar la adición de productos al carrito
 if (isset($_POST['productoId']) && !isset($_POST['action'])) {
     $productoId = $_POST['productoId'];
-    $producto = obtenerProductoPorId($productoId);
+    $producto = obtenerProductoPorId($productoId, $conn);
     if ($producto) {
         $_SESSION['cart'][$productoId] = $producto;
         echo json_encode(['success' => true, 'message' => 'Producto añadido al carrito']);
@@ -52,193 +61,86 @@ if (isset($_POST['action']) && $_POST['action'] == 'toggleFavorite') {
     echo json_encode(['success' => true, 'favorites' => array_keys($_SESSION['favorites'])]);
     exit;
 }
+
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 ?>
+<link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
+<link rel="stylesheet" href="/Talde5_holanda/src/css/categoria.css">
 
-
-<!DOCTYPE html>
-<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiets.Huur</title>
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/categoria.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-</head>
+
 <body>
-<div class="mainDiv">
-    <h1>Catálogo de Bicis</h1>
-    <a href="mainPage.php" class="back-to-index">
-        <button class="back-button">⬅</button>
-    </a>
-    <section class="latest top">
+    <div class="mainDiv">
+        <h1>Catálogo de Bicis</h1>
+        <a href="mainPage.php" class="back-to-index">
+            <button class="back-button">⬅</button>
+        </a>
+        <section class="latest top">
             <div class="scontainer">
                 <div class="heading">
                     <h1>Latest Popular Bike</h1>
-                    
                 </div>
 
                 <div class="content grid top">
-                <div class="box">
-                    <div class="img">
-                        <img src="../../../public/Argazkiak/bicicleta-electrica-removebg-preview.png" width="300">
-                        
-                    </div>
+                    <?php
+                    // Consulta SQL para obtener los datos de las bicicletas
+                    $sql = "SELECT * FROM bizikleta";
+                    $result = $conn->query($sql);
 
-                    <div class="detalis">
-                        <h3>Electric bike</h3>
-                        <p>(Comfortable and a very efficient autonomy)</p>
-                        <h2>$699 <span>/hour</span> </h2>
-                        <button class="rent-now" data-producto-id="1">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <img src="../../../public/Argazkiak/bici-de-ciudad-removebg-preview.png" width="300">
-                        
-                    </div>
+                    // Mostrar los datos de las bicicletas
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<div class='box'>";
+                            echo "<div class='img'><img src='" . $row['imagen'] . "' width='300'></div>";
+                            echo "<div class='detalis'>";
+                            echo "<h3>" . $row['mota'] . "</h3>";
+                            echo "<p>" . $row['descripcion'] . "</p>";
+                            echo "<h2>$" . $row['prezioa'] . " <span>/hora</span> </h2>";
+                            if (isset($row['id'])) {
+                                echo "<button class='rent-now' data-producto-id='" . $row['id'] . "'>Rent now</button>";
+                            } else {
+                                echo "<button class='rent-now' data-producto-id=''>Rent now</button>"; // O algún otro valor predeterminado
+                            }
+                            echo "</div>";
+                            echo "</div>";
+                        }
 
-                    <div class="detalis">
-                        <h3>Aerion Carrbo Helmet</h3>
-                        <p>(Fashion , Twin Disc)</p>
-                        <h2>$699 <span>/hour</span> </h2>
-                        <button class="rent-now" data-producto-id="2">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <img src="../../../public/Argazkiak/bici-de-carretera-removebg-preview.png" width="300">
-                        
-                    </div>
-
-                    <div class="detalis">
-                        <h3>Aerion Carrbo Helmet</h3>
-                        <p>(Fashion , Twin Disc)</p>
-                        <h2>$699 <span>/hour</span> </h2>
-                        <button class="rent-now" data-producto-id="3">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <img src="../../../public/Argazkiak/bici-electrica-ciudad-removebg-preview.png" width="300">
-                        
-                    </div>
-
-                    <div class="detalis">
-                        <h3>Aerion Carrbo Helmet</h3>
-                        <p>(Fashion , Twin Disc)</p>
-                        <h2>$699 <span>/hour</span> </h2>
-                        <button class="rent-now" data-producto-id="4">Rent now</button>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <img src="../../../public/Argazkiak/bicicleta-montaña-removebg-preview.png" width="300">
-                        
-                    </div>
-
-                    <div class="detalis">
-                        <h3>Aerion Carrbo Helmet</h3>
-                        <p>(Fashion , Twin Disc)</p>
-                        <h2>$699 <span>/hour</span> </h2>
-                        <button class="rent-now" data-producto-id="5">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <img src="../../../public/Argazkiak/bmx-removebg-preview.png" width="300">
-                       
-                    </div>
-
-                    <div class="detalis">
-                        <h3>Aerion Carrbo Helmet</h3>
-                        <p>(Fashion , Twin Disc)</p>
-                        <h2>$699 <span>/hour</span> </h2>
-                        <button class="rent-now" data-producto-id="6">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
-                    </div>
+                    } else {
+                        echo "No se encontraron bicicletas";
+                    }
+                    ?>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="slider-container">
-        <div class="slides">
-            <div class="slide">
-                <div class="slide-content">
-                    <h2>KTM 125 DUKE</h2>
-                    <p>- Motor cc: 370.0cc</p>
-                    <p>- Caballos de potencia: 14.5 bhp @ 9250rpm</p>
-                    <p>- Capacidad del tanque: 10.2 L</p>
-                    <p>- Distancia entre ejes: 1366mm</p>
-                    <p>- Refrigerante: Líquido refrigerante</p>
-                    <p>- Motor máximo: 12Nm @ 8000rpm</p>
-                    <br>
-                    <h1>Price: 1999,99€</h1>
-                    <button class="rent-now" data-producto-id="7">Rent now</button>
-                </div>
-                <div class="slide-content-img">
-                    <img src="../../../public/Argazkiak/bici-dos-personas-removebg-preview.png" alt="">
-                </div>
-            </div>
-            <div class="slide">
-                <div class="slide-content">
-                    <h2>KTM 125 AKI</h2>
-                    <p>- Motor cc: 370.0cc</p>
-                    <p>- Caballos de potencia: 14.5 bhp @ 9250rpm</p>
-                    <p>- Capacidad del tanque: 10.2 L</p>
-                    <p>- Distancia entre ejes: 1366mm</p>
-                    <p>- Refrigerante: Líquido refrigerante</p>
-                    <p>- Motor máximo: 12Nm @ 8000rpm</p>
-                    <br>
-                    <h1>Price: 1999,99€</h1>
-                    <button class="rent-now" data-producto-id="8">Rent now</button>
-                </div>
-                <div class="slide-content-img">
-                    <img src="../../../public/Argazkiak/doble-removebg-preview.png" alt="">
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
-</div>
 
-<script>
-    $(document).ready(function() {
-    $('.rent-now').click(function() {
-        var productoId = $(this).data('producto-id');
+    <?php require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/barraDeAbajo.php"); ?>
 
-        $.post('catalogo.php', { productoId: productoId }, function(response) {
-            var data = JSON.parse(response);
-            if (data.success) {
-                // Redireccionar a la página del carrito
-                window.location.href = 'cesta.php';
-            } else {
-                alert("El producto se ha añadido a la cesta");
-            }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.rent-now').click(function () {
+                var productoId = $(this).data('producto-id');
+
+                $.post('catalogo.php', { productoId: productoId }, function (response) {
+                    console.log(response); // Verificar la respuesta del servidor en la consola del navegador
+                    var data = JSON.parse(response);
+                    if (data.success) {
+                        // Redireccionar a la página del carrito
+                        window.location.href = 'cesta.php';
+                    } else {
+                        alert("El producto se ha añadido a la cesta");
+                    }
+                });
+
+            });
         });
-    });
-});
-    var slideIndex = 0;
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-        slideIndex += n;
-        showSlides(slideIndex);
-    }
-    
-    function showSlides(n) {
-        var slides = $(".slide");
-        if (n >= slides.length) {
-            slideIndex = 0;
-        }
-        if (n < 0) {
-            slideIndex = slides.length - 1;
-        }
-        slides.hide().eq(slideIndex).addClass('active').fadeIn();
-    }
-
-    // Auto-slide
-    setInterval(function() {
-        plusSlides(1);
-    }, 10000); // Cambiará el slide cada 3 segundos
-</script>
+    </script>
 </body>
+
 </html>
+
+<?php
+// Cerrar la conexión a la base de datos
+$conn->close();
+?>
