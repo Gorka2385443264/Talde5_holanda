@@ -20,9 +20,9 @@
         </thead>
         <tbody>
             <?php
-            $servername = "erronka3_5taldea";
-            $username = "5taldea";
-            $password = "1@WMG2024"; // Replace with your actual password
+            $servername = "localhost:3306";
+            $username = "root";
+            $password = "1WMG2023";
             $dbname = "erronka3"; // Replace with your actual database name
 
             // Create connection

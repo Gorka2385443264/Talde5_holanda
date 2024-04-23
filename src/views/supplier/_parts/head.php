@@ -25,5 +25,14 @@
     //Sesioa hasten dugu bertan gordetzeko zein hizkuntzatan ari garen
     define('APP_DIR', $_SERVER['DOCUMENT_ROOT'] . '/Talde5_holanda'); //Aplikazioaren karpeta edozein lekutatik atzitzeko.
     define('HREF_VIEWS_DIR', '/Talde5_holanda/src/views/'); //Aplikazioaren views karpeta edozein lekutatik deitzeko
-    require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.
+    
+    session_start();
+
+    require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.    
+    
+    if (!isset($_SESSION['nombre_usuario']) || $_SESSION["nombre_usuario"] == "") {
+        header('Location: ../mainPage/index.php');
+        exit();
+    }
+    
     ?>

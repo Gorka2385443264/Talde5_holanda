@@ -5,11 +5,6 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
 <title>Fiets.Huur </title>
 </head>
-<?php
-
-$_SESSION['nombre_usuario'] = '';  // Estos valores deberían provenir de tu lógica de autenticación
-$_SESSION['apellido_usuario'] = '';
-?>
 
 <body>
     <!-- Div verde en la parte superior -->

@@ -14,6 +14,7 @@
 
 <body>
     <main>
+        
         <div class="contenedor__todo">
             <div class="caja__trasera">
                 <div class="caja__trasera-login">
@@ -55,28 +56,31 @@
     <script src="/Talde5_holanda/src/jquery/index.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $('#form_login').submit(function (e) {
-                e.preventDefault();
-                $.ajax({
-                    type: 'POST',
-                    url: '../../php/conectar.php',
-                    data: $(this).serialize(),
-                    success: function (response) {
-                        if (response.trim() === "Credenciales incorrectas") {
-                            alert('Credenciales incorrectas');
-                        } else if (response.trim() === "Nombre no encontrado") {
-                            alert('Error: Nombre no encontrado');
-                        } else {
-                            alert('opa');
-                            window.location.href = "../supplier/mainPage.php";
+    $(document).ready(function () {
+        $('#form_login').submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '../../php/conectar.php',
+                data: $(this).serialize(),
+                success: function (response) {
+                    var trimmedResponse = response;
 
-                        }
+                    if (trimmedResponse === "Credenciales incorrectas") {
+                        alert('Credenciales incorrectas');
+                    } else if (trimmedResponse === "Inicio de sesión exitoso") {
+                        alert('Inicio de sesión exitoso');
+                        window.location.href = "../supplier/mainPage.php";
+                    } else {
+                        alert('Error no identificado: ' + trimmedResponse);
                     }
-                });
+                }
             });
         });
-    </script>
+    });
+</script>
+
+
 </body>
 
 </html>

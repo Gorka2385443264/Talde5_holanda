@@ -1,9 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['nombre_usuario']) || $_SESSION["nombre_usuario"] == "") {
-    header('Location: ../mainPage/index.php');
-    exit();
-}
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
+
+echo "Usuario: " . $_SESSION['nombre_usuario']; // Verifica que se muestre correctamente
+
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

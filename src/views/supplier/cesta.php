@@ -1,5 +1,14 @@
+
+
+
+    <?php require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php"); ?>
+    <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
+    <link rel="stylesheet" href="/Talde5_holanda/src/css/cesta.css">
+    <title>Cesta de Compra</title>
+</head>
+<body>
+
 <?php
-session_start();
 
 // Inicializa el carrito si no está ya en la sesión
 $carrito = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
@@ -24,15 +33,6 @@ if (isset($_GET['remove']) && isset($carrito[$_GET['remove']])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <?php require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php"); ?>
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/cesta.css">
-    <title>Cesta de Compra</title>
-</head>
-<body>
     <div class="mainDiv">
         <h1>Cesta de la Compra</h1>
         <?php if (count($carrito) > 0): ?>

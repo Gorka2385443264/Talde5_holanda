@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
+
 // EKINTZAK
 if (!isset($_SESSION["_LANGUAGE"])) { //Sesioan hizkuntza ez bada gorde
   //Defektuzko hizkuntza jartzen dugun funtzioari deitzen diogu

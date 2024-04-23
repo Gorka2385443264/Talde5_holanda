@@ -56,12 +56,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['correo_login']) && iss
         $_SESSION['correo'] = $correo_login;
         $_SESSION['nombre_usuario'] = $user['izena'];
         $_SESSION['apellido_usuario'] = $user['abizena'];
-        echo "<script>alert('Inicio de sesión exitoso');</script>";
-        // Redirige a la página principal o a donde sea necesario
-        echo "<script>window.location.href = '../supplier/mainPage.php';</script>";
+        echo "Inicio de sesión exitoso";
+
     } else {
         // Credenciales incorrectas
-        echo "<script>alert('Credenciales incorrectas');</script>";
+        echo "Credenciales incorrectas";
     }
     $stmt->close();
 }
