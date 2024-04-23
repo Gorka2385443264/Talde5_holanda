@@ -7,24 +7,48 @@ $productoId = isset($_GET['productoId']) ? $_GET['productoId'] : '';
 $nombreProducto = "Producto Ejemplo";
 $precioProducto = "100";
 
+// Conectar a la base de datos
+$servername = "localhost:3306";
+$username = "root";
+$password = "1WMG2023";
+$dbname = "erronka3";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
 // Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Aquí recogerías y procesarías los datos del formulario
-    // Por ejemplo: $nombreCliente = $_POST['nombre'];
-    // No olvides validar y limpiar tus datos aquí
+    $nombreCliente = $_POST['nombre'];
+    $emailCliente = $_POST['email'];
+    $direccionCliente = $_POST['direccion'];
+    $detallesPago = $_POST['detallesPago'];
+
+    // Limpiar y validar los datos aquí
+    // ...
 
     // Generar un ID único para la compra
     $idCompra = uniqid('compra_');
 
-    // Supongamos que todo es válido y procedemos a guardar la orden en la base de datos
-    // Deberías usar una declaración preparada para insertar los datos
+    // Insertar datos en la base de datos
+    $stmt = $conn->prepare("INSERT INTO alokairua (idCompra, nombreCliente, email, direccion, detallesPago, productoId, nombreProducto, precioProducto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssss", $idCompra, $nombreCliente, $emailCliente, $direccionCliente, $detallesPago, $productoId, $nombreProducto, $precioProducto);
+    $stmt->execute();
 
-    // Mostrar un mensaje de confirmación con el ID de compra
-    echo "<div>¡Gracias por tu compra! Tu ID de compra es: $idCompra</div>";
-    // Aquí podrías redirigir o mostrar un mensaje de éxito
-    // Para redirigir, puedes descomentar la línea siguiente y modificar la URL de destino
-    // header("Location: success.php?purchaseId=$idCompra");
-    exit();
+    if ($stmt->affected_rows > 0) {
+        echo "<div>¡Gracias por tu compra! Tu ID de compra es: $idCompra</div>";
+        // Redirigir o mostrar un mensaje de éxito
+        // header("Location: success.php?purchaseId=$idCompra");
+        $stmt->close();
+        $conn->close();
+        exit();
+    } else {
+        echo "Error al procesar la compra: " . $stmt->error;
+    }
 }
 ?>
 
@@ -33,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Pagar Producto</title>
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/pago.css"> <!-- Asumiendo que tienes estilos aquí -->
+    <link rel="stylesheet" href="/Talde5_holanda/src/css/pago.css">
 </head>
 <body>
     <h2>Página de Pago para <?php echo htmlspecialchars($nombreProducto); ?></h2>
@@ -50,7 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="direccion">Dirección:</label>
             <input type="text" id="direccion" name="direccion" required>
         </div>
-        <!-- Agregar más campos según sea necesario -->
         <div>
             <label for="detalles">Detalles de Pago (Simulado):</label>
             <input type="text" id="detalles" name="detallesPago" placeholder="Número de tarjeta" required>
@@ -61,4 +84,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </body>
 </html>
+
 

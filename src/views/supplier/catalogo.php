@@ -201,6 +201,21 @@ if (isset($_POST['action']) && $_POST['action'] == 'toggleFavorite') {
 </div>
 
 <script>
+    $(document).ready(function() {
+    $('.rent-now').click(function() {
+        var productoId = $(this).data('producto-id');
+
+        $.post('catalogo.php', { productoId: productoId }, function(response) {
+            var data = JSON.parse(response);
+            if (data.success) {
+                // Redireccionar a la página del carrito
+                window.location.href = 'cesta.php';
+            } else {
+                alert("El producto se ha añadido a la cesta");
+            }
+        });
+    });
+});
     var slideIndex = 0;
     showSlides(slideIndex);
     

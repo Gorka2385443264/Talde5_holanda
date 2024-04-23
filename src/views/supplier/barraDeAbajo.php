@@ -9,9 +9,9 @@ $apellido_usuario = isset($_SESSION['apellido_usuario']) ? $_SESSION['apellido_u
 // Aquí agregamos el código para obtener y asignar el nombre y apellido del usuario si ha iniciado sesión
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // Si el usuario ha iniciado sesión, obtenemos el nombre y apellido de la base de datos
-    $servername = "erronka3_5taldea";
-    $username = "5taldea";
-    $password = "1@ WMG2024";
+    $servername = "localhost:3306";
+    $username = "root";
+    $password = "1WMG2023";
     $dbname = "erronka3";
 
     // Crear conexión

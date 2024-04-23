@@ -5,6 +5,16 @@ session_start();
 $carrito = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $total = 0;
 
+// Si se recibe una actualización de las horas via AJAX
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['index']) && isset($_POST['hours'])) {
+    if (isset($carrito[$_POST['index']])) {
+        $carrito[$_POST['index']]['hours'] = intval($_POST['hours']);
+        $_SESSION['cart'] = $carrito; // Guardar el cambio en la sesión
+        echo json_encode(['success' => true]); // Responder a la solicitud AJAX
+        exit; // Finalizar la ejecución del script para no generar salida HTML
+    }
+}
+
 // Manejar la eliminación de un producto del carrito
 if (isset($_GET['remove']) && isset($carrito[$_GET['remove']])) {
     unset($carrito[$_GET['remove']]);
@@ -21,29 +31,6 @@ if (isset($_GET['remove']) && isset($carrito[$_GET['remove']])) {
     <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
     <link rel="stylesheet" href="/Talde5_holanda/src/css/cesta.css">
     <title>Cesta de Compra</title>
-    <script>
-    function updateSubtotal(index) {
-        // Captura el precio y las horas seleccionadas
-        var price = parseFloat(document.getElementById('price_' + index).innerText.replace('$', ''));
-        var hours = parseInt(document.getElementById('hours_' + index).value);
-        var subtotal = price * hours;
-
-        // Actualiza el campo subtotal correspondiente
-        document.getElementById('subtotal_' + index).innerText = '$' + subtotal.toFixed(2);
-        
-        // Actualiza el total general
-        updateTotal();
-    }
-
-    function updateTotal() {
-        var total = 0;
-        var subtotals = document.getElementsByClassName('subtotal');
-        for (var i = 0; i < subtotals.length; i++) {
-            total += parseFloat(subtotals[i].innerText.replace('$', ''));
-        }
-        document.getElementById('total').innerText = '$' + total.toFixed(2);
-    }
-    </script>
 </head>
 <body>
     <div class="mainDiv">
@@ -89,5 +76,40 @@ if (isset($_GET['remove']) && isset($carrito[$_GET['remove']])) {
         <?php endif; ?>
     </div>
     <?php require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php"); ?>
+    <script>
+    $(document).ready(function() {
+        $('select[id^="hours_"]').change(function() {
+            var index = this.id.split('_')[1];
+            var hours = $(this).val();
+            var price = parseFloat($('#price_' + index).text().replace('$', ''));
+            var subtotal = price * hours;
+            $('#subtotal_' + index).text('$' + subtotal.toFixed(2));
+
+            // Enviar los cambios al servidor para actualizar la sesión
+            $.post('cesta.php', { index: index, hours: hours }, function(response) {
+                console.log(response); // Puedes quitar esto después de confirmar que funciona
+            });
+
+            updateTotal(); // Actualizar el total general
+        });
+    });
+
+    function updateSubtotal(index) {
+        var price = parseFloat(document.getElementById('price_' + index).innerText.replace('$', ''));
+        var hours = parseInt(document.getElementById('hours_' + index).value);
+        var subtotal = price * hours;
+        document.getElementById('subtotal_' + index).innerText = '$' + subtotal.toFixed(2);
+        updateTotal();
+    }
+
+    function updateTotal() {
+        var total = 0;
+        var subtotals = document.getElementsByClassName('subtotal');
+        for (var i = 0; i < subtotals.length; i++) {
+            total += parseFloat(subtotals[i].innerText.replace('$', ''));
+        }
+        document.getElementById('total').innerText = '$' + total.toFixed(2);
+    }
+    </script>
 </body>
 </html>
