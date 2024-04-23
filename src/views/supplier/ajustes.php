@@ -1,7 +1,6 @@
 <?php
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 
-// Inicializar la variable $message
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -9,30 +8,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Cargar el archivo XML
     $xml = simplexml_load_file('user_config.xml');
-    $user = $xml->xpath("/users/user[@id='{$_SESSION['nombre_usuario']}']")[0];
 
-    // Actualizar el color del usuario en el archivo XML
-    if ($user) {
-        $user->color = $color;
-
-        // Guardar el XML
-        $xml->asXML('user_config.xml');
-        $message = 'Color actualizado correctamente.';
+    if ($xml === false) {
+        $message = 'Error al cargar la configuración del usuario.';
     } else {
-        $message = 'Usuario no encontrado.';
+        $result = $xml->xpath("/users/user[@id='{$_SESSION['nombre_usuario']}']");
+
+        if (!empty($result)) {
+            $user = $result[0]; // Safe to access the first element
+
+            // Actualizar el color del usuario en el archivo XML
+            $user->$color = $color;
+
+            // Guardar el XML
+            $xml->asXML('user_config.xml');
+            $message = 'Color actualizado correctamente.';
+        } else {
+            $message = 'Usuario no encontrado.';
+        }
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Ajustes de Perfil</title>
     <link rel="stylesheet" href="/Talde5_holanda/src/css/ajustes.css">
 </head>
-
 <body>
     <div class="container">
         <h1>Ajustes de Perfil</h1>
@@ -49,22 +53,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </form>
 
-        <!-- Botón para ir hacia atrás -->
         <button onclick="goBack()">Volver Atrás</button>
 
         <?php
-        // Incluir la barra de abajo
         require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/barraDeAbajo.php");
         ?>
 
     </div>
-
     <script>
-        // Función para ir hacia atrás en la historia del navegador
         function goBack() {
             window.history.back();
         }
     </script>
 </body>
-
 </html>

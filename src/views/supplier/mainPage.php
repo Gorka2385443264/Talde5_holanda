@@ -3,8 +3,14 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 
 // Cargar el color del usuario desde el archivo XML
 $xml = simplexml_load_file('user_config.xml');
-$userColor = ($xml && isset($_SESSION['nombre_usuario'])) ? (string) $xml->xpath("/users/user[@id='{$_SESSION['nombre_usuario']}']/color")[0] : "#ffffff"; // Color por defecto si no se encuentra en el XML
+$userColor = "#ffffff"; // Color por defecto si no se encuentra en el XML
 
+if ($xml && isset($_SESSION['nombre_usuario'])) {
+    $result = $xml->xpath("/users/user[@id='{$_SESSION['nombre_usuario']}']/color");
+    if (!empty($result)) {
+        $userColor = (string) $result[0]; // Safe to access the first element
+    }
+}
 ?>
 
 <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
@@ -13,9 +19,7 @@ $userColor = ($xml && isset($_SESSION['nombre_usuario'])) ? (string) $xml->xpath
 <style>
     /* Aplicar el color del usuario al contenedor deseado */
     .container {
-        background-color:
-            <?= $userColor ?>
-        ;
+        background-color: <?= $userColor ?>;
     }
 </style>
 
