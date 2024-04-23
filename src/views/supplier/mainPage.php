@@ -1,10 +1,23 @@
 <?php
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
+
+// Cargar el color del usuario desde el archivo XML
+$xml = simplexml_load_file('user_config.xml');
+$userColor = ($xml && isset($_SESSION['nombre_usuario'])) ? (string) $xml->xpath("/users/user[@id='{$_SESSION['nombre_usuario']}']/color")[0] : "#ffffff"; // Color por defecto si no se encuentra en el XML
+
 ?>
 
 <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
 <title>Fiets.Huur </title>
 </head>
+<style>
+    /* Aplicar el color del usuario al contenedor deseado */
+    .container {
+        background-color:
+            <?= $userColor ?>
+        ;
+    }
+</style>
 
 <body>
     <!-- Div verde en la parte superior -->
@@ -41,6 +54,6 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
     </div>
 
     <?php
-        require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php");
+    require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php");
     ?>
 </body>

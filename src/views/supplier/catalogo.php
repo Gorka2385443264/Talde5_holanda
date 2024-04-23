@@ -119,7 +119,6 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 
     <?php require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/barraDeAbajo.php"); ?>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.rent-now').click(function () {
@@ -129,16 +128,17 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
                     console.log(response); // Verificar la respuesta del servidor en la consola del navegador
                     var data = JSON.parse(response);
                     if (data.success) {
-                        // Redireccionar a la página del carrito
+                        // Redireccionar a la página del carrito solo si la solicitud fue exitosa
                         window.location.href = 'cesta.php';
                     } else {
-                        alert("El producto se ha añadido a la cesta");
+                        alert("Ha ocurrido un error al añadir el producto al carrito");
                     }
                 });
 
             });
         });
     </script>
+
 </body>
 
 </html>
