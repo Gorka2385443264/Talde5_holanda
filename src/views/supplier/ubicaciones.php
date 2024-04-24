@@ -9,6 +9,54 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
             height: 400px;
             width: 100%;
         }
+        body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    form {
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    textarea {
+        width: calc(100% - 22px); /* Full width minus padding and border */
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .comentario {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDEnVgmM_Lf_jRVmR0LzU--TRdAUcmDg&callback=initMap&libraries=&v=weekly" defer></script>
     <script>
@@ -49,6 +97,37 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
         <h1>Ubicaciones de bicis en Amsterdam</h1>
         <div id="map"></div>
     </div>
+    <form action="procesar_comentario.php" method="post">
+        <label for="titulo">Título del comentario:</label>
+        <input type="text" id="titulo" name="titulo" required><br><br>
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Enviar comentario">
+    </form>
+    <?php
+    $archivo_xml = "comentarios.xml";
+
+    // Comprueba si el archivo XML existe y no está vacío
+    if (file_exists($archivo_xml) && filesize($archivo_xml) > 0) {
+        $xml = simplexml_load_file($archivo_xml);
+        
+        // Comprueba si el archivo XML se cargó correctamente
+        if ($xml) {
+            // Itera sobre cada elemento 'usuarioa' dentro del XML
+            foreach ($xml->comentario as $comentario) {
+                echo "<div>";
+                echo "<p><strong>COMENTARIOS</strong>";
+                echo "<p><strong>Título:</strong> " . htmlspecialchars($comentario->titulo) . "</p>";
+                echo "<p><strong>Comentario:</strong> " . htmlspecialchars($comentario->comentario) . "</p>";
+                echo "</div><br>";
+            }
+        } else {
+            echo "Error cargando el archivo XML.";
+        }
+    } else {
+        echo "El archivo XML no existe o está vacío.";
+    }
+    ?>
 
     <?php
     require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php");
