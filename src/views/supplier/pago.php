@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['cart'])) {
     $detallesPago = $_POST['detallesPago'];
 
     foreach ($carrito as $item) {
-        $id_bezeroa = 1; // Suponiendo que el ID del cliente está definido o almacenado en algún lugar
+        $id_bezeroa = $_SESSION['id']; // Suponiendo que el ID del cliente está definido o almacenado en algún lugar
         $id_bizikleta = $item['id'];
         $prezioa = $item['price'] * (isset($item['hours']) ? $item['hours'] : 1);
         $denbora = isset($item['hours']) ? $item['hours'] : 1;

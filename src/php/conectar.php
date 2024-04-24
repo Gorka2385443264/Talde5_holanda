@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['correo_login']) && iss
     $contraseña_login = $_POST['contraseña_login'];
 
     // Verificar las credenciales en la tabla erronka3.bezeroa
-    $sql = "SELECT izena, abizena FROM bezeroa WHERE korreoa=? AND pasahitza=?";
+    $sql = "SELECT * FROM bezeroa WHERE korreoa=? AND pasahitza=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $correo_login, $contraseña_login);
     $stmt->execute();
@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['correo_login']) && iss
         $user = $result->fetch_assoc();
         $_SESSION['loggedin'] = true;
         $_SESSION['correo'] = $correo_login;
+        $_SESSION['id'] = $user['id_bezeroa'];
         $_SESSION['nombre_usuario'] = $user['izena'];
         $_SESSION['apellido_usuario'] = $user['abizena'];
         echo "Inicio de sesión exitoso";
