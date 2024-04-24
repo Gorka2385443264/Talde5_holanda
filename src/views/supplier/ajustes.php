@@ -46,28 +46,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <head>
     <meta charset="UTF-8">
-    <title>Ajustes de Perfil</title>
+    <title><?= trans("ajustes") ?></title>
     <link rel="stylesheet" href="/Talde5_holanda/src/css/ajustes.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Ajustes de Perfil</h1>
+        <h1><?= trans("ajustes") ?></h1>
         <?php if (!empty($message)): ?>
             <p><?= htmlspecialchars($message) ?></p>
         <?php endif; ?>
         <form action="ajustes.php" method="post">
             <div class="form-group">
-                <label for="color">Color de Fondo:</label>
+                <label for="color"><?= trans("Color de fondo") ?>:</label>
                 <!-- Mostrar el color del XML como valor predeterminado -->
                 <input type="color" id="color" name="color" value="<?= $userColor ?>" required>
             </div>
             <div class="form-group">
-                <button type="submit" class="save-btn">Guardar Cambios</button>
+                <button type="submit" class="save-btn"><?= trans("Guardar") ?></button>
             </div>
         </form>
 
-        <button onclick="goBack()">Volver Atrás</button>
+        <button onclick="goBack()"><?= trans("Go back") ?></button>
 
     </div>
     <script>

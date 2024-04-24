@@ -10,11 +10,11 @@ $apellido_usuario = isset($_SESSION['apellido_usuario']) ? $_SESSION['apellido_u
             <i class="fa-regular fa-circle-user"></i>
         </div>
         <div class="resto" style="margin-right: auto;">
-            <h1>Hola!</h1>
+            <h1><?= trans("Hola") ?>!</h1>
             <h3>
                 <?php echo $nombre_usuario . " " . $apellido_usuario; ?>
             </h3>
-            <div style="margin-right: auto;">Iniciar viaje</div>
+            <div style="margin-right: auto;"><?= trans("Iniciar viaje") ?></div>
         </div>
     </div>
     <div class="baraAbajo">

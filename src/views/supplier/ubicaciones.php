@@ -85,7 +85,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
             });
         }
     </script>
-    <title>Fiets.Huur - Ubicaciones de Bicis</title>
+    <title>Fiets.Huur</title>
 </head>
 <body>
     <div class="sidebar">
@@ -94,15 +94,15 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
         ?>
     </div>
     <div class="mainDiv">
-        <h1>Ubicaciones de bicis en Amsterdam</h1>
+        <h1><?= trans("Ubicaciones") ?></h1>
         <div id="map"></div>
     </div>
     <form action="procesar_comentario.php" method="post">
-        <label for="titulo">Título del comentario:</label>
+        <label for="titulo"><?= trans("titulo") ?>:</label>
         <input type="text" id="titulo" name="titulo" required><br><br>
-        <label for="comentario">Comentario:</label>
+        <label for="comentario"><?= trans("Coment") ?>:</label>
         <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
-        <input type="submit" value="Enviar comentario">
+        <input type="submit" value="<?= trans("sendComment") ?>">
     </form>
     <?php
     $archivo_xml = "comentarios.xml";
@@ -116,9 +116,9 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
             // Itera sobre cada elemento 'usuarioa' dentro del XML
             foreach ($xml->comentario as $comentario) {
                 echo "<div>";
-                echo "<p><strong>COMENTARIOS</strong>";
-                echo "<p><strong>Título:</strong> " . htmlspecialchars($comentario->titulo) . "</p>";
-                echo "<p><strong>Comentario:</strong> " . htmlspecialchars($comentario->comentario) . "</p>";
+                echo "<p><strong>". '<?= trans("Comentarios") ?>'. "</strong>";
+                echo "<p><strong>". '<?= trans("titulo") ?>'. "</strong> " . htmlspecialchars($comentario->titulo) . "</p>";
+                echo "<p><strong>". '<?= trans("Coment") ?>'. ":</strong> " . htmlspecialchars($comentario->comentario) . "</p>";
                 echo "</div><br>";
             }
         } else {

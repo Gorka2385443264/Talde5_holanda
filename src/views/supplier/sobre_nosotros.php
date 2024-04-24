@@ -24,39 +24,34 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
         ?>
     </div>
     <div class="mainDiv">
-        <h1>Sobre nosotros</h1>
+        <h1><?= trans("Sobrenosotros") ?></h1>
     </div>
 
 
 
     <main>
         <section>
-            <h2>Nuestra Misión</h2>
-            <p>Ofrecer un servicio de alquiler de bicicletas accesible, sostenible y de alta calidad para mejorar la
-                movilidad urbana y fomentar un estilo de vida activo y ecológico.</p>
+            <h2><?= trans("Nuestra mision") ?></h2>
+            <p><?= trans("ourMis") ?></p>
         </section>
         <section>
-            <h2>Nuestra Visión</h2>
-            <p>Ser reconocidos como la principal opción de movilidad urbana sostenible, expandiendo nuestra cobertura y
-                diversificando nuestra flota de bicicletas para satisfacer todas las necesidades de nuestros usuarios.
+            <h2><?= trans("Nuestra Vision") ?></h2>
+            <p><?= trans("ourVis") ?>
             </p>
         </section>
         <section id="equipo">
-            <h2>Conoce al Equipo</h2>
+            <h2><?= trans("Conoce al equipo") ?></h2>
             <div class="miembro">
                 <h3>Beñat</h3>
-                <p>Fundador y CEO. Apasionado del ciclismo y la innovación, Beñat lidera el equipo con visión y
-                    dedicación.</p>
+                <p><?= trans("Beñat") ?></p>
             </div>
             <div class="miembro">
                 <h3>Gorka</h3>
-                <p>Co-fundador y CTO. Ingeniero y ciclista, Gorka es el cerebro detrás de nuestra tecnología y
-                    operaciones.</p>
+                <p><?= trans("Gorka") ?></p>
             </div>
             <div class="miembro">
                 <h3>Urko</h3>
-                <p>Co-fundador y Director de Marketing. Creativo y estratega, Urko se encarga de conectar nuestra marca
-                    con la comunidad.</p>
+                <p><?= trans("Urko") ?></p>
             </div>
         </section>
     </main>

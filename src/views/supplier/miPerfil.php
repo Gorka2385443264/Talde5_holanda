@@ -25,7 +25,7 @@ $nombre_usuario = $_SESSION['nombre_usuario'] ?? 'Invitado';
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Perfil</title>
+    <title><? trans("Mi perfil") ?></title>
     <link rel="stylesheet" href="/Talde5_holanda/src/css/miPerfil.css">
     <!-- Incluir aquí tu archivo CSS -->
 </head>
@@ -34,16 +34,16 @@ $nombre_usuario = $_SESSION['nombre_usuario'] ?? 'Invitado';
         <button class="back-button">⬅</button>
     </a>
     <div class="Mainperfil">
-        <h1>Hola, <?php echo htmlspecialchars($nombre_usuario); ?></h1>
+        <h1><? trans("hola") ?>, <?php echo htmlspecialchars($nombre_usuario); ?></h1>
         
         <section>
-            <h2>Historial de Compras</h2>
+            <h2><? trans("histDeCompra") ?></h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Fecha</th>
-                        <th>Monto</th>
+                        <th><? trans("Product") ?></th>
+                        <th><? trans("Fecha") ?></th>
+                        <th><? trans("Precio") ?></th>
                     </tr>
                 </thead>
                 <tbody>

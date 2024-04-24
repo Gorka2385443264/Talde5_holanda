@@ -17,6 +17,7 @@ return [
 
     //alert
     "inicioEx" => "Saioaren hasiera arrakastatsua",
+    "credIncorrectas" => "Kredentzial okerrak",
     "aceptar" => "onartu",
     //Translate
     "hello" => "Kaixo",
@@ -165,6 +166,7 @@ return [
     "Procesando" => "Prozesatzen",
     
     //Mi perfil
+    "Mi perfil" => "Nire profila",
     "hola" => "Kaixo",
     "histDeCompra" => "Erosketa historikoa",
     "Product" => "Produktua",

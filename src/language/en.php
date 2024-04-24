@@ -5,10 +5,10 @@ return [
     "Iniciar sesion" => "Log in",
     "placeHold1" => "Email",
     "placeHold2" => "Password",
-    "log in" => "Do you already have an account?",
+    "log in" => "Log in to see our web",
     "log in2" => "Log in to enter the page",
     "log in3" => "Log in",
-    "Register" => "You don't have an account yet?",
+    "Register" => "Register yourself",
     "Register2" => "Register so you can log in",
     "Register3" => "Register",
     "placeHold3" => "Name",
@@ -16,7 +16,8 @@ return [
     "placeHold5" => "Phone number",
 
     //alert
-    "inicioEx" => "Inicio de sesion exitoso",
+    "inicioEx" => "The start of the successful session",
+    "credIncorrectas" => "Wrong credentials",
     "aceptar" => "accept",
     //Translate
     "hello" => "Hello",
@@ -178,12 +179,12 @@ return [
     "Procesando" => "Processing",
     
     //Mi perfil
+    "Mi perfil" => "My profile",
     "hola" => "Hello",
     "histDeCompra" => "Historical purchases",
     "Product" => "Product",
     "Fecha" => "Date",
     "Precio" => "Price",
-    "Número de teléfono móvil" => "Mobile phone number",
     //Ajustes
     "ajustes" => "Profile settings",
     "Color de fondo" => "Background color",

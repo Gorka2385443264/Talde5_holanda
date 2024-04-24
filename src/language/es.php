@@ -17,6 +17,7 @@ return [
 
     //alert
     "inicioEx" => "Inicio de sesión exitoso",
+    "credIncorrectas" => "Credenciales incorrectas",
     "aceptar" => "aceptar",
     //Translate
     "hello" => "Hola",
@@ -165,6 +166,7 @@ return [
     "Procesando" => "Procesando",
     
     //Mi perfil
+    "Mi perfil" => "Mi perfil",
     "hola" => "Hola",
     "histDeCompra" => "Histórico de compras",
     "Product" => "Producto",

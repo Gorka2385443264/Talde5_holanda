@@ -5,7 +5,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 
 <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
 <link rel="stylesheet" href="/Talde5_holanda/src/css/sanciones.css">
-<title>Sanciones - Alquiler de Bicicletas </title>
+<title><? trans("sanciones") ?> </title>
 </head>
 <?php
 
@@ -31,31 +31,26 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
 
 
     <header>
-        <h1>Sanciones por Uso Indebido de Bicicletas</h1>
+        <h1><? trans("sanciones") ?></h1>
     </header>
     <main>
         <section>
-            <h2>Introducción</h2>
-            <p>En nuestro compromiso por ofrecer un servicio de calidad y mantener en buen estado nuestro parque de
-                bicicletas, establecemos un sistema de sanciones para asegurar el buen uso de las mismas.</p>
+            <h2><? trans("Introduccion") ?></h2>
+            <p><? trans("intro") ?></p>
         </section>
         <section>
-            <h2>Tipos de Sanciones</h2>
+            <h2><? trans("Tipos de sanciones") ?></h2>
             <ul>
-                <li><strong>Devolución tardía:</strong> Se aplicará un cargo adicional proporcional al tiempo de
-                    retraso.</li>
-                <li><strong>Daños leves:</strong> Cargos adicionales dependiendo de la gravedad y el costo de
-                    reparación.</li>
-                <li><strong>Daños graves o pérdida:</strong> Se cobrará el valor total de la bicicleta, además de
-                    posibles gastos administrativos.</li>
-                <li><strong>Uso indebido:</strong> Multas por utilizar las bicicletas en condiciones no permitidas.
+                <li><strong><? trans("Devolucion tardia:") ?></strong> <? trans("devTar") ?>.</li>
+                <li><strong><? trans("Minor damage") ?>:</strong> <? trans("minDam") ?></li>
+                <li><strong><? trans("Serious damage or loss") ?>:</strong> <? trans("damLos") ?></li>
+                <li><strong><? trans("Wrong use") ?>:</strong> <? trans("WrongUse") ?>
                 </li>
             </ul>
         </section>
         <section>
-            <h2>Proceso de Sanción</h2>
-            <p>Las sanciones se aplicarán según el criterio de nuestro equipo de supervisión y podrán ser apeladas
-                dentro de los 30 días siguientes a su notificación.</p>
+            <h2><? trans("Sanction process") ?></h2>
+            <p><? trans("sancProc") ?></p>
         </section>
     </main>
 

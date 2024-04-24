@@ -10,7 +10,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/Talde5_holanda/src/css/login.css">
 </head>
-<?php require_once "../../php/conectar.php"; ?>
+<?php
+
+require_once ("../supplier/_parts/head.php");
+ require_once ("../../php/conectar.php");
+?>
 
 <body>
     <main>
@@ -18,14 +22,14 @@
         <div class="contenedor__todo">
             <div class="caja__trasera">
                 <div class="caja__trasera-login">
-                    <h3>¿Ya tienes una cuenta?</h3>
-                    <p>Inicia sesión para entrar en la página</p>
-                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    <h3><?= trans("log in") ?></h3>
+                    <p><?= trans("log in2") ?></p>
+                    <button id="btn__iniciar-sesion"><?= trans("log in3") ?></button>
                 </div>
                 <div class="caja__trasera-register">
-                    <h3>¿Aún no tienes una cuenta?</h3>
-                    <p>Regístrate para que puedas iniciar sesión</p>
-                    <button id="btn__registrarse">Regístrarse</button>
+                    <h3><?= trans("Register") ?></h3>
+                    <p><?= trans("Register2") ?></p>
+                    <button id="btn__registrarse"><?= trans("Register3") ?></button>
                 </div>
             </div>
 
@@ -33,23 +37,24 @@
             <div class="contenedor__login-register">
                 <!--Login-->
                 <form action="../../php/conectar.php" method="post" class="formulario__login" id="form_login">
-                    <h2>Iniciar Sesión</h2>
-                    <input type="email" placeholder="Correo Electronico" name="correo_login">
-                    <input type="password" placeholder="Contraseña" name="contraseña_login">
-                    <button type="submit" id="sartu">Entrar</button>
+                    <h2><?= trans("log in3") ?></h2>
+                    <input type="email" placeholder="<?= trans("placeHold1") ?>" name="correo_login">
+                    <input type="password" placeholder="<?= trans("placeHold2") ?>" name="contraseña_login">
+                    <button type="submit" id="sartu"><?= trans("log in3") ?></button>
                 </form>
                 <!--Register-->
                 <form action="" method="post" class="formulario__register">
-                    <h2>Regístrarse</h2>
-                    <input type="text" placeholder="Nombre" name="nombre">
-                    <input type="text" placeholder="Apellido" name="apellido">
-                    <input type="email" placeholder="Correo Electronico" name="correo">
-                    <input type="number" placeholder="Telefono" name="telefono">
-                    <input type="password" placeholder="Contraseña" name="contraseña">
-                    <button type="submit" id="erregistratu">Regístrarse</button>
+                    <h2><?= trans("Register3") ?></h2>
+                    <input type="text" placeholder="<?= trans("placeHold3") ?>" name="nombre">
+                    <input type="text" placeholder="<?= trans("placeHold4") ?>" name="apellido">
+                    <input type="email" placeholder="<?= trans("placeHold1") ?>" name="correo">
+                    <input type="number" placeholder="<?= trans("placeHold5") ?>" name="telefono">
+                    <input type="password" placeholder="<?= trans("placeHold2") ?>" name="contraseña">
+                    <button type="submit" id="erregistratu"><?= trans("Register3") ?></button>
                 </form>
             </div>
         </div>
+        
 
     </main>
 

@@ -46,17 +46,17 @@
     ?>
 
     <div class="mainDiv">
-        <h1>Cesta de la Compra</h1>
+        <h1><? trans("Cesta_de_compra") ?></h1>
         <?php if (empty($carrito)): ?>
-            <p>Tu cesta está vacía. <a href="catalogo.php">Volver al catálogo.</a></p>
+            <p><? trans("Tu cesta esta vacia") ?>. <a href="catalogo.php"><? trans("Volver al catalogo") ?>.</a></p>
         <?php else: ?>
             <table>
                 <tr>
-                    <th>Producto</th>
-                    <th>Precio por Hora</th>
-                    <th>Horas</th>
-                    <th>Acción</th>
-                    <th>Subtotal</th>
+                    <th><? trans("Producto") ?></th>
+                    <th><? trans("Precio_") ?></th>
+                    <th><? trans("Horas") ?></th>
+                    <th><? trans("Accion") ?></th>
+                    <th><? trans("Total") ?></th>
                 </tr>
                 <?php foreach ($carrito as $index => $item): ?>
                     <tr>
@@ -73,7 +73,7 @@
                                 <?php endfor; ?>
                             </select>
                         </td>
-                        <td><a href="cesta.php?remove=<?php echo $index; ?>" class="button">Eliminar</a></td>
+                        <td><a href="cesta.php?remove=<?php echo $index; ?>" class="button"><? trans("ElimButt") ?></a></td>
                         <td id="subtotal_<?php echo $index; ?>" class="subtotal">
                             $<?php echo isset($item['price']) && isset($item['hours']) ? number_format($item['price'] * $item['hours'], 2) : ''; ?>
                         </td>
@@ -85,13 +85,13 @@
                     ?>
                 <?php endforeach; ?>
                 <tr>
-                    <th>Total</th>
+                    <th><? trans("Total") ?></th>
                     <th colspan="4" id="total">$<?php echo number_format($total, 2); ?></th>
                 </tr>
             </table>
             <div>
-                <a href="catalogo.php" class="button">Continuar Comprando</a>
-                <a href="pago.php" class="button">Proceder al Pago</a>
+                <a href="catalogo.php" class="button"><? trans("Continuar comprando") ?></a>
+                <a href="pago.php" class="button"><? trans("Pay") ?></a>
             </div>
         <?php endif; ?>
     </div>
