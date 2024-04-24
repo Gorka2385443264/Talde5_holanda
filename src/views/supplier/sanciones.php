@@ -5,7 +5,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 
 <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
 <link rel="stylesheet" href="/Talde5_holanda/src/css/sanciones.css">
-<title><? trans("sanciones") ?> </title>
+<title><?= trans("sanciones") ?> </title>
 </head>
 <?php
 
@@ -16,6 +16,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
 ?>
 
 <body>
+
     <!-- Div verde en la parte superior -->
     <!-- NO TOCAR -->
     <div class="sidebar">
@@ -31,26 +32,26 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
 
 
     <header>
-        <h1><? trans("sanciones") ?></h1>
+        <h1><?= trans("sanciones") ?></h1>
     </header>
     <main>
         <section>
-            <h2><? trans("Introduccion") ?></h2>
-            <p><? trans("intro") ?></p>
+            <h2><?= trans("Introduccion") ?></h2>
+            <p><?= trans("intro") ?></p>
         </section>
         <section>
-            <h2><? trans("Tipos de sanciones") ?></h2>
+            <h2><?= trans("Tipos de sanciones") ?></h2>
             <ul>
-                <li><strong><? trans("Devolucion tardia:") ?></strong> <? trans("devTar") ?>.</li>
-                <li><strong><? trans("Minor damage") ?>:</strong> <? trans("minDam") ?></li>
-                <li><strong><? trans("Serious damage or loss") ?>:</strong> <? trans("damLos") ?></li>
-                <li><strong><? trans("Wrong use") ?>:</strong> <? trans("WrongUse") ?>
+                <li><strong><?= trans("Devolucion tardia:") ?></strong> <?= trans("devTar") ?>.</li>
+                <li><strong><?= trans("Minor damage") ?>:</strong> <?= trans("minDam") ?></li>
+                <li><strong><?= trans("Serious damage or loss") ?>:</strong> <?= trans("damLos") ?></li>
+                <li><strong><?= trans("Wrong use") ?>:</strong> <?= trans("WrongUse") ?>
                 </li>
             </ul>
         </section>
         <section>
-            <h2><? trans("Sanction process") ?></h2>
-            <p><? trans("sancProc") ?></p>
+            <h2><?= trans("Sanction process") ?></h2>
+            <p><?= trans("sancProc") ?></p>
         </section>
     </main>
 
