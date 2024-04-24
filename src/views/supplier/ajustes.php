@@ -69,10 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <button onclick="goBack()">Volver Atrás</button>
 
-        <?php
-        require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/barraDeAbajo.php");
-        ?>
-
     </div>
     <script>
         function goBack() {

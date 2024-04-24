@@ -15,10 +15,7 @@ $historialCompras = [
     ['producto' => 'Casco de bicicleta', 'fecha' => '2023-02-20', 'monto' => '35.00€']
 ];
 
-$historialRutas = [
-    ['nombre' => 'Ruta del Parque Central', 'fecha' => '2023-03-12', 'distancia' => '5km'],
-    ['nombre' => 'Ruta del Río', 'fecha' => '2023-04-05', 'distancia' => '10km']
-];
+
 
 // Asegúrate de manejar el caso de que el usuario no esté logueado
 $nombre_usuario = $_SESSION['nombre_usuario'] ?? 'Invitado';
@@ -60,30 +57,7 @@ $nombre_usuario = $_SESSION['nombre_usuario'] ?? 'Invitado';
                 </tbody>
             </table>
         </section>
-
-        <section>
-            <h2>Historial de Rutas</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ruta</th>
-                        <th>Fecha</th>
-                        <th>Distancia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($historialRutas as $ruta): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($ruta['nombre']); ?></td>
-                        <td><?php echo htmlspecialchars($ruta['fecha']); ?></td>
-                        <td><?php echo htmlspecialchars($ruta['distancia']); ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </section>
     </div>
-    
     <?php require_once (APP_DIR . "/src/views/supplier/barraDeAbajo.php");?>
 
 </body>

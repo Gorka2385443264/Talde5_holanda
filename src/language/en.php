@@ -1,7 +1,27 @@
 <?php
 return [
+
+    //Inicio de sesion
+    "Iniciar sesion" => "Log in",
+    "placeHold1" => "Email",
+    "placeHold2" => "Password",
+    "log in" => "Do you already have an account?",
+    "log in2" => "Log in to enter the page",
+    "log in3" => "Log in",
+    "Register" => "You don't have an account yet?",
+    "Register2" => "Register so you can log in",
+    "Register3" => "Register",
+    "placeHold3" => "Name",
+    "placeHold4" => "Surname",
+    "placeHold5" => "Phone number",
+
+    //alert
+    "inicioEx" => "Inicio de sesion exitoso",
+    "aceptar" => "accept",
+    //Translate
     "hello" => "Hello",
     "Aldatu" => "Change",
+    
     // FOOTER (1)
     "Contacto" => "Contacts",
     "Dirección: Encamp, AD200, Andorra" => "Address: Encamp, AD200, Andorra",
@@ -39,19 +59,23 @@ return [
     "Light and with good cushioning" => "Light and with good cushioning",
     "BMX" => "BMX",
     "Perfecta para hacer maniobras" => "Perfect for maneuvers",
-    "Bici para dos personas" => "Bike for two people",
-    "Dos ruedas" => "Two whiles",
-    "Dos manillares" => "Two handlebars",
-    "Cuatro pedales" => "Four pedals",
-    "Perfecta para viajes de pareja" => "Perfect for couples trips",
-    "Tres rueda" => "Three whiles",
-    "Un manillar" => "One handlebar",
-    "Dos pedales" => "Two pedals",
-    "Perfect for starters" => "Perfect for starters",
+    //"Bici para dos personas" => "Bike for two people",
+    //"Dos ruedas" => "Two whiles",
+    //"Dos manillares" => "Two handlebars",
+    //"Cuatro pedales" => "Four pedals",
+    //"Perfecta para viajes de pareja" => "Perfect for couples trips",
+    //"Tres rueda" => "Three whiles",
+    //"Un manillar" => "One handlebar",
+    //"Dos pedales" => "Two pedals",
+    //"Perfect for starters" => "Perfect for starters",
 
 
     // Ubicaciones
     "Ubicaciones" => "Bike locations in Amsterdam",
+    "Comentarios" => "Comments",
+    "titulo" => "Title",
+    "Coment" => "Coment",
+    "sendComment" => "Send comment",
 
     //Sanciones
     "sanciones" => "Sanctions",
@@ -154,28 +178,16 @@ return [
     "Procesando" => "Processing",
     
     //Mi perfil
-    "Apellido" => "Surname",
-    "Correo" => "Mail",
-    "Correo electrónico" => "Email",
-    "Fecha de Nacimiento" => "Birthdate",
-    "Teléfono Móvil" => "Mobile phone",
+    "hola" => "Hello",
+    "histDeCompra" => "Historical purchases",
+    "Product" => "Product",
+    "Fecha" => "Date",
+    "Precio" => "Price",
     "Número de teléfono móvil" => "Mobile phone number",
-    //CESTA 7
-    "País" => "Country",
-    "Añade aquí tu país" => "Add your country here",
-    "Provincia" => "Province",
-    "Añade aquí tu provincia" => "Add your province here",
-    "Pueblo" => "Town",
-    "Añade aquí tu pueblo" => "Add your town here",
-    "Código Postal" => "Postal Code",
-    "Añade aquí tu código postal" => "Add your postal code here",
-    "Dirección de envío" => "Shipping Address",
-    "Pon aquí la dirección a donde quieres llevar tus productos" => "Enter here the address where you want to take your products",
-    //CONF_DIRECCION_CESTA
-    "Confirmación" => "Confirmation",
-    "Aquí verás todos tus" => "Here you will see all your",
-    "confirma" => "berretsi",
-    "que estos son los tuyos" => "that these are yours",
-    "Productos solicitados" => "Requested products",
-
+    //Ajustes
+    "ajustes" => "Profile settings",
+    "Color de fondo" => "Background color",
+    "Guardar" => "Save changes",
+    "Go back" => "Go back",
+    
 ];
