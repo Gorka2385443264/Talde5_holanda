@@ -22,7 +22,7 @@ return [
     //Translate
     "hello" => "Hola",
     "Aldatu" => "Cambiar",
-    
+
     // FOOTER (1)
     "Contacto" => "Contacto",
     "Dirección: Encamp, AD200, Andorra" => "Dirección: Encamp, AD200, Andorra",
@@ -44,7 +44,14 @@ return [
     "Iniciar viaje" => "Iniciar viaje",
 
     // Catalogo
-    "Catalogo de bicis" => "Catálogo de bicis",
+
+
+    "Catálogo de Bicis" => "Catálogo de Bicis",
+    "Bicicleta electrica" => "Bicicleta eléctrica",
+    "Cómoda y una autonomía muy eficiente" => "Cómoda y una autonomía muy eficiente",
+    "Alquila ahora" => "Alquila ahora",
+
+
     "Lateste popular" => "Bicis más populares",
     "Electric bike" => "Bici eléctrica",
     "Comodo y una autonomia eficiente" => "Cómoda y con una autonomía eficiente",
@@ -62,7 +69,7 @@ return [
     "Perfecta para hacer maniobras" => "Perfecta para maniobras",
 
     // Ubicaciones
-    "Ubicaciones" => "Ubicaciones de bicis en Amsterdam",
+    "Ubicaciones" => "Ubicaciones",
     "Comentarios" => "Comentarios",
     "titulo" => "Título",
     "Coment" => "Comentario",
@@ -117,7 +124,6 @@ return [
     "idCompra" => "¡Gracias por tu compra! Tu ID de compra es:",
 
     // About us
-    "Sobrenosotros" => "Sobre nosotros",
     "Nuestra mision" => "Nuestra misión",
     "ourMis" => "Ofrecer un servicio de alquiler de bicicletas accesible, sostenible y de alta calidad para mejorar la movilidad urbana y promover un estilo de vida activo y ecológico.",
     "Nuestra Vision" => "Nuestra visión",
@@ -135,7 +141,6 @@ return [
     "Cambiar idioma" => "Cambiar idioma",
 
     // Tendencias
-    "Tendentziak" => "Tendencias",
     "ID" => "ID",
     "Izen" => "Nombre",
     "Deskription" => "Descripción",
@@ -157,14 +162,14 @@ return [
     "ubiIndex" => "Ubicaciones",
     "cataInd" => "Catálogo",
     "cestIndex" => "Carro",
-    
+
     //ESTADO DEL PRODUCTO
     "Verificar" => "Verificar estado del pedido",
     "PlaceHolder" => "Ingresa tu ID de compra",
     "VerEstado" => "Ver estado",
     "Estado" => "El estado de tu pedido con Id es",
     "Procesando" => "Procesando",
-    
+
     //Mi perfil
     "Mi perfil" => "Mi perfil",
     "hola" => "Hola",
@@ -178,5 +183,5 @@ return [
     "Color de fondo" => "Color de fondo",
     "Guardar" => "Guardar cambios",
     "Go back" => "Regresar",
-    
+
 ];

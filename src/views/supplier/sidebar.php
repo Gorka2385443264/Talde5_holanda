@@ -29,34 +29,10 @@
           <?= trans("Estado del producto") ?>
         </a></li>
       <li>
-        <div class="cart-icon">
-          <a href="/Talde5_holanda/src/views/supplier/cesta.php">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="numero_icono_cesta">
-              <?= isset($_SESSION['cesta']) ? count($_SESSION['cesta']) : 0 ?>
-            </span>
-          </a>
-        </div>
       </li>
       <li>
-        <div class="cart-icon2">
-          <div class="cart-icon2">
-            <form id="languageForm" method="post" onsubmit="return false;">
-              <div class="opcion_idioma_borde">
-                <select class="opcion_idioma" name="selectedLang" onchange="changeLanguage(this.value)">
-                  <option class="opcion_idioma" value="eus" <?php if ($_SESSION['_LANGUAGE'] === 'eus')
-                    echo 'selected'; ?>> EUS</option>
-                  <option class="opcion_idioma" value="es" <?php if ($_SESSION['_LANGUAGE'] === 'es')
-                    echo 'selected'; ?>>
-                    ES</option>
-                  <option class="opcion_idioma" value="en" <?php if ($_SESSION['_LANGUAGE'] === 'en')
-                    echo 'selected'; ?>>
-                    EN</option>
-                </select>
-              </div>
-            </form>
-          </div>
-
+        <div class="traductor">
+          <?php require_once (APP_DIR . "/src/views/supplier/_parts/selectLang.php"); ?>
         </div>
       </li>
     </ul>

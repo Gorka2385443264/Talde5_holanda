@@ -22,7 +22,7 @@ return [
     //Translate
     "hello" => "Hello",
     "Aldatu" => "Change",
-    
+
     // FOOTER (1)
     "Contacto" => "Contacts",
     "Dirección: Encamp, AD200, Andorra" => "Address: Encamp, AD200, Andorra",
@@ -44,7 +44,13 @@ return [
     "Iniciar viaje" => "Start travelling",
 
     // Catalogo
-    "Catalogo de bicis" => "Bikes catalog",
+    "Catálogo de Bicis" => "Bikes catalog",
+    "Bicicleta electrica" => "Electric bike",
+    "Cómoda y una autonomía muy eficiente" => "Comfortable and a very efficient autonomy",
+    "Alquila ahora" => "Rent now",
+
+
+
     "Lateste popular" => "Latest Popular Bikes",
     "Electric bike" => "Electric bike",
     "Comodo y una autonomia eficiente" => "Comfortable and a very efficient autonomy",
@@ -72,14 +78,14 @@ return [
 
 
     // Ubicaciones
-    "Ubicaciones" => "Bike locations in Amsterdam",
+    "Ubicaciones" => "Locations",
     "Comentarios" => "Comments",
     "titulo" => "Title",
     "Coment" => "Coment",
     "sendComment" => "Send comment",
 
     //Sanciones
-    "sanciones" => "Sanctions",
+    "Sanciones" => "Sanctions",
     "Introduccion" => "Introduction",
     "intro" => "In our commitment to offer a quality service and keep our bicycle 
     park in good condition, we establish a system of sanctions to ensure their proper use.",
@@ -98,7 +104,9 @@ return [
 
     // SIDEBAR
     "Inicio" => "Main Page",
-    "Sobre nosotros" => "About us",
+    "Catalogo" => "Catalogue",
+    "Cesta" => "Basket",
+    "Sobre Nosotros" => "About us",
     "Noticias" => "Notices",
     "Tendecias" => "Tendences",
     "Cesta de compra" => "Shopping basket",
@@ -128,7 +136,6 @@ return [
     "idCompra" => "Thank you for purchasing! Your purchase ID is:",
 
     // About us
-    "Sobrenosotros" => "About us",
     "Nuestra mision" => "Our mision",
     "ourMis" => "Offer an accessible, sustainable and high-quality bicycle rental
     service to improve urban mobility and promote an active and ecological lifestyle.",
@@ -148,7 +155,7 @@ return [
     "Cambiar idioma" => "Change language",
 
     // Tendencias
-    "Tendentziak" => "Trends",
+    "Tendencias" => "Trends",
     "ID" => "ID ",
     "Izen" => "Name",
     "Deskription" => "Description",
@@ -170,14 +177,14 @@ return [
     "ubiIndex" => "Ubications",
     "cataInd" => "Catalog",
     "cestIndex" => "Cart",
-    
+
     //ESTADO DEL PRODUCTO
     "Verificar" => "Check Order Status",
     "PlaceHolder" => "Enter your purchase ID",
     "VerEstado" => "View status",
     "Estado" => "The status of your order with Id is",
     "Procesando" => "Processing",
-    
+
     //Mi perfil
     "Mi perfil" => "My profile",
     "hola" => "Hello",
@@ -190,5 +197,5 @@ return [
     "Color de fondo" => "Background color",
     "Guardar" => "Save changes",
     "Go back" => "Go back",
-    
+
 ];

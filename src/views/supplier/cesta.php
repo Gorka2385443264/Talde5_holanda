@@ -53,7 +53,7 @@
             <table>
                 <tr>
                     <th><?= trans("Producto") ?></th>
-                    <th><?= trans("Precio_") ?></th>
+                    <th><?= trans("Precio") ?></th>
                     <th><?= trans("Horas") ?></th>
                     <th><?= trans("Accion") ?></th>
                     <th><?= trans("Total") ?></th>

@@ -38,23 +38,23 @@ if ($xml) {
         <div class="catalogoGrande">
             <a href="./sanciones.php" style="text-decoration: none; color: black;">
                 <div class="Servicios">
-                    <h1><?= trans("Sanctions") ?></h1>
+                    <h1><?= trans("Sanciones") ?></h1>
                 </div>
             </a>
 
             <a href="./ubicaciones.php" style="text-decoration: none; color: black;">
                 <div class="ubicaciones">
-                    <h1><?= trans("Ubications") ?></h1>
+                    <h1><?= trans("Ubicaciones") ?></h1>
                 </div>
             </a>
             <a href="./catalogo.php" style="text-decoration: none; color: black;">
                 <div class="catalogo">
-                    <h1><?= trans("Catalog") ?></h1>
+                    <h1><?= trans("Catalogo") ?></h1>
                 </div>
             </a>
             <a href="./cesta.php" style="text-decoration: none; color: black;">
                 <div class="tuRuta">
-                    <h1><?= trans("Cart") ?></h1>
+                    <h1><?= trans("Cesta") ?></h1>
                 </div>
             </a>
         </div>

@@ -5,7 +5,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 
 <link rel="stylesheet" href="/Talde5_holanda/src/css/main.css">
 <link rel="stylesheet" href="/Talde5_holanda/src/css/sanciones.css">
-<title><?= trans("sanciones") ?> </title>
+<title><?= trans("Sanciones") ?> </title>
 </head>
 <?php
 
@@ -32,7 +32,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
 
 
     <header>
-        <h1><?= trans("sanciones") ?></h1>
+        <h1><?= trans("Sanciones") ?></h1>
     </header>
     <main>
         <section>

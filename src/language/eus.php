@@ -22,7 +22,7 @@ return [
     //Translate
     "hello" => "Kaixo",
     "Aldatu" => "Aldatu",
-    
+
     // FOOTER (1)
     "Contacto" => "Harremanetarako",
     "Dirección: Encamp, AD200, Andorra" => "Helbidea: Encamp, AD200, Andorra",
@@ -44,7 +44,12 @@ return [
     "Iniciar viaje" => "Bidaiari ekin",
 
     // Catalogo
-    "Catalogo de bicis" => "Bizikleten katalogoa",
+    "Catalogo" => "Katalogoa",
+    "Catálogo de Bicis" => "Bizikleten Katalogoa",
+    "Bicicleta electrica" => "Bizikleta elektrikoa",
+    "Cómoda y una autonomía muy eficiente" => "Gosgarria eta autonomia oso eraginkorra",
+    "Alquila ahora" => "Orain alokatu",
+
     "Lateste popular" => "Azkeneko bizikleta ezagunak",
     "Electric bike" => "Bizikleta elektrikoa",
     "Comodo y una autonomia eficiente" => "Erosotasuna eta autonomia eraginkorra",
@@ -62,14 +67,14 @@ return [
     "Perfecta para hacer maniobras" => "Maniobrak egiteko perfektua",
 
     // Ubicaciones
-    "Ubicaciones" => "Bizikleten kokapenak Amsterdamen",
+    "Ubicaciones" => "Kokapenak",
     "Comentarios" => "Iruzkinak",
     "titulo" => "Izenburua",
     "Coment" => "Iruzkina",
     "sendComment" => "Iruzkina bidali",
 
     //Sanciones
-    "sanciones" => "Zigorrak",
+    "Sanciones" => "Zigorrak",
     "Introduccion" => "Sarrera",
     "intro" => "Gure kalitatezko zerbitzu bat eskaintzeko eta gure bizikleta parkea egoera onean mantentzeko konpromisoan, zigor sistema bat ezartzen dugu horien erabilera egokia bermatzeko.",
     "Tipos de sanciones" => "Zigorrak motak",
@@ -91,6 +96,7 @@ return [
     "Noticias" => "Berriak",
     "Tendecias" => "Joerak",
     "Cesta de compra" => "Erosketa saskia",
+    "Cesta" => "Saskia",
     "Estado del producto" => "Produktuaren egoera",
 
 
@@ -117,7 +123,6 @@ return [
     "idCompra" => "Eskerrik asko zure erosketagatik! Zure erosketa ID-a hau da:",
 
     // About us
-    "Sobrenosotros" => "Guri buruz",
     "Nuestra mision" => "Gure misioa",
     "ourMis" => "Hiriko mugikortasuna hobetzeko eta bizimodu aktibo eta ekologikoa sustatzeko bizikleta alokairu zerbitzu irisgarri, iraunkor eta kalitatezkoa eskaintzea.",
     "Nuestra Vision" => "Gure ikuspegia",
@@ -135,7 +140,7 @@ return [
     "Cambiar idioma" => "Hizkuntza aldatu",
 
     // Tendencias
-    "Tendentziak" => "Joerak",
+    "Tendencias" => "Joerak",
     "ID" => "ID",
     "Izen" => "Izena",
     "Deskription" => "Deskribapena",
@@ -157,14 +162,14 @@ return [
     "ubiIndex" => "Kokapenak",
     "cataInd" => "Katalogoa",
     "cestIndex" => "Saskia",
-    
+
     //ESTADO DEL PRODUCTO
     "Verificar" => "Eskariaren egoera egiaztatu",
     "PlaceHolder" => "Sartu zure erosketa IDa",
     "VerEstado" => "Egoera ikusi",
     "Estado" => "Zure eskariaren egoera Id honekin da",
     "Procesando" => "Prozesatzen",
-    
+
     //Mi perfil
     "Mi perfil" => "Nire profila",
     "hola" => "Kaixo",
@@ -178,5 +183,5 @@ return [
     "Color de fondo" => "Atzeko kolorea",
     "Guardar" => "Aldaketak gorde",
     "Go back" => "Itzuli",
-    
+
 ];

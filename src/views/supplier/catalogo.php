@@ -1,12 +1,11 @@
-<?php
-session_start();
+<?php require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 
 // Asumiendo que esta función devuelve todos los productos disponibles
 function obtenerProductoPorId($productoId)
 {
     $productos = [
         1 => ['id' => 1, 'name' => 'Bicicleta electrica', 'price' => 4],
-        2 => ['id' => 2, 'name' => 'Casco Aerion Carrbo', 'price' => 2],
+        2 => ['id' => 2, 'name' => 'Bicicleta de paseo', 'price' => 2],
         3 => ['id' => 3, 'name' => 'Bicicleta de Carretera', 'price' => 3],
         4 => ['id' => 4, 'name' => 'Bicicleta Eléctrica de Ciudad', 'price' => 1.5],
         5 => ['id' => 5, 'name' => 'Bicicleta de Montaña', 'price' => 3],
@@ -30,29 +29,22 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiets.Huur</title>
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/categoria.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="/Talde5_holanda/src/css/categoria.css">
 
 </head>
 
 <body>
     <div class="mainDiv">
-        <h1>Catálogo de Bicis</h1>
-        <a href="mainPage.php" class="back-to-index">
-            <button class="back-button">⬅</button>
-        </a>
+        <div class="sidebar">
+            <?php
+            require_once (APP_DIR . "/src/views/supplier/sidebar.php");
+            ?>
+        </div>
         <section class="latest top">
             <div class="scontainer">
                 <div class="heading">
-                    <h1>Latest Popular Bike</h1>
-
+                    <h1><?= trans("Catálogo de Bicis") ?></h1>
                 </div>
                 <div class="content grid top">
                     <div class="box">
@@ -61,11 +53,12 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Electric bike</h3>
-                            <p>(Comfortable and a very efficient autonomy)</p>
-                            <h2>$4 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="1">Rent
-                                now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+
+                            <h3><?= trans("Bicicleta electrica") ?></h3>
+                            <p>(<?= trans("Cómoda y una autonomía muy eficiente") ?>)</p>
+                            <h2>€4 <span>/hora</span> </h2>
+                            <button class="rent-now" data-producto-id="1"><?= trans("Alquila ahora") ?>
+</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
@@ -74,11 +67,11 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Aerion Carrbo Helmet</h3>
-                            <p>(Fashion , Twin Disc)</p>
+                            <h3>Bicicleta de paseo</h3>
+                            <p>(Moda, Disco Doble)</p>
                             <h2>$2 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="2">Rent
-                                now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <button class="rent-now" data-producto-id="2">Alquila
+                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
@@ -87,11 +80,11 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Aerion Carrbo Helmet</h3>
-                            <p>(Fashion , Twin Disc)</p>
+                            <h3>Bicicleta de paseo</h3>
+                            <p>(Moda, Disco Doble)</p>
                             <h2>$3 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="3">Rent
-                                now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <button class="rent-now" data-producto-id="3">Alquila
+                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
@@ -100,10 +93,11 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Aerion Carrbo Helmet</h3>
-                            <p>(Fashion , Twin Disc)</p>
+                            <h3>Bicicleta de paseo</h3>
+                            <p>(Moda, Disco Doble)</p>
                             <h2>$1,5 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="4">Rent now</button>
+                            <button class="rent-now" data-producto-id="4">Alquila
+                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. --></button>
                         </div>
                     </div>
                     <div class="box">
@@ -112,11 +106,11 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Aerion Carrbo Helmet</h3>
-                            <p>(Fashion , Twin Disc)</p>
+                            <h3>Bicicleta de paseo</h3>
+                            <p>(Moda, Disco Doble)</p>
                             <h2>$3 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="5">Rent
-                                now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <button class="rent-now" data-producto-id="5">Alquila
+                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
@@ -125,11 +119,11 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Aerion Carrbo Helmet</h3>
-                            <p>(Fashion , Twin Disc)</p>
+                            <h3>Bicicleta de paseo</h3>
+                            <p>(Moda, Disco Doble)</p>
                             <h2>$2 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="6">Rent
-                                now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <button class="rent-now" data-producto-id="6">Alquila
+                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                 </div>
