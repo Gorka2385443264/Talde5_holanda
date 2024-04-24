@@ -41,17 +41,37 @@ $sql = "SELECT a.id_alokairua, a.prezioa, a.data, b.mota
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
+    // Iniciar la tabla HTML
+    echo '<table border="1">';  // Añade 'border="1"' para ver los bordes de la tabla (útil para desarrollo)
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th>ID de Compra</th>';
+    echo '<th>Precio</th>';
+    echo '<th>Fecha</th>';
+    echo '<th>Tipo de Bicicleta</th>';
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
     // Salida de cada fila de datos
-    while($row = $result->fetch_assoc()) {
-        echo "id_alokairua: " . $row["id_alokairua"]. " - Precio: " . $row["prezioa"]. " - Fecha: " . $row["data"]. " - Tipo de Bicicleta: " . $row["mota"]. "<br>";
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td>' . htmlspecialchars($row["id_alokairua"]) . '</td>';
+        echo '<td>' . htmlspecialchars($row["prezioa"]) . '</td>';
+        echo '<td>' . htmlspecialchars($row["data"]) . '</td>';
+        echo '<td>' . htmlspecialchars($row["mota"]) . '</td>';
+        echo '</tr>';
     }
+    echo '</tbody>';
+    echo '</table>';
 } else {
-    echo "0 results";
+    echo '<p>No se encontraron resultados.</p>';
 }
+
 
 $apellido_usuario = $_SESSION['apellido_usuario'];
 $idUsuario=$_SESSION['id'];
 $correo=$_SESSION['correo'];
+$nombre_usuario=$_SESSION['nombre_usuario'];
 
 // Cerrar conexión
 $conn->close();
