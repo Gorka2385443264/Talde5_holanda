@@ -59,30 +59,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['cart'])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title><? trans("Pagina de pago") ?></title>
+    <title><?= trans("Pagina de pago") ?></title>
     <link rel="stylesheet" href="/Talde5_holanda/src/css/pago.css">
 </head>
 <body>
-    <h2><? trans("Pagina de pago") ?><?php echo htmlspecialchars($nombreProducto); ?></h2>
+    <h2><?= trans("Pagina de pago") ?><?php echo htmlspecialchars($nombreProducto); ?></h2>
     <form action="pago.php?productoId=<?php echo htmlspecialchars($productoId); ?>" method="post">
         <div>
-            <label for="nombre"><? trans("Name") ?>:</label>
+            <label for="nombre"><?= trans("Name") ?>:</label>
             <input type="text" id="nombre" name="nombre" required>
         </div>
         <div>
-            <label for="email"><? trans("E-mail") ?>:</label>
+            <label for="email"><?= trans("E-mail") ?>:</label>
             <input type="email" id="email" name="email" required>
         </div>
         <div>
-            <label for="direccion"><? trans("Direccion") ?>:</label>
+            <label for="direccion"><?= trans("Direccion") ?>:</label>
             <input type="text" id="direccion" name="direccion" required>
         </div>
         <div>
-            <label for="detalles"><? trans("Numero de la tarjeta") ?>:</label>
+            <label for="detalles"><?= trans("Numero de la tarjeta") ?>:</label>
             <input type="text" id="detalles" name="detallesPago" placeholder="Número de tarjeta" required>
         </div>
         <div>
-            <button type="submit"><? trans("Confirmar pag") ?>
+            <button type="submit"><?= trans("Confirmar pag") ?>
 
 
 

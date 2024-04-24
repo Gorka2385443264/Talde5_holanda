@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<?php
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
+?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berriak</title>
     <link rel="stylesheet" href="/Talde5_holanda/src/css/tendentziak.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
-    <h1>Tendentziak</h1>
+    <h1><?= trans("Tendentziak") ?></h1>
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Izena</th>
-                <th>Deskripazioa</th>
-                <th>Popularitatea</th>
-                <th>Data</th>
+                <th><?= trans("ID") ?></th>
+                <th><?= trans("Izen") ?></th>
+                <th><?= trans("Deskription") ?></th>
+                <th><?= trans("Popularitatea") ?></th>
+                <th><?= trans("Data:") ?></th>
             </tr>
         </thead>
         <tbody>

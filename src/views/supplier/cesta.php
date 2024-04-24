@@ -31,7 +31,7 @@
     // Manejar la adición de productos al carrito
     if (isset($_POST['productoId']) && !isset($_POST['action'])) {
         $productoId = $_POST['productoId'];
-        $producto = obtenerProductoPorId($productoId, $conn);
+        $producto = obtenerProductoPorId($productoId);
         if ($producto) {
             $producto['price'] = $producto['prezioa']; // Definir la clave "price"
             $producto['name'] = $producto['mota']; // Definir la clave "name"

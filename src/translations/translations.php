@@ -10,7 +10,7 @@ aldatuHizkuntza();
 
 function defaultLanguage()
 {
-    $_SESSION["_LANGUAGE"] = "es";
+    $_SESSION["_LANGUAGE"] = "eus";
 }
 
 function aldatuHizkuntza()

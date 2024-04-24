@@ -29,22 +29,20 @@
 
     <form action="berriak.php" method="get">
         <select name="order">
-            <option value="DESC"><?php echo $lang['order_recent_first'] ?? 'Recientes primero'; ?></option>
-            <option value="ASC"><?php echo $lang['order_oldest_first'] ?? 'Antiguos primero'; ?></option>
+            <option value="DESC"><?php echo $lang['order_recent_first'] ?? '<?= trans("Recientes primer") ?>'  ?></option>
+            <option value="ASC"><?php echo $lang['order_oldest_first'] ?? '<?= trans("Antiguos primer") ?>' ?></option>
         </select>
-        <button type="submit"><?php echo $lang['submit_button'] ?? 'Filtrar'; ?></button>
-        <form action="" method="post">
-        <input type="submit" name="changeLangToEnglish" value="Change Language to English">
-        </form>
+        <button type="submit"><?php echo $lang['submit_button'] ?? '<?= trans("Filtrar") ?>' ?></button>
+        
 
     </form>
 
     <!-- Eliminados los botones de cambio de idioma -->
     <!-- Contenido de base de datos -->
     <?php
-    $servername = "erronka3_5taldea";
-    $username = "5taldea";
-    $password = "1@WMG2024";
+    $servername = "localhost:3306";
+    $username = "root";
+    $password = "1WMG2023";
     $dbname = "erronka3";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
