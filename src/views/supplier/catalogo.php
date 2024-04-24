@@ -5,7 +5,7 @@ session_start();
 function obtenerProductoPorId($productoId)
 {
     $productos = [
-        1 => ['id' => 1, 'name' => 'Bicicleta Eléctrica', 'price' => 699],
+        1 => ['id' => 1, 'name' => 'Bicicleta electrica', 'price' => 699],
         2 => ['id' => 2, 'name' => 'Casco Aerion Carrbo', 'price' => 150],
         3 => ['id' => 3, 'name' => 'Bicicleta de Carretera', 'price' => 850],
         4 => ['id' => 4, 'name' => 'Bicicleta Eléctrica de Ciudad', 'price' => 1200],
@@ -43,49 +43,94 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 </head>
 
 <body>
-    <div class="mainDiv">
-        <h1>Catálogo de Bicis</h1>
-        <a href="mainPage.php" class="back-to-index">
-            <button class="back-button">⬅</button>
-        </a>
-        <section class="latest top">
+<div class="mainDiv">
+    <h1>Catálogo de Bicis</h1>
+    <a href="mainPage.php" class="back-to-index">
+        <button class="back-button">⬅</button>
+    </a>
+    <section class="latest top">
             <div class="scontainer">
                 <div class="heading">
                     <h1>Latest Popular Bike</h1>
+                    
                 </div>
                 <div class="content grid top">
-                    <div class="box">
-                        <div class="img">
-                            <img src="../../../public/Argazkiak/bicicleta-electrica-removebg-preview.png" width="300">
-                        </div>
-                        <div class="detalis">
-                            <h3>Electric bike</h3>
-                            <p>(Comfortable and a very efficient autonomy)</p>
-                            <h2>$699 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="1">Rent now</button>
-                        </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="../../../public/Argazkiak/bicicleta-electrica-removebg-preview.png" width="300">
+                        
                     </div>
-                    <!-- Repite este bloque para cada producto -->
-                </div>
-            </div>
-        </section>
-        <div class="slider-container">
-            <div class="slides">
-                <div class="slide">
-                    <div class="slide-content">
-                        <h2>KTM 125 DUKE</h2>
-                        <!-- Detalles del producto -->
-                        <h1>Price: 1999,99€</h1>
-                        <button class="rent-now" data-producto-id="7">Rent now</button>
-                    </div>
-                    <div class="slide-content-img">
-                        <img src="../../../public/Argazkiak/bici-dos-personas-removebg-preview.png" alt="">
+                    <div class="detalis">
+                        <h3>Electric bike</h3>
+                        <p>(Comfortable and a very efficient autonomy)</p>
+                        <h2>$699 <span>/hour</span> </h2>
+                        <button class="rent-now" data-producto-id="1">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                     </div>
                 </div>
-                <!-- Repite este bloque para cada producto -->
+                <div class="box">
+                    <div class="img">
+                        <img src="../../../public/Argazkiak/bici-de-ciudad-removebg-preview.png" width="300">
+                        
+                    </div>
+                    <div class="detalis">
+                        <h3>Aerion Carrbo Helmet</h3>
+                        <p>(Fashion , Twin Disc)</p>
+                        <h2>$699 <span>/hour</span> </h2>
+                        <button class="rent-now" data-producto-id="2">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="../../../public/Argazkiak/bici-de-carretera-removebg-preview.png" width="300">
+                        
+                    </div>
+                    <div class="detalis">
+                        <h3>Aerion Carrbo Helmet</h3>
+                        <p>(Fashion , Twin Disc)</p>
+                        <h2>$699 <span>/hour</span> </h2>
+                        <button class="rent-now" data-producto-id="3">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="../../../public/Argazkiak/bici-electrica-ciudad-removebg-preview.png" width="300">
+                        
+                    </div>
+                    <div class="detalis">
+                        <h3>Aerion Carrbo Helmet</h3>
+                        <p>(Fashion , Twin Disc)</p>
+                        <h2>$699 <span>/hour</span> </h2>
+                        <button class="rent-now" data-producto-id="4">Rent now</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="../../../public/Argazkiak/bicicleta-montaña-removebg-preview.png" width="300">
+                        
+                    </div>
+                    <div class="detalis">
+                        <h3>Aerion Carrbo Helmet</h3>
+                        <p>(Fashion , Twin Disc)</p>
+                        <h2>$699 <span>/hour</span> </h2>
+                        <button class="rent-now" data-producto-id="5">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="../../../public/Argazkiak/bmx-removebg-preview.png" width="300">
+                       
+                    </div>
+                    <div class="detalis">
+                        <h3>Aerion Carrbo Helmet</h3>
+                        <p>(Fashion , Twin Disc)</p>
+                        <h2>$699 <span>/hour</span> </h2>
+                        <button class="rent-now" data-producto-id="6">Rent now</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+</div>
 
     <script>
         $(document).ready(function () {
