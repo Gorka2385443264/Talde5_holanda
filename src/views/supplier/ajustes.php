@@ -41,13 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <title><?= trans("ajustes") ?></title>
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/ajustes.css">
+<title><?= trans("ajustes") ?></title>
+<link rel="stylesheet" href="/Talde5_holanda/src/css/ajustes.css">
 </head>
 
 <body>
@@ -67,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </form>
 
-        <button onclick="goBack()"><?= trans("Go back") ?></button>
+        <button onclick="goBack()"><?= trans("Go back") ?> </button>
 
     </div>
     <script>

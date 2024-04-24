@@ -1,7 +1,6 @@
 <!-- SIDEBAR -->
-<?php
-require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.
-?>
+<?php require_once (APP_DIR . "/src/translations/translations.php"); ?>
+
 <button class="boton_sidebar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
   aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-gear"></i></button>
 
@@ -34,21 +33,41 @@ require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabili
           <a href="/Talde5_holanda/src/views/supplier/cesta.php">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="numero_icono_cesta">
-              <?= isset ($_SESSION['cesta']) ? count($_SESSION['cesta']) : 0 ?>
+              <?= isset($_SESSION['cesta']) ? count($_SESSION['cesta']) : 0 ?>
             </span>
           </a>
         </div>
       </li>
       <li>
-
         <div class="cart-icon2">
-          <?php require_once (APP_DIR . "/src/views/supplier/_parts/selectLang.php"); ?>
-        </div>
-        <?php
-        require_once (APP_DIR . "/src/views/supplier/footer.php");
-        ?>
+          <div class="cart-icon2">
+            <form id="languageForm" method="post" onsubmit="return false;">
+              <div class="opcion_idioma_borde">
+                <select class="opcion_idioma" name="selectedLang" onchange="changeLanguage(this.value)">
+                  <option class="opcion_idioma" value="eus" <?php if ($_SESSION['_LANGUAGE'] === 'eus')
+                    echo 'selected'; ?>> EUS</option>
+                  <option class="opcion_idioma" value="es" <?php if ($_SESSION['_LANGUAGE'] === 'es')
+                    echo 'selected'; ?>>
+                    ES</option>
+                  <option class="opcion_idioma" value="en" <?php if ($_SESSION['_LANGUAGE'] === 'en')
+                    echo 'selected'; ?>>
+                    EN</option>
+                </select>
+              </div>
+            </form>
+          </div>
 
+        </div>
       </li>
     </ul>
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function changeLanguage(language) {
+    $.post('cambiarIdioma.php', { language: language }, function (response) {
+      location.reload(); // Recargar la página para aplicar los cambios de idioma
+    });
+  }
+</script>

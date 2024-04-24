@@ -58,7 +58,7 @@
     color: black;
 }
 
-.baraAbajo div {
+.baraAbajo a {
     display: flex; /* Utiliza flexbox para alinear los logos dentro de cada div */
     justify-content: center; /* Centra horizontalmente el contenido de cada div */
     align-items: center; /* Centra verticalmente el contenido de cada div */

@@ -23,7 +23,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
         require_once (APP_DIR . "/src/views/supplier/sidebar.php");
         ?>
     </div>
-    <div class="mainDiv">
+    <div class="mainDiv" style="margin-left: 100px;">
         <h1><?= trans("Sobrenosotros") ?></h1>
     </div>
 
