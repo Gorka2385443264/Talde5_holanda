@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
-    <user id="usuario1">
+    <user>
         <color>#ff0000</color>
     </user>
 </users>
