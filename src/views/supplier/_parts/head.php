@@ -32,8 +32,16 @@
     require_once (APP_DIR . "/src/translations/translations.php"); //APP_DIR erabilita itzulpenen dokumentua atzitu dugu.    
     
     if (!isset($_SESSION['nombre_usuario']) || $_SESSION["nombre_usuario"] == "") {
-        header('Location: ../mainPage/index.php');
-        exit();
+        $url_bukaera = "/";
+        if(isset($_SERVER["HTTP_REFERER"])){
+            $url = $_SERVER["HTTP_REFERER"];
+            $url_bukaera = explode("/views", $url)[1];
+        }
+
+        if($url_bukaera != "/" && $url_bukaera != "/index.php"){
+            header('Location: ../mainPage/index.php');
+            exit();
+        }
     }
     
     ?>

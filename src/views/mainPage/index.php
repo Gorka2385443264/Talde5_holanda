@@ -10,14 +10,17 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/Talde5_holanda/src/css/login.css">
 </head>
+
 <?php
 
 require_once ("../supplier/_parts/head.php");
- require_once ("../../php/conectar.php");
+require_once ("../../php/conectar.php");
+
 ?>
 
 <body>
-    <main>
+
+<main>
         
         <div class="contenedor__todo">
             <div class="caja__trasera">
