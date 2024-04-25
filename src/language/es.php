@@ -121,6 +121,21 @@ return [
     "Continuar comprando" => "Continuar comprando",
     "Pay" => "Pagar",
 
+
+
+
+
+    "Bici de ciudad" => "Bicicleta de ciudad",
+    "Moda, Disco Doble" => "Moderna, Doble Disco",
+    "Comoda y veloz" => "Cómoda y rápida",
+    "Comoda y ayuda al medioambiente" => "Cómoda y ayuda al medio ambiente",
+    "Ligeras y con buena amortiguación" => "Ligeras y con buen amortiguamiento",
+    "Buena para los jovenes" => "Buena para los jóvenes",
+    "BMX" => "BMX",
+    "Bicicleta de montaña" => "Bicicleta de montaña",
+    "Bici de ciudad electrica" => "Bici de ciudad electrica",
+    "Bicicleta de carretera" => "Bicicleta de carretera",
+
     // Pago (2)
     "Pagina de pago" => "Página de pago",
     "Name" => "Nombre",

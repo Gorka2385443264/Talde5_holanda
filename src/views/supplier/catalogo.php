@@ -56,22 +56,21 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                             <h3><?= trans("Bicicleta electrica") ?></h3>
                             <p>(<?= trans("Cómoda y una autonomía muy eficiente") ?>)</p>
-                            <h2>€4 <span>/hora</span> </h2>
+                            <h2>$4 <span>/<?= trans("hora") ?></span></h2>
                             <button class="rent-now" data-producto-id="1"><?= trans("Alquila ahora") ?>
-</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            </button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
                         <div class="img">
                             <img src="../../../public/Argazkiak/bici-de-ciudad-removebg-preview.png" width="300">
-
                         </div>
                         <div class="detalis">
-                            <h3>Bicicleta de paseo</h3>
-                            <p>(Moda, Disco Doble)</p>
-                            <h2>$2 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="2">Alquila
-                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <h3><?= trans("Bici de ciudad") ?></h3>
+                            <p>(<?= trans("Moda, Disco Doble") ?>)</p>
+                            <h2>$2 <span>/<?= trans("hora") ?></span></h2>
+                            <button class="rent-now"
+                                data-producto-id="2"><?= trans("Alquila ahora") ?></button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
@@ -80,11 +79,11 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Bicicleta de paseo</h3>
-                            <p>(Moda, Disco Doble)</p>
-                            <h2>$3 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="3">Alquila
-                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <h3><?= trans("Bicicleta de carretera") ?></h3>
+                            <p>(<?= trans("Comoda y veloz") ?>)</p>
+                            <h2>$3 <span>/<?= trans("hora") ?></span></h2>
+                            <button class="rent-now"
+                                data-producto-id="3"><?= trans("Alquila ahora") ?></button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
@@ -93,11 +92,12 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Bicicleta de paseo</h3>
-                            <p>(Moda, Disco Doble)</p>
-                            <h2>$1,5 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="4">Alquila
-                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. --></button>
+                            <h3><?= trans("Bici de ciudad electrica") ?></h3>
+
+                            <p>(<?= trans("Comoda y ayuda al medioambiente") ?>)</p>
+                            <h2>$1,5 <span>/<?= trans("hora") ?></span></h2>
+                            <button class="rent-now"
+                                data-producto-id="4"><?= trans("Alquila ahora") ?></button><!-- Asegúrate de aplicar este cambio a todos los botones similares. --></button>
                         </div>
                     </div>
                     <div class="box">
@@ -106,11 +106,12 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Bicicleta de paseo</h3>
-                            <p>(Moda, Disco Doble)</p>
-                            <h2>$3 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="5">Alquila
-                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <h3><?= trans("Bicicleta de montaña") ?></h3>
+
+                            <p>(<?= trans("Ligeras y con buena amortiguación") ?>)</p>
+                            <h2>$3 <span>/<?= trans("hora") ?></span></h2>
+                            <button class="rent-now"
+                                data-producto-id="5"><?= trans("Alquila ahora") ?></button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                     <div class="box">
@@ -119,11 +120,11 @@ if (isset($_POST['productoId']) && !isset($_POST['action'])) {
 
                         </div>
                         <div class="detalis">
-                            <h3>Bicicleta de paseo</h3>
-                            <p>(Moda, Disco Doble)</p>
-                            <h2>$2 <span>/hour</span> </h2>
-                            <button class="rent-now" data-producto-id="6">Alquila
-                                ahora</button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
+                            <h3><?= trans("BMX") ?></h3>
+                            <p>(<?= trans("Buena para los jovenes") ?>)</p>
+                            <h2>$2 <span>/<?= trans("hora") ?></span></h2>
+                            <button class="rent-now"
+                                data-producto-id="6"><?= trans("Alquila ahora") ?></button><!-- Asegúrate de aplicar este cambio a todos los botones similares. -->
                         </div>
                     </div>
                 </div>

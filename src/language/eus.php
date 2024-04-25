@@ -58,13 +58,25 @@ return [
     "rent now" => "alokatu orain",
     "Bici de ciudad" => "Hiriko bizikleta",
     "Very comfortable for cities" => "Hirietarako oso erosoa",
+
+
+    "Bici de ciudad" => "Hiriko bizikleta",
+    "Moda, Disco Doble" => "Moda, Disko Bikoitza",
+    "Comoda y veloz" => "Eraikitzailea eta azkarrak",
+    "Comoda y ayuda al medioambiente" => "Eraikitzailea eta ingurumenari laguntzen du",
+    "Ligeras y con buena amortiguación" => "Aingura ona eta arina",
+    "Buena para los jovenes" => "Gazteentzako ona",
+    "BMX" => "BMX",
+    "Bicicleta de montaña" => "Mendiko bizikleta",
+    "Bici de ciudad electrica" => "Hiri bizikleta elektrikoa",
+    "Bicicleta de carretera" => "Errota bizikleta",
+
+
     "Bici de carretera" => "Errepideko bizikleta",
     "Ligera y aerodinamica" => "Arduragabea eta aerodinamikoa",
-    "Bici de ciudad electrica" => "Hiriko bizikleta elektrikoa",
     "Comodo y con una gran autonomia, perfecta para ciudad" => "Erosoa eta autonomia handiarekin, hirirako perfektua",
     "Bici de montaña" => "Mendiko bizikleta",
     "Light and with good cushioning" => "Argia eta kuxin onarekin",
-    "BMX" => "BMX",
     "Perfecta para hacer maniobras" => "Maniobrak egiteko perfektua",
 
     // Ubicaciones
