@@ -32,14 +32,14 @@ $result = $conn->query($sql);
     
 if ($result->num_rows > 0) {
     // Iniciar la tabla HTML
-    echo '<h3>Tu historial de compras:</h3>';
+    echo '<h3>' . trans("histDeCompra") .'</h3>';
     echo '<table border="1">';  // Añade 'border="1"' para ver los bordes de la tabla (útil para desarrollo)
     echo '<thead>';
     echo '<tr>';
-    echo '<th>ID de Compra</th>';
-    echo '<th>Precio</th>';
-    echo '<th>Fecha</th>';
-    echo '<th>Tipo de Bicicleta</th>';
+    echo '<th>'. trans("idCompraHis") .'</th>';
+    echo '<th>'. trans("Precio") .'</th>';
+    echo '<th>'. trans("Fecha") .'</th>';
+    echo '<th>'. trans("TipoDeBici") .'</th>';
     echo '</tr>';
     echo '</thead>';
     echo '<tbody>';
@@ -73,7 +73,7 @@ $conn->close();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title><? trans("Mi perfil") ?></title>
+    <title><?= trans("Mi perfil") ?></title>
     <link rel="stylesheet" href="/Talde5_holanda/src/css/miPerfil.css">
 </head>
 <body>
@@ -85,10 +85,10 @@ $conn->close();
         <table>
             <thead>
                 <tr>
-                    <th><?= trans("Izena") ?></th>
-                    <th><?= trans("Abizena") ?></th>
-                    <th><?= trans("Emaila") ?></th>
-                    <th><?= trans("Zure id-a") ?></th>
+                    <th><?= trans("Name") ?></th>
+                    <th><?= trans("placeHold4") ?></th>
+                    <th><?= trans("placeHold1") ?></th>
+                    <th><?= trans("zureId") ?></th>
                 </tr>
             </thead>
             <tbody>

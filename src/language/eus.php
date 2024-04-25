@@ -14,6 +14,7 @@ return [
     "placeHold3" => "Izena",
     "placeHold4" => "Abizena",
     "placeHold5" => "Telefono zenbakia",
+    "zureId" => "Zure id",
 
     //alert
     "inicioEx" => "Saioaren hasiera arrakastatsua",
@@ -130,6 +131,7 @@ return [
     "Número de tarjeta" => "Txartel zenbakia",
 
     // About us
+    "guri buruz" => "Guri buruz",
     "Nuestra mision" => "Gure misioa",
     "ourMis" => "Hiriko mugikortasuna hobetzeko eta bizimodu aktibo eta ekologikoa sustatzeko bizikleta alokairu zerbitzu irisgarri, iraunkor eta kalitatezkoa eskaintzea.",
     "Nuestra Vision" => "Gure ikuspegia",
@@ -181,8 +183,10 @@ return [
     "Mi perfil" => "Nire profila",
     "hola" => "Kaixo",
     "histDeCompra" => "Erosketa historikoa",
+    "idCompraHis" => "Erosketa id",
     "Product" => "Produktua",
     "Fecha" => "Data",
+    "TipoDeBici" => "Bizikleta motak",
     "Precio" => "Prezioa",
     "Número de teléfono móvil" => "Telefono mugikorraren zenbakia",
     //Ajustes

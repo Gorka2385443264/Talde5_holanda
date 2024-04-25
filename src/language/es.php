@@ -14,6 +14,7 @@ return [
     "placeHold3" => "Nombre",
     "placeHold4" => "Apellido",
     "placeHold5" => "Número de teléfono",
+    "zureId" => "Tu id",
 
     //alert
     "inicioEx" => "Inicio de sesión exitoso",
@@ -132,6 +133,7 @@ return [
 
 
     // About us
+    "guri buruz" => "Sobre nosotros",
     "Nuestra mision" => "Nuestra misión",
     "ourMis" => "Ofrecer un servicio de alquiler de bicicletas accesible, sostenible y de alta calidad para mejorar la movilidad urbana y promover un estilo de vida activo y ecológico.",
     "Nuestra Vision" => "Nuestra visión",
@@ -182,9 +184,11 @@ return [
     "Mi perfil" => "Mi perfil",
     "hola" => "Hola",
     "histDeCompra" => "Histórico de compras",
+    "idCompraHis" => "ID de compra",
     "Product" => "Producto",
     "Fecha" => "Fecha",
     "Precio" => "Precio",
+    "TipoDeBici" => "Tipo de bicicleta",
     "Número de teléfono móvil" => "Número de teléfono móvil",
     //Ajustes
     "ajustes" => "Ajustes de perfil",

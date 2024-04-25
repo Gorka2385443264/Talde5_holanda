@@ -24,7 +24,7 @@ if (isset($_SESSION['nombre_usuario']) && isset($_SESSION['apellido_usuario'])) 
         ?>
     </div>
     <div class="mainDiv" style="margin-left: 100px;">
-        <h1><?= trans("Sobrenosotros") ?></h1>
+        <h1><?= trans("guri buruz") ?></h1>
     </div>
 
 

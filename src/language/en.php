@@ -14,6 +14,7 @@ return [
     "placeHold3" => "Name",
     "placeHold4" => "Surname",
     "placeHold5" => "Phone number",
+    "zureId" => "Your id",
 
     //alert
     "inicioEx" => "The start of the successful session",
@@ -142,6 +143,7 @@ return [
     "Número de tarjeta" => "Card number",
 
     // About us
+    "guri buruz" => "About us",
     "Nuestra mision" => "Our mision",
     "ourMis" => "Offer an accessible, sustainable and high-quality bicycle rental
     service to improve urban mobility and promote an active and ecological lifestyle.",
@@ -195,7 +197,9 @@ return [
     "Mi perfil" => "My profile",
     "hola" => "Hello",
     "histDeCompra" => "Historical purchases",
+    "idCompraHis" => "Purchase ID",
     "Product" => "Product",
+    "TipoDeBici" => "Bike type",
     "Fecha" => "Date",
     "Precio" => "Price",
     //Ajustes
