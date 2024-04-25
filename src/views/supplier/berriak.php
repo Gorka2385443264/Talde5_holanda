@@ -26,16 +26,14 @@
 
 <h1><?php echo $lang['header'] ?? 'Berriak'; ?></h1>
 
+<form action="berriak.php" method="get">
+    <select name="order">
+        <option value="DESC"><?php echo $lang['order_recent_first'] ?? 'Recientes primero'; ?></option>
+        <option value="ASC"><?php echo $lang['order_oldest_first'] ?? 'Antiguos primero'; ?></option>
+    </select>
+    <button type="submit"><?php echo $lang['submit_button'] ?? 'Filtrar'; ?></button>
+</form>
 
-    <form action="berriak.php" method="get">
-        <select name="order">
-            <option value="DESC"><?php echo $lang['order_recent_first'] ?? '<?= trans("Recientes primer") ?>'  ?></option>
-            <option value="ASC"><?php echo $lang['order_oldest_first'] ?? '<?= trans("Antiguos primer") ?>' ?></option>
-        </select>
-        <button type="submit"><?php echo $lang['submit_button'] ?? '<?= trans("Filtrar") ?>' ?></button>
-        
-
-    </form>
 
     <!-- Eliminados los botones de cambio de idioma -->
     <!-- Contenido de base de datos -->
