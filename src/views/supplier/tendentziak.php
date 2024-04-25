@@ -1,13 +1,16 @@
 <?php
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 ?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berriak</title>
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/tendentziak.css"> <!-- Ensure this path is correct -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berriak</title>
+<link rel="stylesheet" href="/Talde5_holanda/src/css/tendentziak.css"> <!-- Ensure this path is correct -->
 </head>
+
 <body>
     <h1><?= trans("Tendentziak") ?></h1>
+    <a href="mainPage.php"><?= trans("Volver a la página principal") ?></a>
+
     <table>
         <thead>
             <tr>
@@ -24,7 +27,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
             $username = "root";
             $password = "1WMG2023";
             $dbname = "erronka3"; // Replace with your actual database name
-
+            
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -38,7 +41,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
 
             if ($result->num_rows > 0) {
                 // Output data of each row
-                while($row = $result->fetch_assoc()) {
+                while ($row = $result->fetch_assoc()) {
                     // Determine color based on popularity
                     $color = '#FFFFFF'; // Default white background
                     if ($row["popularitatea"] >= 90) {
@@ -65,5 +68,5 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
         </tbody>
     </table>
 </body>
-</html>
 
+</html>

@@ -1,38 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-   // Inicialización de la variable $lang
-   $lang = [];
+<?php
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 
-   // Define el archivo de idioma en español por defecto
-   $file_path = __DIR__ . "/lang/es.json";
-   if (file_exists($file_path)) {
-       $json_content = file_get_contents($file_path);
-       if ($json_content !== false) {
-           $decoded_json = json_decode($json_content, true);
-           if (is_array($decoded_json)) {
-               $lang = $decoded_json;
-           }
-       }
-   }
-    ?>
-    <title><?php echo $lang['title'] ?? 'Fiets.hurr'; ?></title>
-    <link rel="stylesheet" href="/Talde5_holanda/src/css/berriak.css">
+$lang = [];
+
+// Define el archivo de idioma en español por defecto
+$file_path = __DIR__ . "/lang/es.json";
+if (file_exists($file_path)) {
+    $json_content = file_get_contents($file_path);
+    if ($json_content !== false) {
+        $decoded_json = json_decode($json_content, true);
+        if (is_array($decoded_json)) {
+            $lang = $decoded_json;
+        }
+    }
+}
+?>
+<title><?php echo $lang['title'] ?? 'Noticias'; ?></title>
+<link rel="stylesheet" href="/Talde5_holanda/src/css/berriak.css">
 </head>
+
 <body>
+    <a href="mainPage.php"><?= trans("Volver a la página principal") ?></a>
 
-<h1><?php echo $lang['header'] ?? 'Berriak'; ?></h1>
+    <h1><?php echo $lang['header'] ?? 'Berriak'; ?></h1>
 
-<form action="berriak.php" method="get">
-    <select name="order">
-        <option value="DESC"><?php echo $lang['order_recent_first'] ?? 'Recientes primero'; ?></option>
-        <option value="ASC"><?php echo $lang['order_oldest_first'] ?? 'Antiguos primero'; ?></option>
-    </select>
-    <button type="submit"><?php echo $lang['submit_button'] ?? 'Filtrar'; ?></button>
-</form>
+    <form action="berriak.php" method="get">
+        <select name="order">
+            <option value="DESC"><?php echo $lang['order_recent_first'] ?? 'Recientes primero'; ?></option>
+            <option value="ASC"><?php echo $lang['order_oldest_first'] ?? 'Antiguos primero'; ?></option>
+        </select>
+        <button type="submit"><?php echo $lang['submit_button'] ?? 'Filtrar'; ?></button>
+    </form>
 
 
     <!-- Eliminados los botones de cambio de idioma -->
@@ -69,12 +67,11 @@
 
     if (isset($_POST['changeLangToEnglish'])) {
         $lang = json_decode(file_get_contents(__DIR__ . "/lang/en.json"), true);
-        setcookie('language', 'en', time() + 60*60*24*30, '/'); // La cookie expira en 30 días
+        setcookie('language', 'en', time() + 60 * 60 * 24 * 30, '/'); // La cookie expira en 30 días
         // Recarga la página
     }
     ?>
 
 </body>
+
 </html>
-
-
