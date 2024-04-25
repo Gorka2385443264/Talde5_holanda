@@ -112,7 +112,12 @@ return [
     "Cesta de compra" => "Shopping basket",
     "Estado del producto" => "Product status",
 
-
+    "Aquí puedes decir si el estado de la Bicicleta está Mal o Bien" => "Here you can tell if the condition of the Bicycle is Bad or Good",
+    "Bien" => "Good",
+    "Mal" => "Wrong",
+    "Actualizar Estado" => "Update status",
+    "Gracias" => "Thank you",
+    "Volver a la página principal" => "Return to main page",
     // CESTA
     "Cesta_de_compra" => "Shopping basket",
     "Tu cesta esta vacia" => "Your basket is empty",

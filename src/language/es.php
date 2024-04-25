@@ -99,6 +99,12 @@ return [
     "Tendecias" => "Tendencias",
     "Cesta de compra" => "Cesta de compra",
     "Estado del producto" => "Estado del producto",
+    "Aquí puedes decir si el estado de la Bicicleta está Mal o Bien" => "Aquí puedes decir si el estado de la Bicicleta está Mal o Bien",
+    "Bien" => "Bien",
+    "Mal" => "Mal",
+    "Actualizar Estado" => "Actualizar Estado",
+    "Gracias" => "Gracias",
+    "Volver a la página principal" => "Volver a la página principal",
 
 
     // CESTA

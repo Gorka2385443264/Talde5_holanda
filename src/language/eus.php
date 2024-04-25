@@ -98,6 +98,12 @@ return [
     "Cesta de compra" => "Erosketa saskia",
     "Cesta" => "Saskia",
     "Estado del producto" => "Produktuaren egoera",
+    "Aquí puedes decir si el estado de la Bicicleta está Mal o Bien" => "Hemen esan dezakezu Bizikletaren egoera txarra edo ona den",
+    "Bien" => "Ondo",
+    "Mal" => "Gaizki",
+    "Actualizar Estado" => "Eguneratu egoera",
+    "Gracias" => "Eskerrik Asko",
+    "Volver a la página principal" => "Itzuli orri nagusira",
 
 
     // CESTA
