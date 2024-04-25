@@ -121,9 +121,9 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_p
             // Itera sobre cada elemento 'usuarioa' dentro del XML
             foreach ($xml->comentario as $comentario) {
                 echo "<div>";
-                echo "<p><strong>" . '<?= trans("Comentarios") ?>' . "</strong>";
-                echo "<p><strong>" . '<?= trans("titulo") ?>' . "</strong> " . htmlspecialchars($comentario->titulo) . "</p>";
-                echo "<p><strong>" . '<?= trans("Coment") ?>' . ":</strong> " . htmlspecialchars($comentario->comentario) . "</p>";
+                echo "<p><strong>" . trans("Comentarios") . "</strong></p>";
+                echo "<p><strong>" .  trans("titulo")  . "</strong> " . htmlspecialchars($comentario->titulo) . "</p>";
+                echo "<p><strong>" . trans("Coment")  . ":</strong> " . htmlspecialchars($comentario->comentario) . "</p>";
                 echo "</div><br>";
             }
         } else {
