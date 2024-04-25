@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php echo $statusMessage; ?>
             </div>
         <?php endif; ?>
+        <a href="mainPage.php">Volver a la página principal</a>
     </div>
 </body>
 
