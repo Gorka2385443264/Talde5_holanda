@@ -1,5 +1,5 @@
 <?php
-session_start(); // Asegurarse de iniciar la sesión para acceder al carrito
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/Talde5_holanda/src/views/supplier/_parts/head.php");
 
 // Conectar a la base de datos
 $servername = "localhost:3306";
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['cart'])) {
     }
 
     if ($stmt->affected_rows > 0) {
-        echo "<div>". '<?= trans("idCompra") ?>'. $id_alokairua . "</div>";
+        echo "<div>" . '<?= trans("idCompra") ?>' . $id_alokairua . "</div>";
         unset($_SESSION['cart']); // Limpiar el carrito
     } else {
         echo "Error al procesar la compra: " . $stmt->error;
@@ -57,11 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['cart'])) {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title><?= trans("Pagina de pago") ?></title>
     <link rel="stylesheet" href="/Talde5_holanda/src/css/pago.css">
 </head>
+
 <body>
     <h2><?= trans("Pagina de pago") ?><?php echo htmlspecialchars($nombreProducto); ?></h2>
     <form action="pago.php?productoId=<?php echo htmlspecialchars($productoId); ?>" method="post">
@@ -83,8 +85,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['cart'])) {
         </div>
         <div>
             <button type="submit"><?= trans("Confirmar pag") ?>
-
-
-
-
-
