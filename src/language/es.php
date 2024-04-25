@@ -128,6 +128,8 @@ return [
     "Numero de la tarjeta" => "Número de la tarjeta",
     "Confirmar pago" => "Confirmar pago",
     "idCompra" => "¡Gracias por tu compra! Tu ID de compra es:",
+    "Número de tarjeta" => "Número de tarjeta",
+
 
     // About us
     "Nuestra mision" => "Nuestra misión",

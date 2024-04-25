@@ -139,6 +139,7 @@ return [
     "Numero de la tarjeta" => "Card number",
     "Confirmar pago" => "Confirm payment",
     "idCompra" => "Thank you for purchasing! Your purchase ID is:",
+    "Número de tarjeta" => "Card number",
 
     // About us
     "Nuestra mision" => "Our mision",

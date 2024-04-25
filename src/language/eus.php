@@ -127,6 +127,7 @@ return [
     "Numero de la tarjeta" => "Txartelaren zenbakia",
     "Confirmar pago" => "Ordainketa baieztatu",
     "idCompra" => "Eskerrik asko zure erosketagatik! Zure erosketa ID-a hau da:",
+    "Número de tarjeta" => "Txartel zenbakia",
 
     // About us
     "Nuestra mision" => "Gure misioa",
